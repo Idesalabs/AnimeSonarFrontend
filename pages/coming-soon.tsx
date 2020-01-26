@@ -1,5 +1,10 @@
+import ExampleComponent from '../components/ExampleComponent'
+
 const Page = () => {
-    return <h1>Coming Soon</h1>
+    return <div>
+        <h1>Coming Soon</h1>
+        <ExampleComponent />
+    </div>
 }
 
 export default Page
