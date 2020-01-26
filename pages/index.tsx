@@ -1,10 +1,12 @@
-import {BlueNavBar} from "../components/Navbars"
+import { BlueNavBar } from "../components/Navbars"
+import ExampleComponent from '../components/ExampleComponent'
 
 
-const Page = ()=>{
+const Page = () => {
     return <div>
-        <BlueNavBar/>
+        <BlueNavBar />
         <h1>Index PAGE</h1>
+        <ExampleComponent />
     </div>
 }
 
