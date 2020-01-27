@@ -1,3 +1,5 @@
+import Button from 'react-bootstrap/Button';
+
 const IntroSection = () => {
     return <div>
         <section>
@@ -41,6 +43,7 @@ const LandingPage = () => {
         <IntroSection/>
         <Features/>
         <Footer/>
+        <Button>Hello</Button>
     </div>
 
 }
