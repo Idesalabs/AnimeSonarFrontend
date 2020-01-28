@@ -14,10 +14,10 @@ const Features = () => {
         <section>
             <h1>Features</h1>
             <div>
-                <img src="" alt="Intuitive-tag-system" />
+                <img src="https://picsum.photos/500/300?random=2" alt="Intuitive-tag-system" />
             </div>
             <div>
-                <img src="" alt="Based-on-Mood" />
+                <img src="https://picsum.photos/500/300" alt="Based-on-Mood" />
             </div>
         </section>
     </div>
