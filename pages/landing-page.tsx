@@ -6,8 +6,8 @@ import Col from 'react-bootstrap/Col';
 const IntroSection = () => {
     return <div>
         <section>
-        <h1 style = {{fontSize: "40px"}}>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, repellendus! Tenetur, illum nulla.</p>
+        <h1 style = {{fontSize: "33px"}}>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+        <p style = {{fontSize: "17px"}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, repellendus! Tenetur, illum nulla.</p>
         </section>
         </div>
 }
@@ -15,13 +15,18 @@ const IntroSection = () => {
 const Features = () => {
     return <div>
         <section>
-            <h1>Features</h1>
-            <div>
-                <img src="https://picsum.photos/500/300?random=2" alt="Intuitive-tag-system" />
-            </div>
-            <div>
-                <img src="https://picsum.photos/500/300" alt="Based-on-Mood" />
-            </div>
+            <h1 style = {{fontSize: "33px"}} className ="text-center">Features</h1>
+            <Row className ="mt-5">
+                <div style= {{display: "inline-block"}} className = "mx-auto px-4">
+                <img src="https://picsum.photos/500/300?random=2" alt="Intuitive-tag-system" className = "img-fluid"/>
+                </div>
+            </Row>
+            <Row className ="mt-5">
+                <div style= {{display: "inline-block"}} className = "mx-auto px-4">
+                <img src="https://picsum.photos/500/300" alt="Based-on-Mood" className = "img-fluid mx-auto"/>
+                </div>
+
+            </Row>
         </section>
     </div>
 }
@@ -53,9 +58,9 @@ const myStyles = {
 }
 
 const LandingPage = () => {
-    return <div style = {myStyles}>
+    return <div style = {myStyles} className ="text-justify">
         <BlueNavBar/>
-        <Row className = "mt-5">
+        <Row className = "mt-5 pb-5">
             <Col className = "offset-lg-1" lg={8} >
             <IntroSection/>
             </Col>
