@@ -6,8 +6,12 @@ import Col from 'react-bootstrap/Col';
 const IntroSection = () => {
     return <div>
         <section>
-        <h1 style = {{fontSize: "33px"}}>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
-        <p style = {{fontSize: "17px"}}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, repellendus! Tenetur, illum nulla.</p>
+        <h1 style = {{fontSize: "33px"}}>
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+        </h1>
+        <p style = {{fontSize: "17px"}}>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, repellendus! Tenetur, illum nulla.
+        </p>
         </section>
         </div>
 }
@@ -15,7 +19,9 @@ const IntroSection = () => {
 const Features = () => {
     return <div>
         <section>
-            <h1 style = {{fontSize: "33px"}} className ="text-center">Features</h1>
+            <h1 style = {{fontSize: "33px"}} className ="text-center">
+                Features
+            </h1>
             <Row className ="mt-5">
                 <div style= {{display: "inline-block"}} className = "mx-auto px-4">
                 <img src="https://picsum.photos/500/300?random=2" alt="Intuitive-tag-system" className = "img-fluid"/>
@@ -25,7 +31,6 @@ const Features = () => {
                 <div style= {{display: "inline-block"}} className = "mx-auto px-4">
                 <img src="https://picsum.photos/500/300" alt="Based-on-Mood" className = "img-fluid mx-auto"/>
                 </div>
-
             </Row>
         </section>
     </div>
