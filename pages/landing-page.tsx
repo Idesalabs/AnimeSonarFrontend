@@ -1,8 +1,6 @@
 import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import styles from '../components/landing-page.module.css'
 
 const IntroSection = () => {
     return <div>
@@ -43,13 +41,8 @@ const Footer = () => {
 }
 
 const LandingPage = () => {
-    return <div className = "MyContainer">
-            <Row>
-                <Col>
-                <IntroSection/>
-                </Col>
-            </Row>
-        
+    return <div>
+        <IntroSection/>
         <Features/>
         <Footer/>
     </div>
