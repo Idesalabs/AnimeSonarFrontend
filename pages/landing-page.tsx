@@ -40,8 +40,19 @@ const Footer = () => {
 </div>
 }
 
+const myStyles = {
+    color: "white",
+      backgroundColor: "DodgerBlue",
+      width: "100%",
+      maxWidth: "1000px",
+      paddingRight: "15px",
+  paddingLeft: "15px",
+  marginRight: "auto",
+  marginLeft: "auto",
+}
+
 const LandingPage = () => {
-    return <div>
+    return <div style = {myStyles}>
         <IntroSection/>
         <Features/>
         <Footer/>
