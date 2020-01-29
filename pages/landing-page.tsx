@@ -1,4 +1,8 @@
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import styles from '../components/landing-page.module.css'
 
 const IntroSection = () => {
     return <div>
@@ -32,18 +36,22 @@ const Footer = () => {
         <p>Get notified once we launch</p>
         <div>
             <input type="email" name="" id=""/>
-            <button>SUBSCRIBE</button>
+            <Button>SUBSCRIBE</Button>
         </div>
     </section>
 </div>
 }
 
 const LandingPage = () => {
-    return <div>
-        <IntroSection/>
+    return <div className = "MyContainer">
+            <Row>
+                <Col>
+                <IntroSection/>
+                </Col>
+            </Row>
+        
         <Features/>
         <Footer/>
-        <Button>Hello</Button>
     </div>
 
 }
