@@ -38,13 +38,13 @@ const Features = () => {
 
 const Footer = () => {
     return <div>
-    <section>
-        <p>...and more features!</p>
+    <section className = "mt-5 pb-5">
+        <p className ="text-right mx-auto" style = {{maxWidth: "500px",}}>...and more features!</p>
     </section>
     <section>
         <p>Get notified once we launch</p>
         <div>
-            <input type="email" name="" id=""/>
+            <input type="email" name="" id="email-form"/>
             <Button>SUBSCRIBE</Button>
         </div>
     </section>
