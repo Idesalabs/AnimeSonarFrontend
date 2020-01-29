@@ -1,3 +1,4 @@
+import { BlueNavBar } from "../components/Navbars"
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -5,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 const IntroSection = () => {
     return <div>
         <section>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+        <h1 style = {{fontSize: "40px"}}>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, repellendus! Tenetur, illum nulla.</p>
         </section>
         </div>
@@ -42,18 +43,23 @@ const Footer = () => {
 
 const myStyles = {
     color: "white",
-      backgroundColor: "DodgerBlue",
-      width: "100%",
-      maxWidth: "1000px",
-      paddingRight: "15px",
-  paddingLeft: "15px",
-  marginRight: "auto",
-  marginLeft: "auto",
+    backgroundColor: "DodgerBlue",
+    width: "100%",
+    maxWidth: "1000px",
+    paddingRight: "15px",
+    paddingLeft: "15px",
+    marginRight: "auto",
+    marginLeft: "auto",
 }
 
 const LandingPage = () => {
     return <div style = {myStyles}>
-        <IntroSection/>
+        <BlueNavBar/>
+        <Row className = "mt-5">
+            <Col className = "offset-lg-1" lg={8} >
+            <IntroSection/>
+            </Col>
+        </Row>
         <Features/>
         <Footer/>
     </div>
@@ -61,4 +67,6 @@ const LandingPage = () => {
 }
 
 
+//className= "justify-content-md-center"
+//.offset-lg-1 
 export default LandingPage
