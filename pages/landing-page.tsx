@@ -1,6 +1,10 @@
 import { BlueNavBar } from "../components/Navbars"
+import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import {buttonColor} from "../components/buttons-style";
+import {buttonStyle} from "../components/buttons-style";
+
 
 const IntroSection = () => {
     return <div>
@@ -46,7 +50,7 @@ const Footer = () => {
         <div className = "pb-5">
             <p>Get notified once we launch</p>
             <input type="email" name="" id="email-form"/>
-            <button>SUBSCRIBE</button>
+            <button style = {{backgroundColor: buttonColor.backgroundColor, textDecoration: buttonStyle.textDecoration}}>SUBSCRIBE</button>
         </div>
         </Col>
         </Row>

@@ -9,8 +9,3 @@ export const BlueNavBar = ()=>{
 <h2>NavBar</h2>
     </div>
 }
-
-export default {
-    BlueNavBar,
-    RedNavBar
-}
