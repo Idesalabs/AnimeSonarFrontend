@@ -1,5 +1,4 @@
 import { BlueNavBar } from "../components/Navbars"
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -43,11 +42,11 @@ const Footer = () => {
     </section>
     <section>
         <Row className = "justify-content-center">
-        <Col lg={5} >
-        <div>
+        <Col md={5} lg={5}>
+        <div className = "pb-5">
             <p>Get notified once we launch</p>
             <input type="email" name="" id="email-form"/>
-            <Button>SUBSCRIBE</Button>
+            <button>SUBSCRIBE</button>
         </div>
         </Col>
         </Row>
@@ -83,4 +82,6 @@ const LandingPage = () => {
 
 //className= "justify-content-md-center"
 //.offset-lg-1 
+//borderRadius: "0px 100px 100px 0px";
+//borderTopLeftRadius
 export default LandingPage
