@@ -42,11 +42,15 @@ const Footer = () => {
         <p className ="text-right mx-auto" style = {{maxWidth: "500px",}}>...and more features!</p>
     </section>
     <section>
-        <p>Get notified once we launch</p>
+        <Row className = "justify-content-center">
+        <Col lg={5} >
         <div>
+            <p>Get notified once we launch</p>
             <input type="email" name="" id="email-form"/>
             <Button>SUBSCRIBE</Button>
         </div>
+        </Col>
+        </Row>
     </section>
 </div>
 }
