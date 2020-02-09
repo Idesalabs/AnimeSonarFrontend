@@ -7,10 +7,10 @@ export default props => (
         {props.children}
         <style jsx>{`
         div {
+            color: #fff;
             margin: auto;
             position: relative;
             z-index: -2;
-            height: ;
             width: 100%;
             max-width: 700px;
         }

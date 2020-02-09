@@ -5,8 +5,6 @@ export default (props) => (
         {props.children}
         <style jsx>{`
         div {
-            background-color: #bbbaba;
-            opacity: 0.7;
             padding: 10px;
             margin: 10px;
         }
