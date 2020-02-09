@@ -20,6 +20,14 @@ const IntroText = () => (
     </div>
 );
 
+const Features = () => (
+    <div>
+        <h1>Features</h1>
+        <img src="" alt=""/><img src="" alt=""/>
+        <p>...and more!</p>
+    </div>
+)
+
 export default () => (
     <Layout>
         <Section>
