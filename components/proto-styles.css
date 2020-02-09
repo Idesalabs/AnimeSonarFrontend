@@ -10,7 +10,5 @@
   }
 
   div {
-    margin: 20px 0 0 30px;
-    width: 70%;
-    color: #fff;
+    max-height: 500px;
   }
