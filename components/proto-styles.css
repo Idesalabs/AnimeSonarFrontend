@@ -1,10 +1,20 @@
-h1 {
-    font-size: 30px;
-    background-color: #bbbaba;
-    opacity: 0.7;
-    margin: 10px;
-}
 
-h2 {
-    font-size: 20px;
-}
+div {
+    height: 700px;
+    width: 100%;
+    background-color: orange;
+    position: relative;
+    z-index: -2;
+    max-width: 1000px;
+  }
+  
+  .b-image {
+    height: 50%;
+    background-image: linear-gradient(to bottom right, rgba(250, 74, 20, 0.699), rgba(250, 104, 20, 0.699)), url("https://picsum.photos/1000");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 100%);
+    position: absolute;
+    z-index: -1;
+  }
