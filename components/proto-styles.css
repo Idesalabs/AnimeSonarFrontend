@@ -37,6 +37,5 @@ button:hover {
 }
 
 div {
-  border: 1px solid inherit;
-  color: rgb(255, 166, 0);
+  height: 25vh;
 }

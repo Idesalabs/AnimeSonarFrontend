@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Section from '../components/Section'
+import BottomPadding from '../components/BottomPadding'
 
 const IntroText = () => (
     <div>
@@ -112,5 +113,6 @@ export default () => (
         <Section>
             <SubsForm/>
         </Section>
+        <BottomPadding/>
     </Layout>
 )
