@@ -9,6 +9,9 @@
     z-index: -1;
   }
 
-  div {
-    max-height: 500px;
+  img {
+    display: block;
+    margin: auto;
+    max-height: 300px;
+    max-width: 100%
   }

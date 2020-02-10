@@ -28,7 +28,7 @@ const IntroText = () => (
 const Features = () => (
     <div>
         <h1>Features</h1>
-        <Section><img style={{maxHeight: "300px"}} className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/></Section>
+        <Section><img style={{maxHeight: "300px", margin: "auto", display: "block"}} className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/></Section>
         <div><img className="img-fluid" src="https://picsum.photos/1000" alt="features__image-2"/></div>
         <p>...and more!</p>
         <style jsx>
