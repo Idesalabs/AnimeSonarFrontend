@@ -43,7 +43,9 @@ const Features = () => (
                 display: block;
                 margin: auto;
                 max-height: 300px;
-                max-width: 100%
+                max-width: 100%;
+                border-radius: 10px;
+                box-shadow: 2px 5px 10px #919191;
             }
             p {
                 color: #fa6814;
@@ -58,7 +60,7 @@ const Features = () => (
 const SubsForm = () => (
     <div style = {{display: "flex", justifyContent: "center"}}>
         <div>
-        <p>Get notified once we launch</p>
+        <label>Get notified once we launch</label>
         <form action="">
             <input type="email"/>
             <button type='submit'>SUBSCRIBE</button>
@@ -66,24 +68,32 @@ const SubsForm = () => (
         <style jsx>
             {`
             input {
-                padding: 5px 26px;
-                font-size: 15px;
+                padding: 4px 30px;
+                margin: 0px;
+                font-size: 13px;
+                border: 1px solid orange;
                 border-radius: 50px 0 0 50px;
             }
+
             button {
-                background-color: #4CAF50;
-                border: none;
+                background: linear-gradient(to bottom right, rgba(255, 217, 1), rgba(252, 25, 9));
+                border: 1px solid rgba(255, 166, 0, 0.7);
                 color: white;
-                padding: 5px 26px;
+                font-weight: 700;
+                padding: 4px 20px;
                 text-align: center;
                 text-decoration: none;
                 display: inline-block;
-                font-size: 15px;
+                font-size: 13px;
                 margin: 0px;
-                cursor: pointer;
                 border-radius: 0 50px 50px 0;
             }
-            p {
+
+            button:hover {
+                opacity: 0.7;
+              }
+
+            label {
                 color: #fa6814;
                 font-size: 13px;
             }
