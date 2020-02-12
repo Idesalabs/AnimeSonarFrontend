@@ -28,17 +28,33 @@ const IntroText = () => (
 const Features = () => (
     <div>
         <h1>Features</h1>
-        <Section><img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/></Section>
-        <Section><img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-2"/></Section>
+        <Section>
+            <h2>Intuitive Tag System</h2>
+            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/>
+            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
+        </Section>
+        <Section>
+            <h2>Based on mood</h2>
+            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/>
+            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
+        </Section>
         <Section><p>...and more!</p></Section>
         <style jsx>
             {`
             div {
                 padding: 10px;
+                color: #fa6814;
             }
             h1 {
                 text-align: center;
                 font-size: 25px;
+                color: #fff;
+                padding-top: 7px;
+            }
+            h2 {
+                text-align: center;
+                font-size: 30px;
+                padding-top: 30px;
             }
             img {
                 display: block;
@@ -52,6 +68,9 @@ const Features = () => (
                 color: #fa6814;
                 text-align: right;
                 font-weight: 700;
+            }
+            .description {
+                text-align: center;
             }
             `}
         </style>
