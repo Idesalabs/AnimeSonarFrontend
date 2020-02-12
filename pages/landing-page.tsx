@@ -20,6 +20,12 @@ const IntroText = () => (
             h2 {
                 font-size: 15px;
             }
+
+            @media only screen and (min-width: 600px) {
+                h1 {
+                    padding-top: 40px;
+                }
+            }
             `}
         </style>
     </div>
@@ -71,6 +77,15 @@ const Features = () => (
             }
             .description {
                 text-align: center;
+            }
+
+            @media only screen and (min-width: 600px) {
+                h1 {
+                    padding-top: 70px;
+                }
+                h2 {
+                    padding-top: 40px;
+                }
             }
             `}
         </style>
