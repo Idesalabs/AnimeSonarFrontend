@@ -1,82 +1,118 @@
-import { BlueNavBar } from "../components/Navbars"
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import React from 'react'
+import Layout from '../components/Layout'
+import Section from '../components/Section'
+import BottomPadding from '../components/BottomPadding'
 
-const IntroSection = () => {
-    return <div>
-        <section>
-        <h1 style = {{fontSize: "33px"}}>
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-        </h1>
-        <p style = {{fontSize: "17px"}}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, repellendus! Tenetur, illum nulla.
-        </p>
-        </section>
-        </div>
-}
-
-const Features = () => {
-    return <div>
-        <section>
-            <h1 style = {{fontSize: "33px"}} className ="text-center">
-                Features
-            </h1>
-            <Row className ="mt-5">
-                <div style= {{display: "inline-block"}} className = "mx-auto px-4">
-                <img src="https://picsum.photos/500/300?random=2" alt="Intuitive-tag-system" className = "img-fluid"/>
-                </div>
-            </Row>
-            <Row className ="mt-5">
-                <div style= {{display: "inline-block"}} className = "mx-auto px-4">
-                <img src="https://picsum.photos/500/300" alt="Based-on-Mood" className = "img-fluid mx-auto"/>
-                </div>
-            </Row>
-        </section>
+const IntroText = () => (
+    <div>
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, consectetur!</h2>
+        <style jsx>
+            {`
+            div {
+                margin: 7% 0 0 7%;
+                width: 70%;
+            }
+            h1 {
+                font-size: 25px;
+            }
+            
+            h2 {
+                font-size: 15px;
+            }
+            `}
+        </style>
     </div>
-}
+);
 
-const Footer = () => {
-    return <div>
-    <section className = "mt-5 pb-5">
-        <p className ="text-right mx-auto" style = {{maxWidth: "500px",}}>...and more features!</p>
-    </section>
-    <section>
-        <p>Get notified once we launch</p>
+const Features = () => (
+    <div>
+        <h1>Features</h1>
+        <Section><img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/></Section>
+        <Section><img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-2"/></Section>
+        <Section><p>...and more!</p></Section>
+        <style jsx>
+            {`
+            div {
+                padding: 10px;
+            }
+            h1 {
+                text-align: center;
+                font-size: 25px;
+            }
+            img {
+                display: block;
+                margin: auto;
+                max-height: 300px;
+                max-width: 100%;
+                border-radius: 10px;
+                box-shadow: 2px 5px 10px #919191;
+            }
+            p {
+                color: #fa6814;
+                text-align: right;
+                font-weight: 700;
+            }
+            `}
+        </style>
+    </div>
+)
+
+const SubsForm = () => (
+    <div style = {{display: "flex", justifyContent: "center"}}>
         <div>
-            <input type="email" name="" id="email-form"/>
-            <Button>SUBSCRIBE</Button>
+        <label>Get notified once we launch</label>
+        <form action="">
+            <input type="email"/>
+            <button type='submit'>SUBSCRIBE</button>
+        </form>
+        <style jsx>
+            {`
+            input {
+                padding: 4px 30px;
+                margin: 0px;
+                font-size: 13px;
+                border: 1px solid orange;
+                border-radius: 50px 0 0 50px;
+            }
+
+            button {
+                background: linear-gradient(to bottom right, rgba(255, 217, 1), rgba(252, 25, 9));
+                border: 1px solid rgba(255, 166, 0, 0.7);
+                color: white;
+                font-weight: 700;
+                padding: 4px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 13px;
+                margin: 0px;
+                border-radius: 0 50px 50px 0;
+            }
+
+            button:hover {
+                opacity: 0.7;
+              }
+
+            label {
+                color: #fa6814;
+                font-size: 13px;
+            }
+            `}
+        </style>
         </div>
-    </section>
-</div>
-}
-
-const myStyles = {
-    color: "white",
-    backgroundColor: "DodgerBlue",
-    width: "100%",
-    maxWidth: "1000px",
-    paddingRight: "15px",
-    paddingLeft: "15px",
-    marginRight: "auto",
-    marginLeft: "auto",
-}
-
-const LandingPage = () => {
-    return <div style = {myStyles} className ="text-justify">
-        <BlueNavBar/>
-        <Row className = "mt-5 pb-5">
-            <Col className = "offset-lg-1" lg={8} >
-            <IntroSection/>
-            </Col>
-        </Row>
-        <Features/>
-        <Footer/>
     </div>
+)
 
-}
-
-
-//className= "justify-content-md-center"
-//.offset-lg-1 
-export default LandingPage
+export default () => (
+    <Layout>
+        <Section>
+        <IntroText/>
+        </Section>
+        <Features/>
+        <Section>
+            <SubsForm/>
+        </Section>
+        <BottomPadding/>
+    </Layout>
+)
