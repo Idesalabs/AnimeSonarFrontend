@@ -11,6 +11,7 @@ export default () => (
             border: 2px solid orange;
             display: flex;
             justify-content: center;
+            box-shadow: 0 8px 10px -5px #696969;
         }
         `}</style>
     </div>
