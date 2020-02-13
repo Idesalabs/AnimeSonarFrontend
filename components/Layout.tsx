@@ -4,15 +4,15 @@ export default props => (
     <div>
         <Header/>
         <div className="b-image__skewer"></div>
-        {props.children}
+        <div className="children">
+            {props.children}
+        </div>
         <style jsx>{`
         div {
             color: #fff;
-            margin: auto;
             position: relative;
             z-index: -2;
-            width: 100%;
-            max-width: 700px;
+            width: 100vw;
         }
         .b-image__skewer {
             height: 50vh;
@@ -22,7 +22,12 @@ export default props => (
             background-size: cover;
             clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 100%);
             position: absolute;
-            z-index: -1;
+            z-index: -5;
+        }
+        .children {
+            margin: auto;
+            width: 100%;
+            max-width: 800px;
         }
         `}</style>
     </div>

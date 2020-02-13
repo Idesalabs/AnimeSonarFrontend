@@ -14,11 +14,22 @@ const IntroText = () => (
                 width: 70%;
             }
             h1 {
-                font-size: 25px;
+                font-size: 35px;
+                padding-top: 10px;
             }
             
             h2 {
-                font-size: 15px;
+                font-size: 20px;
+            }
+
+            @media only screen and (max-width: 600px) {
+                h1 {
+                    font-size: 6vw;
+                    padding-top: 0;
+                }
+                h2 {
+                    font-size: 4vw;
+                }
             }
             `}
         </style>
@@ -28,30 +39,69 @@ const IntroText = () => (
 const Features = () => (
     <div>
         <h1>Features</h1>
-        <Section><img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/></Section>
-        <Section><img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-2"/></Section>
+        <section>
+            <h2>Intuitive Tag System</h2>
+            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/>
+            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
+        </section>
+        <section>
+            <h2>Based on mood</h2>
+            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/>
+            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
+        </section>
         <Section><p>...and more!</p></Section>
         <style jsx>
             {`
             div {
                 padding: 10px;
+                color: #fa6814;
             }
             h1 {
                 text-align: center;
-                font-size: 25px;
+                font-size: 35px;
+                color: #fff;
+                padding-top: 30px;
+            }
+            section {
+                background-color: #fff;
+                padding: 20px;
+                margin: 30px auto 0;
+                border-radius: 10px;
+                box-shadow: 2px 5px 10px #919191;
+                width: 100%;
+                max-width: 500px;
+            }
+            h2 {
+                text-align: center;
+                font-size: 30px;
+                
             }
             img {
                 display: block;
                 margin: auto;
-                max-height: 300px;
+                max-height: 150px;
                 max-width: 100%;
-                border-radius: 10px;
-                box-shadow: 2px 5px 10px #919191;
             }
             p {
                 color: #fa6814;
                 text-align: right;
                 font-weight: 700;
+            }
+            .description {
+                text-align: center;
+            }
+
+            @media only screen and (max-width: 600px) {
+                h1 {
+                    font-size: 6vw;
+                    padding-top: 0;
+                }
+                h2 {
+                    font-size: 5vw;
+                }
+                .description {
+                    font-size: 2.8vw;
+                }
             }
             `}
         </style>
@@ -111,7 +161,7 @@ export default () => (
         </Section>
         <Features/>
         <Section>
-            <SubsForm/>
+        <SubsForm/>
         </Section>
         <BottomPadding/>
     </Layout>
