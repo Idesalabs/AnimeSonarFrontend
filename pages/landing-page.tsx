@@ -34,16 +34,16 @@ const IntroText = () => (
 const Features = () => (
     <div>
         <h1>Features</h1>
-        <Section>
+        <section>
             <h2>Intuitive Tag System</h2>
             <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/>
             <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
-        </Section>
-        <Section>
+        </section>
+        <section>
             <h2>Based on mood</h2>
             <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/>
             <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
-        </Section>
+        </section>
         <Section><p>...and more!</p></Section>
         <style jsx>
             {`
@@ -57,18 +57,25 @@ const Features = () => (
                 color: #fff;
                 padding-top: 7px;
             }
+            section {
+                background-color: #fff;
+                padding: 20px;
+                margin: 25px auto 0;
+                border-radius: 10px;
+                box-shadow: 2px 5px 10px #919191;
+                width: 100%;
+                max-width: 400px;
+            }
             h2 {
                 text-align: center;
                 font-size: 30px;
-                padding-top: 30px;
+                
             }
             img {
                 display: block;
                 margin: auto;
-                max-height: 300px;
+                max-height: 150px;
                 max-width: 100%;
-                border-radius: 10px;
-                box-shadow: 2px 5px 10px #919191;
             }
             p {
                 color: #fa6814;
@@ -84,7 +91,7 @@ const Features = () => (
                     padding-top: 70px;
                 }
                 h2 {
-                    padding-top: 40px;
+                    
                 }
             }
             `}
@@ -145,7 +152,7 @@ export default () => (
         </Section>
         <Features/>
         <Section>
-            <SubsForm/>
+        <SubsForm/>
         </Section>
         <BottomPadding/>
     </Layout>

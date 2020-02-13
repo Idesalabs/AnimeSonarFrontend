@@ -39,6 +39,8 @@ button:hover {
 div {
   height: 25vh;
   color: #696969;
+  padding: 20px;
+  margin: 25px 20px 0;
 }
 
 h2 {
