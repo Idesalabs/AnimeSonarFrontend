@@ -6,7 +6,7 @@ import BottomPadding from '../components/BottomPadding'
 const IntroText = () => (
     <div>
         <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, consectetur!</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, consectetur!</p>
         <style jsx>
             {`
             div {
@@ -18,7 +18,7 @@ const IntroText = () => (
                 padding-top: 10px;
             }
             
-            h2 {
+            p {
                 font-size: 20px;
             }
 
@@ -27,7 +27,7 @@ const IntroText = () => (
                     font-size: 6vw;
                     padding-top: 0;
                 }
-                h2 {
+                p {
                     font-size: 4vw;
                 }
             }
@@ -49,12 +49,15 @@ const Features = () => (
             <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/>
             <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
         </section>
-        <Section><p>...and more!</p></Section>
+        <p>...and more!</p>
         <style jsx>
             {`
             div {
                 padding: 10px;
                 color: #fa6814;
+                width: 100%;
+                max-width: 500px;
+                margin: auto;
             }
             h1 {
                 text-align: center;
@@ -65,11 +68,9 @@ const Features = () => (
             section {
                 background-color: #fff;
                 padding: 20px;
-                margin: 30px auto 0;
+                margin-top: 30px;
                 border-radius: 10px;
                 box-shadow: 2px 5px 10px #919191;
-                width: 100%;
-                max-width: 500px;
             }
             h2 {
                 text-align: center;
@@ -86,9 +87,12 @@ const Features = () => (
                 color: #fa6814;
                 text-align: right;
                 font-weight: 700;
+                margin-top: 10px;
+                padding: 10px 0;
             }
             .description {
                 text-align: center;
+                font-weight: 400;
             }
 
             @media only screen and (max-width: 600px) {
