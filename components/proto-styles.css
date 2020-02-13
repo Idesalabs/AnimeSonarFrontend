@@ -36,11 +36,20 @@ button:hover {
   opacity: 0.7;
 }
 
+/*DO NOT EDIT BELOW THIS LINE*/
 div {
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
-  background-color: aqua;
-  margin-top: 10px;
-  padding: 10px;
+  color: #fff;
+  position: relative;
+  z-index: -2;
+  width: 100vw;
+}
+.b-image__skewer {
+  height: 75vh;
+  background-image: linear-gradient(to bottom right, rgba(250, 74, 20, 0.7), rgba(250, 47, 20, 0.7)), url("https://picsum.photos/1000");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 100%);
+  position: absolute;
+  z-index: -5;
 }
