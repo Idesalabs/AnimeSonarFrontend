@@ -1,8 +1,9 @@
 import Header from './Header'
+import { colors } from '../styles'
 
 export default props => (
-    <div >
-        <Header/>
+    <div style={{ backgroundColor: colors.background }} >
+        <Header />
         <div className="b-image__skewer"></div>
         <div className="children">
             {props.children}
@@ -30,6 +31,9 @@ export default props => (
             margin: auto;
             width: 100%;
             max-width: 800px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
         }
         `}</style>
     </div>

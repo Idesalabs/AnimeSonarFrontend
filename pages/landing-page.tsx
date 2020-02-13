@@ -2,33 +2,45 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Section from '../components/Section'
 import BottomPadding from '../components/BottomPadding'
+import { colors } from '../styles'
 
 const IntroText = () => (
     <div>
         <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, consectetur!</p>
+        <p style={{ marginTop: 10 }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, consectetur!</p>
         <style jsx>
             {`
             div {
                 margin: 7% 0 0 7%;
-                width: 70%;
+            
             }
             h1 {
-                font-size: 35px;
+              
                 padding-top: 10px;
+                text-align: center;
+                margin:auto;
+               font-weight:700;
             }
             
             p {
-                font-size: 20px;
+                font-size: 2.5vmin;
+                max-width:70%;
+                margin:auto;
+                text-align: center;
             }
 
             @media only screen and (max-width: 600px) {
                 h1 {
                     font-size: 6vw;
                     padding-top: 0;
+                    max-width:100%;
+                  
                 }
                 p {
                     font-size: 4vw;
+                    max-width:100%;
+                   
+
                 }
             }
             `}
@@ -38,44 +50,46 @@ const IntroText = () => (
 
 const Features = () => (
     <div>
-        <h1>Features</h1>
+        <h1 style={{ fontSize: 23 }}>Features</h1>
         <section>
-            <h2>Intuitive Tag System</h2>
-            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/>
-            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
+            <h2 style={{ marginBottom: 20 }}>Intuitive Tag System</h2>
+            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1" />
+            <p style={{}} className="description">You can select how much a tag is actually demonstrated in the anime e.g how "romantic" or "comedic".</p>
         </section>
         <section>
-            <h2>Based on mood</h2>
-            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1"/>
-            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
+            <h2 style={{ marginBottom: 20 }}>Based on mood</h2>
+            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1" />
+            <p style={{}} className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
         </section>
-        <p>...and more!</p>
+        <p style={{ fontSize: 20 }}>...and more features !</p>
         <style jsx>
             {`
             div {
                 padding: 10px;
-                color: #fa6814;
+                color: ${colors.primary};
                 width: 100%;
                 max-width: 500px;
                 margin: auto;
+              
+
             }
             h1 {
                 text-align: center;
-                font-size: 35px;
                 color: #fff;
                 padding-top: 30px;
+
             }
             section {
                 background-color: #fff;
-                padding: 20px;
+                padding: 25px;
                 margin-top: 30px;
                 border-radius: 10px;
-                box-shadow: 2px 5px 10px #919191;
+                box-shadow: 2px 5px 10px #91919152;
             }
             h2 {
                 text-align: center;
-                font-size: 30px;
-                
+                font-size: 25px;
+                font-weight:700;
             }
             img {
                 display: block;
@@ -84,7 +98,7 @@ const Features = () => (
                 max-width: 100%;
             }
             p {
-                color: #fa6814;
+                color: ${colors.primary};
                 text-align: right;
                 font-weight: 700;
                 margin-top: 10px;
@@ -93,6 +107,9 @@ const Features = () => (
             .description {
                 text-align: center;
                 font-weight: 400;
+                max-width:80%;
+              
+                margin: auto;
             }
 
             @media only screen and (max-width: 600px) {
@@ -101,72 +118,27 @@ const Features = () => (
                     padding-top: 0;
                 }
                 h2 {
-                    font-size: 5vw;
+                    font-size: 6vw;
                 }
-                .description {
-                    font-size: 2.8vw;
-                }
+               p {
+                   font-size:4vw
+               }
             }
             `}
         </style>
     </div>
 )
 
-const SubsForm = () => (
-    <div style = {{display: "flex", justifyContent: "center"}}>
-        <div>
-        <label>Get notified once we launch</label>
-        <form action="">
-            <input type="email"/>
-            <button type='submit'>SUBSCRIBE</button>
-        </form>
-        <style jsx>
-            {`
-            input {
-                padding: 4px 30px;
-                margin: 0px;
-                font-size: 13px;
-                border: 1px solid orange;
-                border-radius: 50px 0 0 50px;
-            }
-
-            button {
-                background: linear-gradient(to bottom right, rgba(255, 217, 1), rgba(252, 25, 9));
-                border: 1px solid rgba(255, 166, 0, 0.7);
-                color: white;
-                font-weight: 700;
-                padding: 4px 20px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 13px;
-                margin: 0px;
-                border-radius: 0 50px 50px 0;
-            }
-
-            button:hover {
-                opacity: 0.7;
-              }
-
-            label {
-                color: #fa6814;
-                font-size: 13px;
-            }
-            `}
-        </style>
-        </div>
-    </div>
-)
 
 export default () => (
     <Layout>
         <Section>
-        <IntroText/>
+            <IntroText />
         </Section>
-        <Features/>
-        <Section>
-        <SubsForm/>
-        </Section>
-        <BottomPadding/>
+        <Features />
+        {/* <div style={{ width: '100%', maxWidth: 300 }}>
+            <SubsForm />
+        </div> */}
+        <BottomPadding />
     </Layout>
 )
