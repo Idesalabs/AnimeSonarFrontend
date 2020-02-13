@@ -27,7 +27,7 @@ export default props => (
         .children {
             margin: auto;
             width: 100%;
-            max-width: 700px;
+            max-width: 800px;
         }
         `}</style>
     </div>

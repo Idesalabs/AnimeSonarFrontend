@@ -14,16 +14,21 @@ const IntroText = () => (
                 width: 70%;
             }
             h1 {
-                font-size: 25px;
+                font-size: 35px;
+                padding-top: 10px;
             }
             
             h2 {
-                font-size: 15px;
+                font-size: 20px;
             }
 
-            @media only screen and (min-width: 600px) {
+            @media only screen and (max-width: 600px) {
                 h1 {
-                    padding-top: 40px;
+                    font-size: 6vw;
+                    padding-top: 0;
+                }
+                h2 {
+                    font-size: 4vw;
                 }
             }
             `}
@@ -53,18 +58,18 @@ const Features = () => (
             }
             h1 {
                 text-align: center;
-                font-size: 25px;
+                font-size: 35px;
                 color: #fff;
-                padding-top: 7px;
+                padding-top: 30px;
             }
             section {
                 background-color: #fff;
                 padding: 20px;
-                margin: 25px auto 0;
+                margin: 30px auto 0;
                 border-radius: 10px;
                 box-shadow: 2px 5px 10px #919191;
                 width: 100%;
-                max-width: 400px;
+                max-width: 500px;
             }
             h2 {
                 text-align: center;
@@ -86,12 +91,16 @@ const Features = () => (
                 text-align: center;
             }
 
-            @media only screen and (min-width: 600px) {
+            @media only screen and (max-width: 600px) {
                 h1 {
-                    padding-top: 70px;
+                    font-size: 6vw;
+                    padding-top: 0;
                 }
                 h2 {
-                    
+                    font-size: 5vw;
+                }
+                .description {
+                    font-size: 2.8vw;
                 }
             }
             `}
