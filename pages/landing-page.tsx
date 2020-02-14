@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Section from '../components/Section'
 import BottomPadding from '../components/BottomPadding'
+import SubsForm from '../components/SubscriptionForm'
 import { colors } from '../styles'
 
 const IntroText = () => (
@@ -70,8 +71,6 @@ const Features = () => (
                 width: 100%;
                 max-width: 500px;
                 margin: auto;
-              
-
             }
             h1 {
                 text-align: center;
@@ -108,7 +107,6 @@ const Features = () => (
                 text-align: center;
                 font-weight: 400;
                 max-width:80%;
-              
                 margin: auto;
             }
 
@@ -136,9 +134,9 @@ export default () => (
             <IntroText />
         </Section>
         <Features />
-        {/* <div style={{ width: '100%', maxWidth: 300 }}>
+        <div style={{ width: '100%', maxWidth: 400 }}>
             <SubsForm />
-        </div> */}
+        </div>
         <BottomPadding />
     </Layout>
 )
