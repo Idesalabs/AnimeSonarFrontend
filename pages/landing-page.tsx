@@ -55,12 +55,12 @@ const Features = () => (
         <h1 style={{ fontSize: 23 }}>Features</h1>
         <Card>
             <h2 style={{ marginBottom: 20 }}>Intuitive Tag System</h2>
-            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1" />
+            <img className="img-fluid" src="/tags__system__logo.svg" alt="features__image-1" />
             <p style={{}} className="description">You can select how much a tag is actually demonstrated in the anime e.g how "romantic" or "comedic".</p>
         </Card>
         <Card>
             <h2 style={{ marginBottom: 20 }}>Based on mood</h2>
-            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1" />
+            <img className="img-fluid" src="/mood__selector__logo.svg" alt="features__image-1" />
             <p style={{}} className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
         </Card>
         <p style={{ fontSize: 20 }}>...and more features !</p>
@@ -87,7 +87,7 @@ const Features = () => (
             img {
                 display: block;
                 margin: auto;
-                max-height: 150px;
+                max-height: 300px;
                 max-width: 100%;
             }
             p {

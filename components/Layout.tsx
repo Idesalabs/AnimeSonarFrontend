@@ -2,7 +2,7 @@ import Header from './Header'
 import { colors } from '../styles'
 
 export default props => (
-    <div style={{ backgroundColor: colors.background }} >
+    <div className="layout__body" style={{ backgroundColor: colors.background }} >
         <Header />
         <div className="b-image__skewer"></div>
         <div className="children">
@@ -11,8 +11,6 @@ export default props => (
         <style jsx>{`
         div {
             color: #fff;
-            position: relative;
-            z-index: -2;
             width: 100vw;
           }
 
@@ -23,8 +21,7 @@ export default props => (
             background-repeat: no-repeat;
             background-size: cover;
             clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 100%);
-            position: absolute;
-            z-index: -5;
+            position: fixed;
           }
 
         .children {
@@ -34,6 +31,8 @@ export default props => (
             display:flex;
             flex-direction:column;
             align-items:center;
+            position: relative;
+          
         }
         `}</style>
     </div>
