@@ -2,6 +2,8 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Section from '../components/Section'
 import BottomPadding from '../components/BottomPadding'
+import SubsForm from '../components/SubscriptionForm'
+import Card from '../components/Card'
 import { colors } from '../styles'
 
 const IntroText = () => (
@@ -51,16 +53,16 @@ const IntroText = () => (
 const Features = () => (
     <div>
         <h1 style={{ fontSize: 23 }}>Features</h1>
-        <section>
+        <Card>
             <h2 style={{ marginBottom: 20 }}>Intuitive Tag System</h2>
-            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1" />
+            <img className="img-fluid" src="/tags__system__logo.svg" alt="features__image-1" />
             <p style={{}} className="description">You can select how much a tag is actually demonstrated in the anime e.g how "romantic" or "comedic".</p>
-        </section>
-        <section>
+        </Card>
+        <Card>
             <h2 style={{ marginBottom: 20 }}>Based on mood</h2>
-            <img className="img-fluid" src="https://picsum.photos/1000/600" alt="features__image-1" />
+            <img className="img-fluid" src="/mood__selector__logo.svg" alt="features__image-1" />
             <p style={{}} className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
-        </section>
+        </Card>
         <p style={{ fontSize: 20 }}>...and more features !</p>
         <style jsx>
             {`
@@ -70,21 +72,12 @@ const Features = () => (
                 width: 100%;
                 max-width: 500px;
                 margin: auto;
-              
-
             }
             h1 {
                 text-align: center;
                 color: #fff;
                 padding-top: 30px;
 
-            }
-            section {
-                background-color: #fff;
-                padding: 25px;
-                margin-top: 30px;
-                border-radius: 10px;
-                box-shadow: 2px 5px 10px #91919152;
             }
             h2 {
                 text-align: center;
@@ -94,7 +87,7 @@ const Features = () => (
             img {
                 display: block;
                 margin: auto;
-                max-height: 150px;
+                max-height: 300px;
                 max-width: 100%;
             }
             p {
@@ -108,7 +101,6 @@ const Features = () => (
                 text-align: center;
                 font-weight: 400;
                 max-width:80%;
-              
                 margin: auto;
             }
 
@@ -136,9 +128,9 @@ export default () => (
             <IntroText />
         </Section>
         <Features />
-        {/* <div style={{ width: '100%', maxWidth: 300 }}>
+        <div style={{ width: '100%', maxWidth: 400 }}>
             <SubsForm />
-        </div> */}
+        </div>
         <BottomPadding />
     </Layout>
 )

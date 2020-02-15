@@ -1,4 +1,5 @@
 import { BlueNavBar } from "../components/Navbars"
+import SubsForm from "../components/SubscriptionForm"
 
 
 const Page = () => {

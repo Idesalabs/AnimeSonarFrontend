@@ -19,7 +19,7 @@
   }
 
   button {
-    background: linear-gradient(to bottom right, rgba(255, 217, 1, 0.7), rgba(252, 25, 9, 0.7));
+    background: linear-gradient(to bottom right, #ffe53b, #ff2525);
     border: none;
     color: white;
     font-weight: 700;
@@ -45,11 +45,19 @@ div {
 }
 .b-image__skewer {
   height: 75vh;
-  background-image: linear-gradient(to bottom right, rgba(250, 74, 20, 0.7), rgba(250, 47, 20, 0.7)), url("https://picsum.photos/1000");
+  background: linear-gradient(to bottom right, rgba(250, 74, 20, 0.7), rgba(250, 47, 20, 0.7)), url("https://picsum.photos/1000");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 100%);
   position: absolute;
   z-index: -5;
+  background-color: #fff;
+  height: calc(50vh + 10vw);
+  text-decoration: none;
+}
+
+input:focus {
+  background-color: #a8a8a8;
+  color: #fff;
 }
