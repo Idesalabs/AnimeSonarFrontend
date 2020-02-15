@@ -19,7 +19,7 @@
   }
 
   button {
-    background: linear-gradient(to bottom right, rgba(255, 217, 1, 0.7), rgba(252, 25, 9, 0.7));
+    background: linear-gradient(to bottom right, #ffe53b, #ff2525);
     border: none;
     color: white;
     font-weight: 700;
@@ -53,4 +53,11 @@ div {
   position: absolute;
   z-index: -5;
   background-color: #fff;
+  height: calc(50vh + 10vw);
+  text-decoration: none;
+}
+
+input:focus {
+  background-color: #a8a8a8;
+  color: #fff;
 }

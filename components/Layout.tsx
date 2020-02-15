@@ -15,8 +15,8 @@ export default props => (
           }
 
           .b-image__skewer {
-            height: 75vh;
-            background-image: linear-gradient(to bottom right, rgba(250, 74, 20, 0.7), rgba(250, 47, 20, 0.7)), url("https://picsum.photos/1000");
+            height: calc(50vh + 10vw);
+            background-image: linear-gradient(to bottom right, rgba(255, 85, 43, 0.7),rgba(255, 85, 43, 0.9)), url("https://picsum.photos/1000");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
