@@ -11,7 +11,7 @@ export default props => (
         <style jsx>{`
         div {
             color: #fff;
-            width: 100vw;
+            width: 100%;
           }
 
           .b-image__skewer {
