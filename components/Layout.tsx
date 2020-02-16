@@ -1,7 +1,12 @@
 import Header from './Header'
 import { colors } from '../styles'
 
-export default props => (
+interface LayoutProps {
+    backgroundImage?: string
+    children: React.ReactNode
+}
+
+export default (props: LayoutProps) => (
     <div className="layout__body" style={{ backgroundColor: colors.background }} >
         <Header />
         <div className="b-image__skewer"></div>
@@ -16,7 +21,7 @@ export default props => (
 
           .b-image__skewer {
             height: calc(50vh + 10vw);
-            background-image: linear-gradient(to bottom right, rgba(255, 85, 43, 0.7),rgba(255, 85, 43, 0.9)), url("https://picsum.photos/1000");
+            background-image: ${colors.button}, url("${props.backgroundImage}");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
