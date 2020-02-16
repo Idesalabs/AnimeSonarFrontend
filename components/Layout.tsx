@@ -21,7 +21,10 @@ export default (props: LayoutProps) => (
 
           .b-image__skewer {
             height: calc(50vh + 10vw);
-            background-image: ${colors.gradient}, url("${props.backgroundImage}");
+            background-image: ${props.backgroundImage ?
+                'linear-gradient(to bottom right, rgba(255, 85, 43, .8),rgba(255, 85, 43, 1))' :
+                colors.gradient
+            }, url("${props.backgroundImage}");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;

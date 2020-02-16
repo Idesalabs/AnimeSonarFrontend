@@ -52,7 +52,7 @@ const IntroText = () => (
 
 const Features = () => (
     <div>
-        <h1 style={{ fontSize: 23 }}>Features</h1>
+        <h1 style={{ fontSize: 23, fontWeight: 700 }}>Features</h1>
         <Card>
             <h2 style={{ marginBottom: 20 }}>Intuitive Tag System</h2>
             <img className="img-fluid" src="/tags__system__logo.svg" alt="features__image-1" />
@@ -123,7 +123,7 @@ const Features = () => (
 
 
 export default () => (
-    <Layout>
+    <Layout backgroundImage='/landing__page__background.svg'>
         <Section>
             <IntroText />
         </Section>
