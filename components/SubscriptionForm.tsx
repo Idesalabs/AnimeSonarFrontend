@@ -24,23 +24,21 @@ const SubsForm = () => {
             display: block;
             mix-blend-mode: darken;
         }
-        input {
-            border: none;
-            font-weight: 700;
+
+        .email-input {
+        border: none;
             border-radius: 50px 0 0 50px;
             border: 1px solid #ff552b80;
            border-right-style:none;
-        }
-
-        .email-input {
             display: inline-block;
             padding: 4px 25px;
+            color:${colors.primary}
         }
 
         .email-button {
             background: ${colors.button};
             color: #fff;
-            font-weight: 700;
+            font-weight: 500;
             border-radius: 0 50px 50px 0;
             border: 1px solid #ff552b80;
             border-left-style:none; 
@@ -48,7 +46,7 @@ const SubsForm = () => {
             cursor:pointer;
             display: inline-block;
             padding: 4px 25px;
-            transition: all 0.3s cubic-bezier(.25,.8,.25,1);  /* important for transitions */
+            transition: all 0.3s;  /* important for transitions */
         }
 
         .email-button:hover {
