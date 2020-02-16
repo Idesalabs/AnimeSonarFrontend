@@ -46,11 +46,12 @@ const SubsForm = () => {
             cursor:pointer;
             display: inline-block;
             padding: 4px 25px;
-            transition: all 0.3s;  /* important for transitions */
+            transition: all 0.3s; 
         }
 
         .email-button:hover {
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            padding: 6px 27px;
+            box-shadow: 6px 2px 10px 3px #ff552b5e;
         }
 
         *:focus {
