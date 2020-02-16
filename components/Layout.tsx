@@ -21,7 +21,7 @@ export default (props: LayoutProps) => (
 
           .b-image__skewer {
             height: calc(50vh + 10vw);
-            background-image: ${colors.button}, url("${props.backgroundImage}");
+            background-image: ${colors.gradient}, url("${props.backgroundImage}");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;

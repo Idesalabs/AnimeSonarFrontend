@@ -36,7 +36,7 @@ const SubsForm = () => {
         }
 
         .email-button {
-            background: ${colors.button};
+            background: ${colors.gradient};
             color: #fff;
             font-weight: 500;
             border-radius: 0 50px 50px 0;
