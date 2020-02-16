@@ -48,7 +48,7 @@ const SubsForm = () => {
             cursor:pointer;
             display: inline-block;
             padding: 4px 25px;
-            transition: all 0.3s cubic-bezier(.25,.8,.25,1);  /* important for transitions */
+            transition: all .3s;  /* important for transitions */
         }
 
         .email-button:hover {
