@@ -2,18 +2,18 @@ import { colors } from '../styles'
 import { useState } from 'react'
 
 const SubsForm = () => {
-const [email,setEmail] = useState('')
+    const [email, setEmail] = useState('')
 
-    return  <div>
-    <form action="">
-        <label htmlFor="email-input">Get notified once we launch</label>
-        <input name='email-input'  value={email} onChange={event=>{
-            setEmail(event.target.value)
-        }} className="subscription"/>
-        <a href="#" className="subscription">SUBSCRIBE</a>
-    </form>
-    <style jsx>
-        {`
+    return <div>
+        <form action="">
+            <label htmlFor="email-input">Get notified once we launch</label>
+            <input name='email-input' value={email} onChange={event => {
+                setEmail(event.target.value)
+            }} className="email-input" />
+            <a href="#" className="email-button">SUBSCRIBE</a>
+        </form>
+        <style jsx>
+            {`
         form {
             font-size: 13px;
             user-select: none;
@@ -31,7 +31,13 @@ const [email,setEmail] = useState('')
             border: 1px solid #ff552b80;
            border-right-style:none;
         }
-        a {
+
+        .email-input {
+            display: inline-block;
+            padding: 4px 25px;
+        }
+
+        .email-button {
             background: ${colors.button};
             color: #fff;
             font-weight: 700;
@@ -40,18 +46,21 @@ const [email,setEmail] = useState('')
             border-left-style:none; 
             text-decoration: none;
             cursor:pointer;
-        }
-        .subscription {
             display: inline-block;
             padding: 4px 25px;
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);  /* important for transitions */
+        }
+
+        .email-button:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         }
 
         *:focus {
             outline: none;
         }
         `}
-    </style>
-</div>
+        </style>
+    </div>
 }
 
 export default SubsForm
