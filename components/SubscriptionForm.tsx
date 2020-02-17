@@ -1,8 +1,9 @@
 import { colors } from '../styles'
 import { useState } from 'react'
+import {sendEmail} from  '../functions/subsForm__dataControl'
 
 const SubsForm = () => {
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState('');
 
     return <div>
         <form action="">
@@ -10,7 +11,9 @@ const SubsForm = () => {
             <input name='email-input' value={email} onChange={event => {
                 setEmail(event.target.value)
             }} className="email-input" />
-            <a href="#" className="email-button">SUBSCRIBE</a>
+            <a href="#" className="email-button" onClick={event => {
+                sendEmail(email)
+            }}>SUBSCRIBE</a>
         </form>
         <style jsx>
             {`
