@@ -20,22 +20,31 @@ const SubsForm = () => {
     return <div>
         {
             submitted ?
-            <p style={{ backgroundColor: colors.primaryTransparent, color: '#fff', width: '100%', padding: '10px 0px', fontSize: 15, fontStyle: 'italic', fontWeight: 700, textAlign: 'center' }}>Thank you for your patronage</p> :
-            loading ?
-                <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>...Pending</p> :
-                <>
-                <form action="">
-                <label htmlFor="email-input">Get notified once we launch</label>
-                <input name='email-input' placeholder="Email address" value={email} onChange={event => {
-                    setEmail(event.target.value)
-                }} className="email-input" />
-                <a href="#" className="email-button" onClick={e => {
-                    e.preventDefault()
-                    handleButtonPress()
-                }}>SUBSCRIBE</a>
-            </form>
-            <style jsx>
-                {`
+                <p style={{
+                    backgroundColor: colors.primaryTransparent,
+                    color: '#fff',
+                    width: '100%',
+                    padding: '10px 0px',
+                    fontSize: 15,
+                    fontWeight: 500,
+                    borderRadius: '2em',
+                    textAlign: 'center'
+                }}>Thanks!</p> :
+                loading ?
+                    <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>...Sending</p> :
+                    <>
+                        <form action="">
+                            <label htmlFor="email-input">Get notified once we launch</label>
+                            <input name='email-input' placeholder="Email address" value={email} onChange={event => {
+                                setEmail(event.target.value)
+                            }} className="email-input" />
+                            <a href="#" className="email-button" onClick={e => {
+                                e.preventDefault()
+                                handleButtonPress()
+                            }}>SUBSCRIBE</a>
+                        </form>
+                        <style jsx>
+                            {`
             form {
                 font-size: 13px;
                 user-select: none;
@@ -87,8 +96,8 @@ const SubsForm = () => {
                 outline: none;
             }
             `}
-            </style>
-                </>
+                        </style>
+                    </>
         }
     </div>
 }
