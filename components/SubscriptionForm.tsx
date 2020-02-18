@@ -56,27 +56,31 @@ const SubsForm = () => {
                 padding: 6px 27px;
                 color: grey;
             }
+
+            .email-input:focus {
+                border: 1.5px solid ${colors.primary};
+                border-right-style:none;
+            }
     
             .email-button {
-                background: ${colors.gradient};
-                color: #fff;
                 font-weight: 500;
                 border-radius: 0 50px 50px 0;
-                border: 1px solid #ff552b36;
-                border-left-style:none; 
+                border: 1.5px solid ${colors.primary};
+                background: #fff;
+                color: ${colors.primary};
                 text-decoration: none;
                 cursor:pointer;
                 display: inline-block;
                 padding: 6px 27px;
                 transition: all 0.3s ease-in-out; 
             }
-    
+            
             .email-button:hover {
-                box-shadow: inset 0px 0px 0px 2px ${colors.primary};
-                //border: 1.5px solid ${colors.primary};
-                border-left-style:none;
-                background: #fff;
-                color: ${colors.primary};
+                //box-shadow: inset 0px 0px 0px 2px ${colors.primary};
+                background: ${colors.gradient};
+                border: 1px solid #ff552b36;
+                border-left-style:none; 
+                color: #fff;
             }
     
             *:focus {
