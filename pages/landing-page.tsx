@@ -21,7 +21,7 @@ const IntroText = () => (
                 padding-top: 10px;
                 text-align: center;
                 margin:auto;
-                font-weight:700;
+                font-weight:900;
                 letter-spacing: 3px;
             }
             
