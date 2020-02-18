@@ -15,16 +15,18 @@ const SubsForm = () => {
         }
     }
 
-
-    const Form = () => {
-        return <>
-            <form action="">
+    return <div>
+        {
+            loading ?
+                <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>...Pending</p> :
+                <>
+                <form action="">
                 <label htmlFor="email-input">Get notified once we launch</label>
                 <input name='email-input' value={email} onChange={event => {
                     setEmail(event.target.value)
                 }} className="email-input" />
                 <a href="#" className="email-button" onClick={e => {
-                    // e.preventDefault()
+                    e.preventDefault()
                     handleButtonPress()
                 }}>SUBSCRIBE</a>
             </form>
@@ -75,14 +77,7 @@ const SubsForm = () => {
             }
             `}
             </style>
-        </>
-    }
-
-    return <div>
-        {
-            loading ?
-                <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>...Loading</p> :
-                <Form />
+                </>
         }
     </div>
 }
