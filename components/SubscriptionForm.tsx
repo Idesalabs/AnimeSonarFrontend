@@ -5,24 +5,28 @@ import validateEmail from '../functions/validateEmail';
 
 const SubsForm = () => {
     const [email, setEmail] = useState('');
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const [submitted, setSubmitted] = useState(false)
 
     const handleButtonPress = async () => {
         if (validateEmail(email)) {
             setLoading(true)
             await sendEmail(email)
+            setSubmitted(true)
             setLoading(false)
         }
     }
 
     return <div>
         {
+            submitted ?
+            <p style={{ backgroundColor: colors.primary, color: '#fff', width: '100%', padding: '10px 0px', fontSize: 15, fontStyle: 'italic', fontWeight: 700, textAlign: 'center' }}>Thank you for your patronage</p> :
             loading ?
                 <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>...Pending</p> :
                 <>
                 <form action="">
                 <label htmlFor="email-input">Get notified once we launch</label>
-                <input name='email-input' value={email} onChange={event => {
+                <input name='email-input' placeholder="Email address" value={email} onChange={event => {
                     setEmail(event.target.value)
                 }} className="email-input" />
                 <a href="#" className="email-button" onClick={e => {
@@ -44,13 +48,13 @@ const SubsForm = () => {
             }
     
             .email-input {
-            border: none;
+                border: none;
                 border-radius: 50px 0 0 50px;
                 border: 1px solid #ff552b36;
-               border-right-style:none;
+                border-right-style:none;
                 display: inline-block;
                 padding: 6px 27px;
-                color:${colors.primary}
+                color: grey;
             }
     
             .email-button {
@@ -64,12 +68,15 @@ const SubsForm = () => {
                 cursor:pointer;
                 display: inline-block;
                 padding: 6px 27px;
-                transition: all 0.3s; 
+                transition: all 0.3s ease-in-out; 
             }
     
             .email-button:hover {
-             
-                box-shadow: 4px 1px 12px 2px #ff552b5e;
+                box-shadow: inset 0px 0px 0px 2px ${colors.primary};
+                //border: 1.5px solid ${colors.primary};
+                border-left-style:none;
+                background: #fff;
+                color: ${colors.primary};
             }
     
             *:focus {
