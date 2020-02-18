@@ -20,7 +20,7 @@ const SubsForm = () => {
     return <div>
         {
             submitted ?
-            <p style={{ backgroundColor: colors.primary, color: '#fff', width: '100%', padding: '10px 0px', fontSize: 15, fontStyle: 'italic', fontWeight: 700, textAlign: 'center' }}>Thank you for your patronage</p> :
+            <p style={{ backgroundColor: colors.primaryTransparent, color: '#fff', width: '100%', padding: '10px 0px', fontSize: 15, fontStyle: 'italic', fontWeight: 700, textAlign: 'center' }}>Thank you for your patronage</p> :
             loading ?
                 <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>...Pending</p> :
                 <>
