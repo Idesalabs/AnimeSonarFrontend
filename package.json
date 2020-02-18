@@ -28,6 +28,7 @@
         "react-addons-css-transition-group": "^15.6.2",
         "react-bootstrap": "^1.0.0-beta.16",
         "react-dom": "^16.12.0",
+        "stein-js-client": "0.0.2",
         "tsconfig-paths-webpack-plugin": "^3.2.0"
     },
     "devDependencies": {
