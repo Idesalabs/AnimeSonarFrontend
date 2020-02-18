@@ -8,20 +8,21 @@ import { colors } from '../styles'
 
 const IntroText = () => (
     <div>
-        <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-        <p style={{ marginTop: 10 }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, consectetur!</p>
+        <h1>Coming Soon</h1>
+        <p style={{ marginTop: 10 }}>Making up your mind on anime to watch doesn't have to be difficult. Use anirec to shrink your "plan to watch" list.</p>
         <style jsx>
             {`
             div {
-                margin: 7% 0 0 7%;
+                margin: 7% 0 0;
             
             }
             h1 {
-              
+                font-size: 6vw;
                 padding-top: 10px;
                 text-align: center;
                 margin:auto;
-               font-weight:700;
+                font-weight:900;
+                letter-spacing: 3px;
             }
             
             p {
@@ -33,16 +34,12 @@ const IntroText = () => (
 
             @media only screen and (max-width: 600px) {
                 h1 {
-                    font-size: 6vw;
                     padding-top: 0;
                     max-width:100%;
-                  
                 }
                 p {
                     font-size: 4vw;
                     max-width:100%;
-                   
-
                 }
             }
             `}
@@ -77,7 +74,7 @@ const Features = () => (
                 text-align: center;
                 color: #fff;
                 padding-top: 30px;
-
+                letter-spacing: 2px;
             }
             h2 {
                 text-align: center;
