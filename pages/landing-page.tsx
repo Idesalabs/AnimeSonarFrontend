@@ -9,7 +9,7 @@ import { colors } from '../styles'
 const IntroText = () => (
     <div>
         <h1>Coming Soon</h1>
-        <p style={{ marginTop: 10 }}>Making up your mind on anime to watch doesn't have to be difficult. Use anirec to shrink your "plan to watch" list.</p>
+        <p style={{ marginTop: 10 }}>Making up your mind on anime to watch doesn't have to be difficult. Use anime sonar to shrink your "plan to watch" list.</p>
         <style jsx>
             {`
             div {
