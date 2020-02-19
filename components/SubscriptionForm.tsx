@@ -81,14 +81,12 @@ const SubsForm = () => {
                 cursor:pointer;
                 display: inline-block;
                 padding: 6px 27px;
-                transition: all 0.3s ease-in-out; 
+                transition: all 0.2s; 
             }
             
             .email-button:hover {
-                //box-shadow: inset 0px 0px 0px 2px ${colors.primary};
+                /*box-shadow: inset 0px 0px 0px 2px ${colors.primary};*/
                 background: ${colors.gradient};
-                border: 1px solid #ff552b36;
-                border-left-style:none; 
                 color: #fff;
             }
     
