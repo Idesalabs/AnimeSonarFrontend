@@ -17,7 +17,7 @@ const SubsForm = () => {
         }
     }
 
-    return <div>
+    return <div style={{ display: 'flex', justifyContent: 'center' }}>
         {
             submitted ?
                 <p style={{
@@ -48,12 +48,14 @@ const SubsForm = () => {
             form {
                 font-size: 13px;
                 user-select: none;
+                
             }
     
             label {
                 color: ${colors.primary};
                 display: block;
                 mix-blend-mode: darken;
+                font-size:15px;
             }
     
             .email-input {
@@ -64,6 +66,8 @@ const SubsForm = () => {
                 display: inline-block;
                 padding: 6px 27px;
                 color: grey;
+                transition: all 0.5s; 
+
             }
 
             .email-input:focus {
