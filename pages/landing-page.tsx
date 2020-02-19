@@ -17,12 +17,10 @@ const IntroText = () => (
             
             }
             h1 {
-                font-size: 6vw;
                 padding-top: 10px;
                 text-align: center;
                 margin:auto;
-                font-weight:900;
-                letter-spacing: 3px;
+                font-weight:700;
             }
             
             p {
@@ -34,6 +32,7 @@ const IntroText = () => (
 
             @media only screen and (max-width: 600px) {
                 h1 {
+                    font-size: 6vw;
                     padding-top: 0;
                     max-width:100%;
                 }
@@ -74,7 +73,6 @@ const Features = () => (
                 text-align: center;
                 color: #fff;
                 padding-top: 30px;
-                letter-spacing: 2px;
             }
             h2 {
                 text-align: center;
