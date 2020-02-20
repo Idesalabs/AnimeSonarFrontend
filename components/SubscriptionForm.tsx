@@ -1,5 +1,7 @@
 import { colors } from '../styles'
 import { useState } from 'react'
+import { IconContext } from "react-icons";
+import { FaCheckCircle } from 'react-icons/fa';
 import sendEmail from '../functions/sendEmail'
 import validateEmail from '../functions/validateEmail';
 
@@ -20,18 +22,23 @@ const SubsForm = () => {
     return <div style={{ display: 'flex', justifyContent: 'center' }}>
         {
             submitted ?
+                <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: 25, } }}>
                 <p style={{
-                    background: colors.gradient,
+                    background: '#39DB80',
                     color: '#fff',
                     width: '100%',
                     padding: '10px 10px',
                     fontSize: 15,
+                    opacity: '0.6',
                     fontWeight: 500,
                     borderRadius: '2em',
                     textAlign: 'center'
-                }}>Subscribed!</p> :
+                }}><FaCheckCircle/> Subscribed!</p>
+                </IconContext.Provider> :
                 loading ?
-                    <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>...Sending</p> :
+                    <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>
+                        <img className="img-fluid" src="/Dual Ring-1s-30px.svg" alt="loading-icon" /> ...Sending
+                    </p> :
                     <>
                         <div className='form'>
                             <label htmlFor="email-input">Get notified once we launch</label>
