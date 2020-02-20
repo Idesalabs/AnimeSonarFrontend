@@ -42,7 +42,7 @@ const SubsForm = () => {
                                 e.preventDefault()
                                 console.log('button clicked')
                                 handleButtonPress()
-                                return
+
                             }}>SUBSCRIBE</a>
                         </div>
                         <style jsx>
