@@ -40,9 +40,7 @@ const SubsForm = () => {
                             }} className="email-input" />
                             <a href='#' className="email-button" onClick={e => {
                                 e.preventDefault()
-                                console.log('button clicked')
                                 handleButtonPress()
-                                
                             }}>SUBSCRIBE</a>
                         </div>
                         <style jsx>
