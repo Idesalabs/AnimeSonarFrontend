@@ -13,13 +13,9 @@ const IntroText = () => (
         <p style={{ marginTop: 10 }}>Making your mind up on what show to watch doesn't have to be difficult. Let Anime Sonar make that choice for you.</p>
         <style jsx>
             {`
-            div {
-                margin: 7% 0 0;
-            
-            }
             h1 {
-                font-size: calc(35px + 3vw);
-                padding-top: 10px;
+                font-size: calc(30px + 3vw);
+                padding-top: 15px;
                 text-align: center;
                 margin:auto;
                 font-weight:700;
