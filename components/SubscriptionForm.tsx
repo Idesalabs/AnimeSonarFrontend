@@ -41,6 +41,7 @@ const SubsForm = () => {
                             <a href="#" className="email-button" onClick={e => {
                                 e.preventDefault()
                                 handleButtonPress()
+                                return false
                             }}>SUBSCRIBE</a>
                         </form>
                         <style jsx>
