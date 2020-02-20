@@ -24,7 +24,7 @@ const SubsForm = () => {
                     background: colors.gradient,
                     color: '#fff',
                     width: '100%',
-                    padding: '10px 0px',
+                    padding: '10px 10px',
                     fontSize: 15,
                     fontWeight: 500,
                     borderRadius: '2em',
