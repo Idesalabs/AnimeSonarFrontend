@@ -5,6 +5,7 @@ import BottomPadding from '../components/BottomPadding'
 import SubsForm from '../components/SubscriptionForm'
 import Card from '../components/Card'
 import { colors } from '../styles'
+import ShareButtons from '../components/ShareButtons'
 
 const IntroText = () => (
     <div>
@@ -131,6 +132,9 @@ export default () => (
         <Features />
         <div style={{ width: '100%', maxWidth: 400 }}>
             <SubsForm />
+        </div>
+        <div style={{ padding: '10px 0 0', width: '100%', maxWidth: '500px', display: 'flex', justifyContent: 'flex-end' }}>
+            <ShareButtons />
         </div>
         <BottomPadding />
     </Layout>

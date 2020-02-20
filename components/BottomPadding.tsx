@@ -3,7 +3,7 @@ export default () => (
         <style jsx>
         {`
         div {
-            height: 15vh;
+            height: 10vh;
         }
         `}
     </style>
