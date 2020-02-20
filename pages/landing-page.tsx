@@ -9,7 +9,7 @@ import { colors } from '../styles'
 const IntroText = () => (
     <div>
         <h1>Coming Soon</h1>
-        <p style={{ marginTop: 10 }}>Making up your mind on anime to watch doesn't have to be difficult. Use anirec to shrink your "plan to watch" list.</p>
+        <p style={{ marginTop: 10 }}>Making your mind up on what show to watch doesn't have to be difficult. Let Anime Sonar make that choice for you.</p>
         <style jsx>
             {`
             div {
@@ -17,10 +17,12 @@ const IntroText = () => (
             
             }
             h1 {
+                font-size: calc(35px + 3vw);
                 padding-top: 10px;
                 text-align: center;
                 margin:auto;
                 font-weight:700;
+                letter-spacing: 4px;
             }
             
             p {
@@ -28,16 +30,19 @@ const IntroText = () => (
                 max-width:70%;
                 margin:auto;
                 text-align: center;
+                letter-spacing: 2px;
             }
 
             @media only screen and (max-width: 600px) {
                 h1 {
-                    font-size: 6vw;
+                    font-size: calc(30px + 2vw);
+                    letter-spacing: 2px;
                     padding-top: 0;
                     max-width:100%;
                 }
                 p {
-                    font-size: 4vw;
+                    font-size: calc(2vw + 5px);
+                    letter-spacing: 1px;
                     max-width:100%;
                 }
             }
@@ -57,7 +62,7 @@ const Features = () => (
         <Card>
             <h2 style={{ marginBottom: 20 }}>Based on mood</h2>
             <img className="img-fluid" src="/mood__selector__logo.svg" alt="features__image-1" />
-            <p style={{}} className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, nisi.</p>
+            <p style={{}} className="description">You down in the dumps ? find anime to cheer you up.</p>
         </Card>
         <p style={{ fontSize: 20 }}>...and more features !</p>
         <style jsx>
@@ -108,7 +113,8 @@ const Features = () => (
                     font-size: 6vw;
                 }
                p {
-                   font-size:4vw
+                font-size: calc(2vw + 5px);
+                letter-spacing: 1px;
                }
             }
             `}
