@@ -21,7 +21,7 @@ const SubsForm = () => {
         {
             submitted ?
                 <p style={{
-                    backgroundColor: colors.primaryTransparent,
+                    background: colors.gradient,
                     color: '#fff',
                     width: '100%',
                     padding: '10px 10px',

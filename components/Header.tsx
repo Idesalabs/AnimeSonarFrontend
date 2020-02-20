@@ -1,20 +1,31 @@
+import { Styles } from 'types/global'
 
+
+const styles: Styles = {
+    container: {
+        backgroundColor: 'white',
+        padding: '10px 40px 10px',
+        position: 'sticky',
+        top: 0,
+        zIndex: 10000,
+        boxShadow: '0 8px 10px -5px #696969'
+    },
+    innerContainer: {
+        maxWidth: 800,
+        width: '100%',
+        margin: 'auto',
+        display: 'flex',
+        justifyContent: 'center',
+    }
+}
 
 export default () => (
-    <div>
-        <img src="" alt="logo" />
-        <style jsx>{`
-        div {
-            height: 40px;
-            background-color: white;
-            padding: 10px 0 30px;
-            position: sticky;
-            top: 0;
-            z-index: 10000;
-            display: flex;
-            justify-content: center;
-            box-shadow: 0 8px 10px -5px #696969;
-        }
-        `}</style>
-    </div>
+    <nav style={styles.container}>
+        <div style={styles.innerContainer}>
+            {/* <img src='/logo.svg' height={50} /> */}
+            <img src='/logo-with-text.svg' height={40} />
+        </div>
+
+    </nav>
 )
+
