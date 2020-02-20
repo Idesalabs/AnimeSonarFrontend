@@ -7,4 +7,6 @@
 
 
 // export default MyApp
-export default () => { }
+export default () => {
+    return <div>hello</div>
+}
