@@ -10,7 +10,7 @@ import ShareButtons from '../components/ShareButtons'
 const IntroText = () => (
     <div>
         <h1>Easy Anime Recommendations</h1>
-        <p style={{ marginTop: 10 }}>Making your mind up on what show to watch doesn't have to be difficult. Let Anime Sonar make that choice for you.</p>
+        <p style={{ marginTop: 10 }}>Making your mind up on a show to watch doesn't have to be difficult. Let Anime Sonar make that choice for you.</p>
         <style jsx>
             {`
             h1 {
