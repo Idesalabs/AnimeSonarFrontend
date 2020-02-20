@@ -27,7 +27,7 @@ const IntroText = () => (
                 max-width:70%;
                 margin:auto;
                 text-align: center;
-                letter-spacing: 2px;
+                // letter-spacing: 2px;
             }
 
             @media only screen and (max-width: 600px) {

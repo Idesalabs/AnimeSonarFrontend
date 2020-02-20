@@ -12,7 +12,7 @@ const ButtonProps = {
     style: {
         marginLeft: 10
     },
-    title: 'Let Anime Sonar make that choice for you.'
+    title: 'Find your next anime with animesonar'
 }
 
 export default () => {

@@ -29,7 +29,7 @@ const SubsForm = () => {
                     fontWeight: 500,
                     borderRadius: '2em',
                     textAlign: 'center'
-                }}>Thanks!</p> :
+                }}>Subscribed!</p> :
                 loading ?
                     <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>...Sending</p> :
                     <>
@@ -38,11 +38,11 @@ const SubsForm = () => {
                             <input name='email-input' placeholder="Email address" value={email} onChange={event => {
                                 setEmail(event.target.value)
                             }} className="email-input" />
-                            <a className="email-button" onClick={e => {
-                                e.preventDefault()
+                            <a href='#' className="email-button" onClick={e => {
                                 console.log('button clicked')
                                 handleButtonPress()
-                                return false
+                                e.preventDefault()
+
                             }}>SUBSCRIBE</a>
                         </form>
                         <style jsx>
