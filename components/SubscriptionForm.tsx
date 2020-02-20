@@ -38,8 +38,9 @@ const SubsForm = () => {
                             <input name='email-input' placeholder="Email address" value={email} onChange={event => {
                                 setEmail(event.target.value)
                             }} className="email-input" />
-                            <a href="#" className="email-button" onClick={e => {
+                            <a className="email-button" onClick={e => {
                                 e.preventDefault()
+                                console.log('button clicked')
                                 handleButtonPress()
                                 return false
                             }}>SUBSCRIBE</a>
