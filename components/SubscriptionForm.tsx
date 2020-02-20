@@ -33,21 +33,21 @@ const SubsForm = () => {
                 loading ?
                     <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>...Sending</p> :
                     <>
-                        <form action="">
+                        <div className='form'>
                             <label htmlFor="email-input">Get notified once we launch</label>
                             <input name='email-input' placeholder="Email address" value={email} onChange={event => {
                                 setEmail(event.target.value)
                             }} className="email-input" />
                             <a href='#' className="email-button" onClick={e => {
+                                e.preventDefault()
                                 console.log('button clicked')
                                 handleButtonPress()
-                                e.preventDefault()
                                 return
                             }}>SUBSCRIBE</a>
-                        </form>
+                        </div>
                         <style jsx>
                             {`
-            form {
+            .form {
                 font-size: 13px;
                 user-select: none;
                 
