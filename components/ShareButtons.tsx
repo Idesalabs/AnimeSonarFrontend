@@ -17,10 +17,10 @@ const ButtonProps = {
 
 export default () => {
     return <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: 10 }}>
-        <FacebookShareButton quote='' hashtag='#AnimeSonar' {...ButtonProps} >
+        <FacebookShareButton quote='Anime Sonar' hashtag='#Anime' {...ButtonProps} >
             <FacebookIcon {...IconProps} />
         </FacebookShareButton>
-        <TwitterShareButton {...ButtonProps} hashtags={['AnimeSonar']} >
+        <TwitterShareButton via='AnimeSonar' {...ButtonProps} hashtags={['Anime', 'AnimeSonar', 'anitwt', 'anitwitter']}>
             <TwitterIcon {...IconProps} />
         </TwitterShareButton>
         <WhatsappShareButton separator=' ' {...ButtonProps}>
