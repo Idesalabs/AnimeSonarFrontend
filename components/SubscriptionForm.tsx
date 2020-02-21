@@ -24,14 +24,12 @@ const SubsForm = () => {
             submitted ?
                 <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: 25, } }}>
                 <p style={{
-                    background: '#39DB80',
-                    color: '#fff',
+                    color: colors.success,
                     width: '100%',
                     padding: '10px 10px',
                     fontSize: 15,
                     opacity: '0.6',
                     fontWeight: 500,
-                    borderRadius: '2em',
                     textAlign: 'center'
                 }}><FaCheckCircle/> Subscribed!</p>
                 </IconContext.Provider> :
