@@ -54,11 +54,11 @@ const IntroText = () => (
 
 const Features = () => (
     <div style={{ padding: 10, color: colors.primary, width: '100%', maxWidth: 550, margin: 'auto' }}>
-        <h1 style={{ fontSize: 23, fontWeight: 700, textAlign: 'center', }}>Features</h1>
+        <h1 style={{ color: 'white', fontSize: 23, fontWeight: 700, textAlign: 'center', }}>Features</h1>
         <FeaturesCard
             title='Intuitive Tag System'
-            image='/tags__system__logo.svg'
-            description='You can select how much a tag is actually demonstrated in the anime e.g how "romantic" or "comedic".'
+            image='/tag-system.svg'
+            description="Prioritize focus areas of the anime you want. E.g how 'romantic' or 'tragic'."
         />
         <FeaturesCard
             title='Based on mood'

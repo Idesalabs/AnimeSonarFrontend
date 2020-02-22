@@ -28,14 +28,14 @@ const SubsForm = () => {
                     width: '100%',
                     padding: '10px 10px',
                     fontSize: 15,
-                    opacity: '0.6',
+                    opacity: 0.8,
                     fontWeight: 500,
                     textAlign: 'center'
                 }}><FaCheckCircle /> Subscribed!</p>
                 </IconContext.Provider> :
                 loading ?
                     <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>
-                        <img className="img-fluid" src="/Dual Ring-1s-30px.svg" alt="loading-icon" /> ...Sending
+                         Sending <img className="img-fluid" src="/Dual Ring-1s-30px.svg" alt="loading-icon" />
                     </p> :
                     <>
                         <div className='form'>
@@ -53,7 +53,6 @@ const SubsForm = () => {
             .form {
                 font-size: 13px;
                 user-select: none;
-                
             }
     
             label {
