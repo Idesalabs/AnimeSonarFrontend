@@ -3,23 +3,27 @@ import Layout from '../components/Layout'
 import Section from '../components/Section'
 import BottomPadding from '../components/BottomPadding'
 import SubsForm from '../components/SubscriptionForm'
-import Card from '../components/Card'
 import { colors } from '../styles'
 import ShareButtons from '../components/ShareButtons'
+import { FeaturesCard } from '../components/FeaturesCard'
 
 const IntroText = () => (
     <div>
-        <h1>Easy Anime Recommendations</h1>
-        <p style={{ marginTop: 10 }}>Making your mind up on a show to watch doesn't have to be difficult. Let Anime Sonar make that choice for you.</p>
+
+        <h2 className='heading'>Over-Engineered Anime Randomizer</h2>
+
+        <p style={{ marginTop: 10 }}>
+            Just kidding...get suggestions by precisely expressing what you want to watch.
+        </p>
         <style jsx>
             {`
-            h1 {
-                font-size: calc(30px + 3vw);
+            .heading {
+                font-size: calc(20px + 3vw);
                 padding-top: 15px;
                 text-align: center;
                 margin:auto;
                 font-weight:700;
-                letter-spacing: 4px;
+                
             }
             
             p {
@@ -27,7 +31,7 @@ const IntroText = () => (
                 max-width:70%;
                 margin:auto;
                 text-align: center;
-                // letter-spacing: 2px;
+               
             }
 
             @media only screen and (max-width: 600px) {
@@ -49,73 +53,28 @@ const IntroText = () => (
 );
 
 const Features = () => (
-    <div>
-        <h1 style={{ fontSize: 23, fontWeight: 700 }}>Features</h1>
-        <Card>
-            <h2 style={{ marginBottom: 20 }}>Intuitive Tag System</h2>
-            <img className="img-fluid" src="/tags__system__logo.svg" alt="features__image-1" />
-            <p style={{}} className="description">You can select how much a tag is actually demonstrated in the anime e.g how "romantic" or "comedic".</p>
-        </Card>
-        <Card>
-            <h2 style={{ marginBottom: 20 }}>Based on mood</h2>
-            <img className="img-fluid" src="/mood__selector__logo.svg" alt="features__image-1" />
-            <p style={{}} className="description">You down in the dumps ? find anime to cheer you up.</p>
-        </Card>
-        <p style={{ fontSize: 20 }}>...and more features !</p>
-        <style jsx>
-            {`
-            div {
-                padding: 10px;
-                color: ${colors.primary};
-                width: 100%;
-                max-width: 500px;
-                margin: auto;
-            }
-            h1 {
-                text-align: center;
-                color: #fff;
-                padding-top: 30px;
-            }
-            h2 {
-                text-align: center;
-                font-size: 25px;
-                font-weight:700;
-            }
-            img {
-                display: block;
-                margin: auto;
-                max-height: 300px;
-                max-width: 100%;
-            }
-            p {
-                color: ${colors.primary};
-                text-align: right;
-                font-weight: 700;
-                margin-top: 10px;
-                padding: 10px 0;
-            }
-            .description {
-                text-align: center;
-                font-weight: 400;
-                max-width:80%;
-                margin: auto;
-            }
+    <div style={{ padding: 10, color: colors.primary, width: '100%', maxWidth: 550, margin: 'auto' }}>
+        <h1 style={{ fontSize: 23, fontWeight: 700, textAlign: 'center', }}>Features</h1>
+        <FeaturesCard
+            title='Intuitive Tag System'
+            image='/tags__system__logo.svg'
+            description='You can select how much a tag is actually demonstrated in the anime e.g how "romantic" or "comedic".'
+        />
+        <FeaturesCard
+            title='Based on mood'
+            image='/mood__selector__logo.svg'
+            description='You down in the dumps ? find anime to cheer you up.'
+        />
 
-            @media only screen and (max-width: 600px) {
-                h1 {
-                    font-size: 6vw;
-                    padding-top: 0;
-                }
-                h2 {
-                    font-size: 6vw;
-                }
-               p {
-                font-size: calc(2vw + 5px);
-                letter-spacing: 1px;
-               }
-            }
-            `}
-        </style>
+        <p style={{
+            fontSize: 20,
+            color: colors.primary,
+            textAlign: 'right',
+            fontWeight: 700,
+            marginTop: 10,
+            padding: '10px 0'
+        }}>...and more features !</p>
+
     </div>
 )
 

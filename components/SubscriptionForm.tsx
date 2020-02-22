@@ -31,7 +31,7 @@ const SubsForm = () => {
                     opacity: '0.6',
                     fontWeight: 500,
                     textAlign: 'center'
-                }}><FaCheckCircle/> Subscribed!</p>
+                }}><FaCheckCircle /> Subscribed!</p>
                 </IconContext.Provider> :
                 loading ?
                     <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>
