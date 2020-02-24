@@ -8,7 +8,7 @@ const styles: Styles = {
         position: 'sticky',
         top: 0,
         zIndex: 10000,
-        boxShadow: '0 8px 10px -5px #696969'
+        boxShadow: '0 8px 10px -5px #69696973'
     },
     innerContainer: {
         maxWidth: 800,
