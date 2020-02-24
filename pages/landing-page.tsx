@@ -71,7 +71,7 @@ const Features = () => (
             fontSize: 20,
             color: colors.primary,
             textAlign: 'right',
-            fontWeight: 700,
+            fontWeight: 400,
             marginTop: 10,
             padding: '10px 0'
         }}>...subtags, blacklist and more!</p>
