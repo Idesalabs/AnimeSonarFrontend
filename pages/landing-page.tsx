@@ -14,7 +14,7 @@ const IntroText = () => (
         <h2 className='heading'>Over-Engineered Anime Randomizer</h2>
 
         <p style={{ marginTop: 10 }}>
-            Just kidding...get suggestions by precisely expressing what you want to watch.
+            Just kidding...get anime suggestions by precisely expressing what you want to watch.
         </p>
         <style jsx>
             {`
