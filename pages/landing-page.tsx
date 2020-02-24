@@ -59,12 +59,12 @@ const Features = () => (
         <FeaturesCard
             title='Intuitive Tag System'
             image='/tag-system.svg'
-            description="Prioritize focus areas of the anime you want. E.g how 'romantic' or 'tragic'."
+            description="Prioritize focus areas you want in an anime e.g how 'romantic' or 'tragic'."
         />
         <FeaturesCard
             title='Based on mood'
             image='/mood__selector__logo.svg'
-            description='You down in the dumps ? find anime to cheer you up.'
+            description='You down in the dumps ? Find anime to cheer you up.'
         />
 
         <p style={{
