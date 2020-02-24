@@ -6,6 +6,7 @@ import SubsForm from '../components/SubscriptionForm'
 import { colors } from '../styles'
 import ShareButtons from '../components/ShareButtons'
 import { FeaturesCard } from '../components/FeaturesCard'
+import MetaTags from '../components/MetaTags'
 
 const IntroText = () => (
     <div>
@@ -13,7 +14,7 @@ const IntroText = () => (
         <h2 className='heading'>Over-Engineered Anime Randomizer</h2>
 
         <p style={{ marginTop: 10 }}>
-            Just kidding...get suggestions by precisely expressing what you want to watch.
+            Just kidding...get anime suggestions by precisely expressing what you want to watch.
         </p>
         <style jsx>
             {`
@@ -80,17 +81,20 @@ const Features = () => (
 
 
 export default () => (
-    <Layout backgroundImage='/landing__page__background.svg'>
-        <Section>
-            <IntroText />
-        </Section>
-        <Features />
-        <div style={{ width: '100%', maxWidth: 400 }}>
-            <SubsForm />
-        </div>
-        <div style={{ padding: '10px 0 0', width: '100%', maxWidth: '500px', display: 'flex', justifyContent: 'center' }}>
-            <ShareButtons />
-        </div>
-        <BottomPadding />
-    </Layout>
+    <>
+        <MetaTags />
+        <Layout backgroundImage='/landing__page__background.svg'>
+            <Section>
+                <IntroText />
+            </Section>
+            <Features />
+            <div style={{ width: '100%', maxWidth: 400 }}>
+                <SubsForm />
+            </div>
+            <div style={{ padding: '10px 0 0', width: '100%', maxWidth: '500px', display: 'flex', justifyContent: 'center' }}>
+                <ShareButtons />
+            </div>
+            <BottomPadding />
+        </Layout>
+    </>
 )
