@@ -11,15 +11,15 @@ import MetaTags from '../components/MetaTags'
 const IntroText = () => (
     <div>
 
-        <h2 className='heading'>Over-Engineered Anime Randomizer</h2>
+        <h2 className='heading'>The "Over-Engineered" Anime Recommender</h2>
 
         <p style={{ marginTop: 10 }}>
-            Just kidding...get anime suggestions by precisely expressing what you want to watch.
+            Get anime suggestions by expressing what you want to watch.
         </p>
         <style jsx>
             {`
             .heading {
-                font-size: calc(20px + 3vw);
+                font-size: calc(18px + 3vw);
                 padding-top: 15px;
                 text-align: center;
                 margin:auto;
