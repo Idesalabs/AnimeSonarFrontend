@@ -44,7 +44,7 @@ const SubsForm = () => {
                             <input name='email-input' placeholder="Email address" value={email} onChange={event => {
                                 setEmail(event.target.value)
                             }} className="email-input" />
-                            <Button title='SUBSCRIBE' borderRadius='0 50px 50px 0' handleClick={handleButtonPress()} />
+                            <Button title='SUBSCRIBE' borderRadius='0 50px 50px 0' handleClick={handleButtonPress} />
                         </div>
                         <style jsx>
                             {`

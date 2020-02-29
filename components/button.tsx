@@ -4,7 +4,7 @@ export default (props) => (
     <>
     <a href='#' className="button" onClick={e => {
         e.preventDefault()
-        {props.handleClick}
+        props.handleClick()
         }}>{props.title}</a>
     <style jsx>
         {`
