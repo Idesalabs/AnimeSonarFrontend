@@ -4,6 +4,7 @@ import { IconContext } from "react-icons";
 import { FaCheckCircle } from 'react-icons/fa';
 import sendEmail from '../functions/sendEmail'
 import validateEmail from '../functions/validateEmail';
+import Button from '../components/button';
 
 const SubsForm = () => {
     const [email, setEmail] = useState('');
@@ -43,10 +44,7 @@ const SubsForm = () => {
                             <input name='email-input' placeholder="Email address" value={email} onChange={event => {
                                 setEmail(event.target.value)
                             }} className="email-input" />
-                            <a href='#' className="email-button" onClick={e => {
-                                e.preventDefault()
-                                handleButtonPress()
-                            }}>SUBSCRIBE</a>
+                            <Button title='SUBSCRIBE' borderRadius='0 50px 50px 0' handleClick={handleButtonPress()} />
                         </div>
                         <style jsx>
                             {`
@@ -97,7 +95,7 @@ const SubsForm = () => {
                 background: ${colors.gradient};
                 color: #fff;
             }
-    
+            
             *:focus {
                 outline: none;
             }

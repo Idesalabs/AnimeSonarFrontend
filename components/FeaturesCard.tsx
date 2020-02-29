@@ -28,6 +28,6 @@ export const FeaturesCard = ({ description = '', title = '', image = '' }) => {
             }
             `}
         </style>
-    </Card>;
+    </Card>
     </div>
 };
