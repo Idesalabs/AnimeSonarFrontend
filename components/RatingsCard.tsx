@@ -2,17 +2,15 @@ import React from 'react';
 import Card from './Card';
 import { colors } from '../styles';
 
-export const FeaturesCard = ({ description = '', title = '', image = '' }) => {
-    return <div>
-        <Card borderRadius = '10px'>
+export const RatingsCard = ({ title = '', image = '' }) => {
+    return <Card>
+        <div style={{ position: 'absolute', height: '10px', width: '100%', background: colors.gradient }}></div>
         <h2 style={{ marginBottom: 20, textAlign: 'center', fontSize: 25, fontWeight: 700 }}>{title}</h2>
         <img style={{textAlign:'center', display: 'inline', margin: 'auto', maxHeight: 300, maxWidth: '100%' }} className="img-fluid" src={image} alt="features__image-1" />
-        <p style={{ color: colors.primary, textAlign: 'center', marginTop: 10, padding: '10px 0' }} className="description">{description}</p>
+        <p style={{ color: colors.primary, textAlign: 'center', marginTop: 10, padding: '10px 0' }} className="description"></p>
         <style jsx>
             {`
-            div {
-                
-            }
+
             @media only screen and (max-width: 600px) {
                 h1 {
                     font-size: 6vw;
@@ -29,5 +27,4 @@ export const FeaturesCard = ({ description = '', title = '', image = '' }) => {
             `}
         </style>
     </Card>;
-    </div>
 };
