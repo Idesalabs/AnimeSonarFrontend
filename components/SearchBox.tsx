@@ -6,12 +6,10 @@ import { FaSearch } from 'react-icons/fa';
 const SearchBox = (props) => {
     const [search, setSearch] = useState('');
 
-    return <div style={{ display: 'flex', justifyContent: 'start' }}>
-        {
-            <>
+    return <>
             <form className='form'>
-            <IconContext.Provider value={{ style: { verticalAlign: 'baseline', fontSize: '17px'} }}>
-                <input name='search-box' placeholder="Search" value={search} onChange={event => {
+            <IconContext.Provider value={{ style: {fontSize: '18px'} }}>
+                <input name='search-box' placeholder="Search..." value={search} onChange={event => {
                         setSearch(event.target.value)
                     }} className="search-input" />
                 <button type = "submit" className="search-button"><FaSearch/></button>
@@ -19,56 +17,55 @@ const SearchBox = (props) => {
             </form>
             <style jsx>
             {`
-            .form {
-                font-size: 14px;
-                user-select: none;
-                width: 250px;
-                position: relative;
-            }
-            
-            .search-input {
-                border: 2px solid #ff552b36;
-                border-radius: ${props.borderRadius};
-                width: 100%;
-                color: ${colors.primary};
-                padding: ${props.padding};
-                transition: all 0.5s;
-                height: 40px;
-            }
-
-            .search-input:focus {
-                border: 2px solid ${colors.primary};
-            }
-    
-            .search-button {
-                font-weight: 700;
-                border-radius: ${props.borderRadius};
-                //border: 1.5px solid ${colors.primary};
-                border: none;
-                background: transparent;
-                color: ${colors.primary};
-                text-decoration: none;
-                cursor:pointer;
-                padding: ${props.padding};
-                transition: all 0.2s;
-                position: absolute;
-                right: 0;
-                height: 40px;
-            }
-            
-            .search-button:hover {
-                background: ${colors.gradient};
-                color: #fff;
-            }
-            
             *:focus {
                 outline: none;
             }
+
+            ::placeholder {
+                color: ${colors.primary};
+                opacity: 0.7;
+            }
+
+            .form {
+                position: relative;
+                font-size: 15px;
+                display: inline-block;
+            }
+            
+            .search-input {
+                width: 250px;
+                height: ${props.height};
+                padding-left: 15px;
+                border: 2px solid ${colors.primary};
+                border-radius: 25px 50px 50px 25px;
+                font-weight: 500;
+                color: ${colors.primary};
+                transition: all 1s;
+            }
+
+            .search-input:focus {
+                background: ${colors.grey};
+            }
+
+            .search-button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: ${props.height};
+                width: ${props.height};
+                border-radius: 50%;
+                border: none;
+                background: transparent;
+                color: ${colors.primary};
+                transition: all 0.5s;
+            }
+
+            .search-button:hover {
+                opacity: 0.7;
+            }
             `}
-                        </style>
-                    </>
-        }
-    </div>
+            </style>
+            </>
 }
 
 export default SearchBox

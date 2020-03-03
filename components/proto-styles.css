@@ -65,3 +65,12 @@ p {
   height: 50px;
   
 }
+
+input {
+  height: 50px;
+  padding: 0 10px;
+  color: #cccccc67;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+}

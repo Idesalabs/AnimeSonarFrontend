@@ -5,8 +5,10 @@ export default (props) => (
         {props.children}
         <style jsx>{`
         div {
-            padding: 10px;
-            margin: 10px;
+            display: flex;
+            justify-content: ${props.justifyContent};
+            padding: ${props.padding};
+            margin: ${props.margin};
         }
         `}</style>
     </div>
