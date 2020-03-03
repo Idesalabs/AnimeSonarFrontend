@@ -23,7 +23,7 @@ const SubsForm = () => {
     return <div style={{ display: 'flex', justifyContent: 'center' }}>
         {
             submitted ?
-                <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: 25, } }}>
+                <IconContext.Provider value={{ style: { verticalAlign: 'baseline', fontSize: 25, } }}>
                 <p style={{
                     color: colors.success,
                     width: '100%',
@@ -39,13 +39,13 @@ const SubsForm = () => {
                          Sending <img className="img-fluid" src="/Dual Ring-1s-30px.svg" alt="loading-icon" />
                     </p> :
                     <>
-                        <div className='form'>
+                        <form className='form'>
                             <label htmlFor="email-input">Get notified once we launch</label>
                             <input name='email-input' placeholder="Email address" value={email} onChange={event => {
                                 setEmail(event.target.value)
                             }} className="email-input" />
-                            <Button title='SUBSCRIBE' borderRadius='0 50px 50px 0' handleClick={handleButtonPress} />
-                        </div>
+                            <Button title='SUBSCRIBE' borderRadius='0 50px 50px 0' padding = '6px 27px' handleClick={handleButtonPress} />
+                        </form>
                         <style jsx>
                             {`
             .form {

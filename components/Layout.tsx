@@ -33,7 +33,7 @@ export default (props: LayoutProps) => (
         </div>
         <style jsx>{`
         div {
-            color: #fff;
+            color: ${colors.primary};
             width: 100%;
           }
 

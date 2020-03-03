@@ -16,9 +16,8 @@ export default (props) => (
             color: ${colors.primary};
             text-decoration: none;
             cursor:pointer;
-            display: inline-block;
-            padding: 6px 27px;
-            transition: all 0.2s; 
+            padding: ${props.padding};
+            transition: all 0.2s;
         }
         
         .button:hover {
