@@ -1,6 +1,6 @@
 import { colors } from '../styles'
 
-export default (props) => (
+const Button = (props) => (
     <>
     <a href='#' className="button" onClick={e => {
         e.preventDefault()
@@ -15,9 +15,11 @@ export default (props) => (
             background: #fff;
             color: ${colors.primary};
             text-decoration: none;
+            text-align: center;
             cursor:pointer;
             padding: ${props.padding};
             transition: all 0.2s;
+            width: ${props.width};
         }
         
         .button:hover {
@@ -29,3 +31,5 @@ export default (props) => (
     </style>
     </>
 )
+
+export default Button
