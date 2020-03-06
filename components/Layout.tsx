@@ -1,6 +1,5 @@
 import Header from './Header'
 import { colors } from '../styles'
-import MetaTags from 'react-meta-tags';
 
 interface LayoutProps {
     backgroundImage?: string
@@ -9,23 +8,7 @@ interface LayoutProps {
 
 export default (props: LayoutProps) => (
     <div className="layout__body" style={{ backgroundColor: colors.background }} >
-        <MetaTags>
-        <title>Anime Sonar — select, express, attain</title>
-        <meta name="title" content="Anime Sonar — select, express, attain"/>
-        <meta name="description" content="Get suggestions by precisely expressing what you want to watch."/>
-        <meta name="keywords" content="anime animeSonar recommend recommendations what to watch"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:url" content="https://animesonar.com/"/>
-        <meta property="og:title" content="Anime Sonar — select, express, attain"/>
-        <meta property="og:description" content="Get suggestions by precisely expressing what you want to watch."/>
-        <meta property="og:image" content="/logo.png"/>
 
-        <meta property="twitter:card" content="summary_large_image"/>
-        <meta property="twitter:url" content="https://animesonar.com/"/>
-        <meta property="twitter:title" content="Anime Sonar — select, express, attain"/>
-        <meta property="twitter:description" content={`Get suggestions by precisely expressing what you want to watch.`}/>
-        <meta property="twitter:image" content="/logo.png"/>
-        </MetaTags>
         <Header />
         <div className="b-image__skewer"></div>
         <div className="children">
