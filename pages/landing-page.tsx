@@ -18,6 +18,10 @@ const IntroText = () => (
         </p>
         <style jsx>
             {`
+            div {
+                color: #fff;
+            }
+
             .heading {
                 font-size: calc(18px + 3vw);
                 padding-top: 15px;
@@ -54,8 +58,8 @@ const IntroText = () => (
 );
 
 const Features = () => (
-    <div style={{ padding: 10, color: colors.primary, width: '100%', maxWidth: 550, margin: 'auto' }}>
-        <h1 style={{ color: 'white', fontSize: 23, fontWeight: 700, textAlign: 'center', }}>Features</h1>
+    <div style={{ padding: 10, width: '100%', maxWidth: 550, margin: 'auto' }}>
+        <h1 style={{ color: '#fff', fontSize: 23, fontWeight: 700, textAlign: 'center', }}>Features</h1>
         <FeaturesCard
             title='Intuitive Tag System'
             image='/tag-system.svg'
@@ -69,7 +73,6 @@ const Features = () => (
 
         <p style={{
             fontSize: 20,
-            color: colors.primary,
             textAlign: 'right',
             fontWeight: 400,
             marginTop: 10,
