@@ -32,12 +32,12 @@ export default (props: LayoutProps) => (
             {props.children}
         </div>
         <style jsx>{`
-        div {
+        .layout__body {
             color: ${colors.primary};
+        }
+        
+        .b-image__skewer {
             width: 100%;
-          }
-
-          .b-image__skewer {
             height: calc(50vh + 10vw);
             background-image: ${props.backgroundImage ?
                 'linear-gradient(to bottom right, rgba(255, 85, 43, .8),rgba(255, 85, 43, 1))' :
@@ -58,7 +58,6 @@ export default (props: LayoutProps) => (
             flex-direction:column;
             align-items:center;
             position: relative;
-          
         }
         `}</style>
     </div>
