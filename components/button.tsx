@@ -5,7 +5,7 @@ const Button = (props) => (
     <a href='#' className="button" onClick={e => {
         e.preventDefault()
         props.handleClick()
-        }}>{props.title}</a>
+        }}>{props.text}</a>
     <style jsx>
         {`
         .button {
