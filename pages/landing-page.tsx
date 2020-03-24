@@ -91,7 +91,7 @@ export default () => (
                 <IntroText />
             </Section>
             <Features />
-            <div style={{ width: '100%', maxWidth: 400 }}>
+            <div style={{ width: '100%', maxWidth: 300 }}>
                 <SubsForm />
             </div>
             <div style={{ padding: '10px 0 0', width: '100%', maxWidth: '500px', display: 'flex', justifyContent: 'center' }}>

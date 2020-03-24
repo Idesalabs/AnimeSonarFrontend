@@ -6,6 +6,50 @@ import sendEmail from '../functions/sendEmail'
 import validateEmail from '../functions/validateEmail';
 import Button from '../components/button';
 
+const EmailForm = (props) => (
+    <>
+        <form className='email-form'>
+            <label htmlFor="email-input">Get notified once we launch</label>
+            <div style={{ display: 'flex'}}>
+                <input name='email-input' placeholder="Email address" value={props.value} onChange={event => {
+                    props.setValue(event.target.value)
+                }} className="email-input" />
+                <Button text='SUBSCRIBE' borderRadius='0 50px 50px 0' padding = '6px 24px' handleClick={props.handleClick} />
+            </div>
+        </form>
+        <style jsx>
+            {`
+            *:focus {
+                outline: none;
+            }
+
+            .email-form {
+                font-size: 13px;
+            }
+
+            label {
+                font-size: 15px;
+            }
+
+            .email-input {
+                border: none;
+                padding: 6px 24px;
+                border: 1px solid #ff552b36;
+                border-right-style:none;
+                border-radius: 50px 0 0 50px;
+                color: grey;
+                transition: all 0.5s;
+                }
+
+                .email-input:focus {
+                                border: 1.5px solid ${colors.primary};
+                                border-right-style:none;
+                            }
+                            `}
+                        </style>
+                    </>
+)
+
 const SubsForm = () => {
     const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false);
@@ -38,70 +82,7 @@ const SubsForm = () => {
                     <p style={{ color: colors.primary, fontSize: 15, textAlign: 'center' }}>
                          Sending <img className="img-fluid" src="/Dual Ring-1s-30px.svg" alt="loading-icon" />
                     </p> :
-                    <>
-                        <form className='form'>
-                            <label htmlFor="email-input">Get notified once we launch</label>
-                            <input name='email-input' placeholder="Email address" value={email} onChange={event => {
-                                setEmail(event.target.value)
-                            }} className="email-input" />
-                            <Button title='SUBSCRIBE' borderRadius='0 50px 50px 0' padding = '6px 27px' handleClick={handleButtonPress} />
-                        </form>
-                        <style jsx>
-                            {`
-            .form {
-                font-size: 13px;
-                user-select: none;
-            }
-    
-            label {
-                color: ${colors.primary};
-                display: block;
-                mix-blend-mode: darken;
-                font-size:15px;
-            }
-    
-            .email-input {
-                border: none;
-                border-radius: 50px 0 0 50px;
-                border: 1px solid #ff552b36;
-                border-right-style:none;
-                display: inline-block;
-                padding: 6px 27px;
-                color: grey;
-                transition: all 0.5s; 
-
-            }
-
-            .email-input:focus {
-                border: 1.5px solid ${colors.primary};
-                border-right-style:none;
-            }
-    
-            .email-button {
-                font-weight: 500;
-                border-radius: 0 50px 50px 0;
-                border: 1.5px solid ${colors.primary};
-                background: #fff;
-                color: ${colors.primary};
-                text-decoration: none;
-                cursor:pointer;
-                display: inline-block;
-                padding: 6px 27px;
-                transition: all 0.2s; 
-            }
-            
-            .email-button:hover {
-                /*box-shadow: inset 0px 0px 0px 2px ${colors.primary};*/
-                background: ${colors.gradient};
-                color: #fff;
-            }
-            
-            *:focus {
-                outline: none;
-            }
-            `}
-                        </style>
-                    </>
+                    <EmailForm value= {email} setValue= {setEmail} handleClick={handleButtonPress}/>
         }
     </div>
 }
