@@ -11,7 +11,7 @@ export const FeaturesCard = (props) => {
             {`
             .title {
                 text-align: center;
-                font-size: calc(16px + 1.5vmin);
+                font-size: calc(14px + 1.5vmin);
                 font-weight: 700;
             }
             .description {

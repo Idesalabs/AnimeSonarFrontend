@@ -9,46 +9,42 @@ import { FeaturesCard } from '../components/FeaturesCard'
 import MetaTags from '../components/MetaTags'
 
 const IntroText = () => (
-    <div>
-
-        <h2 className='heading'>Over-Engineered Anime Randomizer</h2>
-
-        <p style={{ marginTop: 10 }}>
-            Just kidding...get anime suggestions by precisely expressing what you want to watch.
+    <div className='intro__text'>
+        <h2 className='intro__heading'>Welcome to AnimeSonar</h2>
+        <p style={{ marginTop: 10 }} className='intro__description'>
+            An over-engineered anime recommendation site
         </p>
         <style jsx>
             {`
-            div {
+            .intro__text {
                 color: #fff;
+                padding: 10vh 0 5vh;
             }
 
-            .heading {
-                font-size: calc(20px + 3vw);
+            .intro__heading {
+                font-size: 7vmin;
                 padding-top: 15px;
                 text-align: center;
                 margin:auto;
-                font-weight:700;
-                
+                font-weight:700;   
             }
             
-            p {
+            .intro__description {
                 font-size: 2.5vmin;
-                max-width:70%;
+                max-width:80%;
                 margin:auto;
                 text-align: center;
                
             }
 
             @media only screen and (max-width: 600px) {
-                h1 {
-                    font-size: calc(30px + 2vw);
-                    letter-spacing: 2px;
-                    padding-top: 0;
-                    max-width:100%;
+                .intro-text {
+                    padding: 0;
                 }
-                p {
-                    font-size: calc(2vw + 5px);
-                    letter-spacing: 1px;
+                .heading {
+                    font-size: calc(15px + 4.2vw);
+                }
+                .intro__description {
                     max-width:100%;
                 }
             }
@@ -78,7 +74,9 @@ const Features = () => (
             marginTop: 10,
             padding: '10px 0'
         }}>...subtags, blacklist and more!</p>
-
+        <style jsx>
+            
+        </style>
     </div>
 )
 
