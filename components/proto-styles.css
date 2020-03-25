@@ -74,3 +74,8 @@ input {
   text-align: center;
   display: inline-block;
 }
+
+.placeholder {
+  text-align: center;
+  margin-top: 15px;
+}
