@@ -26,7 +26,7 @@ export default () =>{
                 </Section>
 
                 <Section justifyContent= 'flex-end' padding= '10px 0 0' margin= '10px 0 0'>
-                    <Button title ='NEXT' borderRadius='50px' padding= '5px 0' width= '150px'/>
+                    <Button text ='NEXT' borderRadius='50px' padding= '5px 0' width= '150px'/>
                 </Section>
                 </RatingsCard>
                 <RatingsCard title= 'Ratings'>
@@ -51,7 +51,7 @@ export default () =>{
                     </ul>
                 </Section>
                 <Section justifyContent= 'flex-end' padding= '10px 0 0' margin= '10px 0 0'>
-                    <Button title ='NEXT' borderRadius='50px' padding= '5px 0' width= '150px'/>
+                    <Button text ='NEXT' borderRadius='50px' padding= '5px 0' width= '150px'/>
                 </Section>
                 </RatingsCard>
                 <RatingsCard title = 'Suggest SubTags'>
@@ -119,7 +119,7 @@ export default () =>{
                 </Section>
 
                 <Section justifyContent= 'flex-end' padding= '10px 0 0' margin= '10px 0 0'>
-                    <Button title ='NEXT' borderRadius='50px' padding= '5px 0' width= '150px'/>
+                    <Button text='NEXT' borderRadius='50px' padding= '5px 0' width= '150px'/>
                 </Section>
                 </RatingsCard>
            </div>
