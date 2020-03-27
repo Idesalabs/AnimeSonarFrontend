@@ -24,11 +24,11 @@ const EmailForm = (props) => (
             }
 
             .email-form {
-                font-size: 13px;
+                font-size: calc(7px + .8vmin);
             }
 
             label {
-                font-size: 15px;
+                font-size: calc(9px + .8vmin);
             }
 
             .email-input {

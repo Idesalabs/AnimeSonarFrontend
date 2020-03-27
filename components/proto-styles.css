@@ -76,6 +76,7 @@ input {
 }
 
 .placeholder {
-  text-align: center;
-  margin-top: 15px;
+  font-size: calc(12.5px + 1.5vmin);
+  text-align: right;
+  padding: 15px 0;
 }

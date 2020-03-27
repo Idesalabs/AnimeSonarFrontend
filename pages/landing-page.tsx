@@ -30,19 +30,19 @@ const IntroText = () => (
             }
             
             .intro__description {
-                font-size: 2.5vmin;
+                font-size:calc(10px + 1vmin);
                 max-width:80%;
                 margin:auto;
                 text-align: center;
-               
+                letter-spacing: 1.5px;      
             }
 
             @media only screen and (max-width: 600px) {
-                .intro-text {
-                    padding: 0;
+                .intro__text {
+                    padding: 2.5vh 0 2.5vh;
                 }
-                .heading {
-                    font-size: calc(15px + 4.2vw);
+                .intro__heading {
+                    font-size: calc(15px + 4vw);
                 }
                 .intro__description {
                     max-width:100%;
@@ -55,7 +55,7 @@ const IntroText = () => (
 
 const Features = () => (
     <div style={{ padding: 10, width: '100%', maxWidth: 550, margin: 'auto' }}>
-        <h1 style={{ color: '#fff', fontSize: 23, fontWeight: 700, textAlign: 'center', }}>Features</h1>
+        <h1 className='features__heading'>Features</h1>
         <FeaturesCard
             title='Intuitive Tag System'
             image='/tag-system.svg'
@@ -67,15 +67,21 @@ const Features = () => (
             description='You down in the dumps ? find anime to cheer you up.'
         />
 
-        <p style={{
-            fontSize: 20,
-            textAlign: 'right',
-            fontWeight: 400,
-            marginTop: 10,
-            padding: '10px 0'
-        }}>...subtags, blacklist and more!</p>
+        <p className='features__footer'>...subtags, blacklist and more!</p>
         <style jsx>
-            
+            {`
+            .features__heading {
+                color: #fff;
+                font-size: calc(12.5px + 1.5vmin);
+                font-weight: 700;
+                text-align: center;
+            }
+            .features__footer {
+                font-size: calc(10px + 1vmin);
+                text-align: right;
+                padding: 15px 0;
+            }
+            `}
         </style>
     </div>
 )
