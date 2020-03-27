@@ -19,10 +19,10 @@ export default () =>{
 
     return <>
         <Layout>
-           <div style = {{ maxWidth: '600px'}}>
-                <RatingsCard title = 'What was the last anime you watched?'>
+           <div style = {{ padding: 10, width: '100%', maxWidth: 600, margin: 'auto'}}>
+                <RatingsCard title = 'What was the last anime you watched?'> 
                 <Section padding= '20px 0'>
-                    <SearchBox height ='40px'/>
+                    <SearchBox padding ='5px' width='250px'/>
                 </Section>
 
                 <Section justifyContent= 'flex-end' padding= '10px 0 0' margin= '10px 0 0'>
