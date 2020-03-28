@@ -39,15 +39,15 @@ const EmailForm = (props) => (
                 border-radius: 50px 0 0 50px;
                 color: grey;
                 transition: all 0.5s;
-                }
+            }
 
-                .email-input:focus {
-                                border: 1.5px solid ${colors.primary};
-                                border-right-style:none;
-                            }
-                            `}
-                        </style>
-                    </>
+            .email-input:focus {
+            border: 1.5px solid ${colors.primary};
+            border-right-style:none;
+            }
+            `}
+        </style>
+    </>
 )
 
 const SubsForm = () => {
