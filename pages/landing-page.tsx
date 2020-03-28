@@ -12,7 +12,7 @@ const IntroText = () => (
     <div className='intro__text'>
         <h2 className='intro__heading'>Welcome to AnimeSonar</h2>
         <p style={{ marginTop: 10 }} className='intro__description'>
-            An over-engineered anime recommendation site
+            The over-engineered anime recommendation site
         </p>
         <style jsx>
             {`
@@ -21,8 +21,12 @@ const IntroText = () => (
                 padding: 10vh 0 5vh;
             }
 
+
             .intro__heading {
                 font-size: 7vmin;
+}
+            .heading {
+                font-size: calc(18px + 3vw);
                 padding-top: 15px;
                 text-align: center;
                 margin:auto;
@@ -59,12 +63,12 @@ const Features = () => (
         <FeaturesCard
             title='Intuitive Tag System'
             image='/tag-system.svg'
-            description="Prioritize focus areas of the anime you want. E.g how 'romantic' or 'tragic'."
+            description="Prioritize focus areas you want in an anime e.g how 'romantic' or 'tragic'."
         />
         <FeaturesCard
             title='Based on mood'
             image='/mood__selector__logo.svg'
-            description='You down in the dumps ? find anime to cheer you up.'
+            description='You down in the dumps ? Find anime to cheer you up.'
         />
 
         <p className='features__footer'>...subtags, blacklist and more!</p>
