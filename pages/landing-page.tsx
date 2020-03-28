@@ -9,46 +9,46 @@ import { FeaturesCard } from '../components/FeaturesCard'
 import MetaTags from '../components/MetaTags'
 
 const IntroText = () => (
-    <div>
-
-        <h2 className='heading'>The "Over-Engineered" Anime Recommender</h2>
-
-        <p style={{ marginTop: 10 }}>
-            Get anime suggestions by expressing what you want to watch.
+    <div className='intro__text'>
+        <h2 className='intro__heading'>Welcome to AnimeSonar</h2>
+        <p style={{ marginTop: 10 }} className='intro__description'>
+            The over-engineered anime recommendation site
         </p>
         <style jsx>
             {`
-            div {
+            .intro__text {
                 color: #fff;
+                padding: 10vh 0 5vh;
             }
 
+
+            .intro__heading {
+                font-size: 7vmin;
+}
             .heading {
                 font-size: calc(18px + 3vw);
                 padding-top: 15px;
                 text-align: center;
                 margin:auto;
-                font-weight:700;
-                
+                font-weight:700;   
             }
             
-            p {
-                font-size: 2.5vmin;
-                max-width:70%;
+            .intro__description {
+                font-size:calc(10px + 1vmin);
+                max-width:80%;
                 margin:auto;
                 text-align: center;
-               
+                letter-spacing: 1.5px;      
             }
 
             @media only screen and (max-width: 600px) {
-                h1 {
-                    font-size: calc(30px + 2vw);
-                    letter-spacing: 2px;
-                    padding-top: 0;
-                    max-width:100%;
+                .intro__text {
+                    padding: 2.5vh 0 2.5vh;
                 }
-                p {
-                    font-size: calc(2vw + 5px);
-                    letter-spacing: 1px;
+                .intro__heading {
+                    font-size: calc(15px + 4vw);
+                }
+                .intro__description {
                     max-width:100%;
                 }
             }
@@ -59,7 +59,7 @@ const IntroText = () => (
 
 const Features = () => (
     <div style={{ padding: 10, width: '100%', maxWidth: 550, margin: 'auto' }}>
-        <h1 style={{ color: '#fff', fontSize: 23, fontWeight: 700, textAlign: 'center', }}>Features</h1>
+        <h1 className='features__heading'>Features</h1>
         <FeaturesCard
             title='Intuitive Tag System'
             image='/tag-system.svg'
@@ -71,14 +71,22 @@ const Features = () => (
             description='You down in the dumps ? Find anime to cheer you up.'
         />
 
-        <p style={{
-            fontSize: 20,
-            textAlign: 'right',
-            fontWeight: 400,
-            marginTop: 10,
-            padding: '10px 0'
-        }}>...subtags, blacklist and more!</p>
-
+        <p className='features__footer'>...subtags, blacklist and more!</p>
+        <style jsx>
+            {`
+            .features__heading {
+                color: #fff;
+                font-size: calc(12.5px + 1.5vmin);
+                font-weight: 700;
+                text-align: center;
+            }
+            .features__footer {
+                font-size: calc(10px + 1vmin);
+                text-align: right;
+                padding: 15px 0;
+            }
+            `}
+        </style>
     </div>
 )
 
@@ -91,7 +99,7 @@ export default () => (
                 <IntroText />
             </Section>
             <Features />
-            <div style={{ width: '100%', maxWidth: 400 }}>
+            <div style={{ width: '100%', maxWidth: 300 }}>
                 <SubsForm />
             </div>
             <div style={{ padding: '10px 0 0', width: '100%', maxWidth: '500px', display: 'flex', justifyContent: 'center' }}>

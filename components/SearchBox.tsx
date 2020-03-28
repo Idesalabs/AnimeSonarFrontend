@@ -8,11 +8,11 @@ const SearchBox = (props) => {
 
     return <>
             <form className='form'>
-            <IconContext.Provider value={{ style: {fontSize: '18px'} }}>
+            <IconContext.Provider value={{ style: {fontSize: 'calc(10px + .8vmin)'} }}>
                 <input name='search-box' placeholder="Search..." value={search} onChange={event => {
                         setSearch(event.target.value)
-                    }} className="search-input" />
-                <button type = "submit" className="search-button"><FaSearch/></button>
+                    }} className="search__input" />
+                <button type = "submit" className="search__button"><FaSearch/></button>
             </IconContext.Provider>
             </form>
             <style jsx>
@@ -28,39 +28,34 @@ const SearchBox = (props) => {
 
             .form {
                 position: relative;
-                font-size: 15px;
-                display: inline-block;
+                font-size: calc(8px + .8vmin);
+                display: flex;
             }
             
-            .search-input {
-                width: 250px;
+            .search__input {
+                width: ${props.width};
+                padding-left: 10px;
                 height: ${props.height};
-                padding-left: 15px;
-                border: 2px solid ${colors.primary};
-                border-radius: 25px 50px 50px 25px;
+                border: 1.5px solid ${colors.primary};
+                border-radius: 30px;
                 font-weight: 500;
                 color: ${colors.primary};
-                transition: all 1s;
             }
 
-            .search-input:focus {
-                background: ${colors.grey};
-            }
-
-            .search-button {
+            .search__button {
                 position: absolute;
-                top: 0;
-                right: 0;
-                height: ${props.height};
+                top: 2px;
+                right: 2px;
+                height: calc(${props.height} - 4px);
                 width: ${props.height};
                 border-radius: 50%;
                 border: none;
-                background: transparent;
+                background: #fff;
                 color: ${colors.primary};
-                transition: all 0.5s;
+                transition: all 0.2s;
             }
 
-            .search-button:hover {
+            .search__button:hover {
                 opacity: 0.7;
             }
             `}
