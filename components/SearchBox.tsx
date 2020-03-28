@@ -37,7 +37,7 @@ const SearchBox = (props) => {
                 padding-left: 10px;
                 height: ${props.height};
                 border: 1.5px solid ${colors.primary};
-                border-radius: 10px 30px 30px 10px;
+                border-radius: 30px;
                 font-weight: 500;
                 color: ${colors.primary};
             }
@@ -55,7 +55,7 @@ const SearchBox = (props) => {
                 transition: all 0.2s;
             }
 
-            .search-button:hover {
+            .search__button:hover {
                 opacity: 0.7;
             }
             `}
