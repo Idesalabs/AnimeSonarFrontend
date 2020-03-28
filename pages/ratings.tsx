@@ -22,11 +22,11 @@ export default () =>{
            <div style = {{ padding: 10, width: '100%', maxWidth: 600, margin: 'auto'}}>
                 <RatingsCard title = 'What was the last anime you watched?'> 
                 <Section padding= '20px 0'>
-                    <SearchBox padding ='5px' width='250px'/>
+                    <SearchBox height='calc(20px + 1.5vmin)' width='calc(110px + 15vmin)'/>
                 </Section>
 
                 <Section justifyContent= 'flex-end' padding= '10px 0 0' margin= '10px 0 0'>
-                    <Button text ='NEXT' borderRadius='50px' padding= '5px 0' width= '150px'/>
+                    <Button text ='NEXT' borderRadius='50px' padding= '5px 0' width= 'calc(60px + 10vmin)' fontSize='calc(7px + .8vmin)'/>
                 </Section>
                 </RatingsCard>
                 <RatingsCard title= 'Ratings'>
@@ -51,7 +51,7 @@ export default () =>{
                     </ul>
                 </Section>
                 <Section justifyContent= 'flex-end' padding= '10px 0 0' margin= '10px 0 0'>
-                    <Button text ='NEXT' borderRadius='50px' padding= '5px 0' width= '150px'/>
+                <Button text ='NEXT' borderRadius='50px' padding= '5px 0' width= 'calc(60px + 10vmin)' fontSize='calc(7px + .8vmin)'/>
                 </Section>
                 </RatingsCard>
                 <RatingsCard title = 'Suggest SubTags'>
@@ -119,7 +119,7 @@ export default () =>{
                 </Section>
 
                 <Section justifyContent= 'flex-end' padding= '10px 0 0' margin= '10px 0 0'>
-                    <Button text='NEXT' borderRadius='50px' padding= '5px 0' width= '150px'/>
+                <Button text ='NEXT' borderRadius='50px' padding= '5px 0' width= 'calc(60px + 10vmin)' fontSize='calc(7px + .8vmin)'/>
                 </Section>
                 </RatingsCard>
            </div>

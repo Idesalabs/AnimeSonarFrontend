@@ -11,8 +11,8 @@ const SearchBox = (props) => {
             <IconContext.Provider value={{ style: {fontSize: 'calc(10px + .8vmin)'} }}>
                 <input name='search-box' placeholder="Search..." value={search} onChange={event => {
                         setSearch(event.target.value)
-                    }} className="search-input" />
-                <button type = "submit" className="search-button"><FaSearch/></button>
+                    }} className="search__input" />
+                <button type = "submit" className="search__button"><FaSearch/></button>
             </IconContext.Provider>
             </form>
             <style jsx>
@@ -32,23 +32,23 @@ const SearchBox = (props) => {
                 display: flex;
             }
             
-            .search-input {
+            .search__input {
                 width: ${props.width};
-                padding: ${props.padding};
-                border: 2px solid ${colors.primary};
+                padding-left: 10px;
+                height: ${props.height};
+                border: 1.5px solid ${colors.primary};
                 border-radius: 10px 30px 30px 10px;
                 font-weight: 500;
                 color: ${colors.primary};
-                //transition: all 1s;
             }
 
-            .search-button {
+            .search__button {
                 position: absolute;
                 top: 2px;
                 right: 2px;
-                padding: ${props.padding};
+                height: calc(${props.height} - 4px);
                 width: ${props.height};
-                border-radius: 0px 30px 30px 0px;
+                border-radius: 50%;
                 border: none;
                 background: #fff;
                 color: ${colors.primary};

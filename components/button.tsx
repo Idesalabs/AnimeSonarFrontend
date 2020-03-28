@@ -10,6 +10,7 @@ const Button = (props) => (
         {`
         .button {
             font-weight: 500;
+            font-size: ${props.fontSize};
             border-radius: ${props.borderRadius};
             border: 1.5px solid ${colors.primary};
             background: #fff;
