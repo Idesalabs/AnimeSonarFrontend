@@ -5,11 +5,12 @@ const Button = (props) => (
     <a href='#' className="button" onClick={e => {
         e.preventDefault()
         props.handleClick()
-        }}>{props.title}</a>
+        }}>{props.text}</a>
     <style jsx>
         {`
         .button {
             font-weight: 500;
+            font-size: ${props.fontSize};
             border-radius: ${props.borderRadius};
             border: 1.5px solid ${colors.primary};
             background: #fff;

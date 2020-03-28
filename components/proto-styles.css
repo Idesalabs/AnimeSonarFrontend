@@ -74,3 +74,9 @@ input {
   text-align: center;
   display: inline-block;
 }
+
+.placeholder {
+  max-width: 10;
+  width: 60%;
+  font-size: ;
+}

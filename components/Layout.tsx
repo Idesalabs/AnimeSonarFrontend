@@ -7,20 +7,22 @@ interface LayoutProps {
 }
 
 export default (props: LayoutProps) => (
-    <div className="layout__body" style={{ backgroundColor: colors.background }} >
+
+    <div className="layout__body">
         <Header />
         <div className="b-image__skewer"></div>
         <div className="children">
             {props.children}
         </div>
         <style jsx>{`
-        div {
+        .layout__body {
             color: ${colors.primary};
+            background-color: ${colors.background};
+        }
+        
+        .b-image__skewer {
             width: 100%;
-          }
-
-          .b-image__skewer {
-            height: calc(50vh + 10vw);
+            height: calc(50vh + 15vmin);
             background-image: ${props.backgroundImage ?
                 'linear-gradient(to bottom right, rgba(255, 85, 43, .8),rgba(255, 85, 43, 1))' :
                 colors.gradient
@@ -40,7 +42,6 @@ export default (props: LayoutProps) => (
             flex-direction:column;
             align-items:center;
             position: relative;
-          
         }
         `}</style>
     </div>

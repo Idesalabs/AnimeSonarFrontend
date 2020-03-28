@@ -19,7 +19,7 @@ export default (props) => (
                 box-shadow: 2px 5px 10px #91919152;
             }
             .card__content {
-                padding: 30px;  
+                padding: 25px;  
             }
             `}
         </style>
