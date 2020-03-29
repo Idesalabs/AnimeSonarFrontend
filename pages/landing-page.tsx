@@ -10,7 +10,7 @@ import MetaTags from '../components/MetaTags'
 
 const IntroText = () => (
     <div className='intro__text'>
-        <h2 className='intro__heading'>Welcome to AnimeSonar</h2>
+        <h2 className='intro__heading'>Welcome to Anime Sonar</h2>
         <p style={{ marginTop: 10 }} className='intro__description'>
             The over-engineered anime recommendation site
         </p>
@@ -23,9 +23,7 @@ const IntroText = () => (
 
 
             .intro__heading {
-                font-size: 7vmin;
-}
-            .heading {
+                // font-size: 7vmin;
                 font-size: calc(18px + 3vw);
                 padding-top: 15px;
                 text-align: center;
@@ -58,7 +56,7 @@ const IntroText = () => (
 );
 
 const Features = () => (
-    <div style={{ padding: 10, width: '100%', maxWidth: 550, margin: 'auto' }}>
+    <div style={{ padding: 10, width: '100%', maxWidth: 600, margin: 'auto' }}>
         <h1 className='features__heading'>Features</h1>
         <FeaturesCard
             title='Intuitive Tag System'
@@ -84,6 +82,7 @@ const Features = () => (
                 font-size: calc(10px + 1vmin);
                 text-align: right;
                 padding: 15px 0;
+                font-weight:500;
             }
             `}
         </style>
@@ -94,7 +93,7 @@ const Features = () => (
 export default () => (
     <>
         <MetaTags />
-        <Layout backgroundImage='/landing__page__background.svg'>
+        <Layout noSlant backgroundImage='/landing__page__background.svg'>
             <Section>
                 <IntroText />
             </Section>
