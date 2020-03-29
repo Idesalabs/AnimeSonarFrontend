@@ -18,7 +18,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "./",
-    "rootDir": "./"
+    "paths": {
+      "components": [
+        "./components"
+      ]
+    }
   },
   "exclude": [
     "node_modules"

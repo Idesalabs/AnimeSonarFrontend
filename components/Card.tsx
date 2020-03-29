@@ -2,12 +2,12 @@ import React, { ReactChildren } from 'react';
 import { colors } from '../styles'
 
 interface Props {
-    borderRadius?: number | string
+    borderRadius?: string
     children: JSX.Element[] | JSX.Element
     showLid?: boolean
 }
 
-export default ({ borderRadius = 20, children, showLid = true }: Props) => (
+export default ({ borderRadius = '10px', children, showLid = true }: Props) => (
     <div className="card__body">
         <div style={{
             height: '10px',
