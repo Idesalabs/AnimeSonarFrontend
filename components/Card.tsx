@@ -3,7 +3,7 @@ import { colors } from '../styles'
 
 interface Props {
     borderRadius?: number | string
-    children: JSX.Element[]
+    children: JSX.Element[] | JSX.Element
     showLid?: boolean
 }
 
