@@ -25,6 +25,7 @@ export default ({ borderRadius = '10px', children, showLid = true }: Props) => (
             .card__body {
                 background-color: #fff;
                 border-radius: ${borderRadius};
+                
                 margin-top: 30px;
                 width:100%;
                 box-shadow: 2px 5px 10px #91919152;
