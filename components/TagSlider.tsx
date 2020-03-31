@@ -13,15 +13,15 @@ const _tags = [
         name: 'Comedy',
         color: 'orange'
     },
-    // {
-    //     name: 'Horror',
-    //     color: 'black'
-    // }
-    ,
     {
-        name: 'Scifi',
-        color: 'blue'
+        name: 'Horror',
+        color: 'black'
     }
+
+    // {
+    //     name: 'Scifi',
+    //     color: 'blue'
+    // }
 
 ]
 
@@ -48,7 +48,7 @@ const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagS
         style={{ ...styles.tag, backgroundColor: color, width: width + '%' }}
     >
         <span style={styles.tagText}>{name}</span>
-        <span style={{ ...styles.tagText, fontSize: 12 }}>{nearestN(.001, width) + '%'}</span>
+        {/* <span style={{ ...styles.tagText, fontSize: 12 }}>{nearestN(.01, width) + '%'}</span> */}
         {!noSliderButton && < div
             style={styles.sliderButton}
             onPointerDown={onSliderSelect}
