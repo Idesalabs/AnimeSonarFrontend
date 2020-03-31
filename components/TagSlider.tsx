@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
-const tags = [
+const _tags = [
     {
         name: 'Action',
         color: 'red'
@@ -16,8 +16,8 @@ const tags = [
 
 ]
 
-const getPercentage = (containerWidth: number, ) => {
-
+const getPercentage = (containerWidth: number, distanceMoved: number) => {
+    return (distanceMoved / containerWidth) * 100
 }
 
 interface TagSectionProps {
@@ -25,7 +25,7 @@ interface TagSectionProps {
     color: string
     noSliderButton: boolean
     width: number
-    onMouseDrag?: (newWidth: number) => any
+    onSliderSelect: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
 
 
@@ -33,36 +33,18 @@ interface TagSectionProps {
 
 // }
 
-const TagSection = ({ name, color, noSliderButton, width, onMouseDrag }: TagSectionProps) => {
-    const [mouseDown, setMouseDown] = useState(false)
-    const [startX, setStartX] = useState<number>()
+const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagSectionProps) => {
+
 
     return <div
         className='tag'
         style={{ ...styles.tag, backgroundColor: color, width: width + '%' }}
     >
         <span style={styles.tagText}>{name}</span>
+        <span style={{ ...styles.tagText, fontSize: 12 }}>{width + '%'}</span>
         {!noSliderButton && < div
             style={styles.sliderButton}
-
-            onMouseDown={(e) => {
-
-                setMouseDown(true)
-                setStartX(e.pageX)
-            }}
-            onMouseUp={() => setMouseDown(false)}
-
-            onMouseMove={(e) => {
-                if (mouseDown) {
-                    const distanceMoved = startX - e.pageX
-                    const percentageMoved = (Math.abs(distanceMoved) / 600) * 100
-                    if (distanceMoved < 0) {
-                        onMouseDrag(width + percentageMoved)
-                    } else {
-                        onMouseDrag(width - percentageMoved)
-                    }
-                }
-            }}
+            onMouseDown={onSliderSelect}
         >
             <img src='/slider-arrows.svg' height={'30%'} />
         </div>
@@ -81,32 +63,86 @@ const TagSection = ({ name, color, noSliderButton, width, onMouseDrag }: TagSect
 }
 
 export default () => {
-    const [widths, setWidths] = useState(tags.map(() => 100 / tags.length))
+    const [widths, setWidths] = useState<number[]>((new Array(_tags.length).fill(100 / _tags.length)))
+    const [tags, setTags] = useState(_tags)
+    const TagSliderRef = useRef<HTMLDivElement>()
 
-    return <div style={{
-        width: '100%',
-        display: 'flex',
 
-    }}>
-        {tags.map((tag, index) => <TagSection
-            width={widths[index]}
-            key={index}
-            noSliderButton={index === tags.length - 1}
-            name={tag.name}
-            onMouseDrag={(newWidth) => {
-                console.log(newWidth)
-                const change = newWidth - widths[index]
-                let _widths = widths.map(w => w)
-                _widths[index] = newWidth
-                _widths[index + 1] -= change
-                console.log(_widths)
-                setWidths(_widths)
-            }}
-            color={tag.color}
-        />
-        )}
+    return <>
 
-    </div>
+        <div
+            ref={TagSliderRef}
+            style={{
+                width: '100%',
+                display: 'flex',
+
+            }}>
+            {tags.map((tag, index) => <TagSection
+                width={widths[index]}
+                key={index}
+                noSliderButton={index === tags.length - 1}
+                name={tag.name}
+                onSliderSelect={(e) => {
+                    e.preventDefault()
+                    const startDragX = e.pageX
+                    const sliderWidth = TagSliderRef.current.offsetWidth
+
+                    const resize = (e: MouseEvent) => {
+                        const endDragX = e.pageX
+                        const distanceMoved = endDragX - startDragX
+                        const maxPercent = widths[index] + widths[index + 1]
+
+                        const percentageMoved = getPercentage(sliderWidth, distanceMoved)
+
+                        const _widths = widths.map(w => w)
+
+                        const prevPercentage = _widths[index] //previous width of this tag section
+                        const newPercentage = prevPercentage + percentageMoved
+                        const currentSectionWidth = newPercentage < 0 ? 0 : newPercentage > maxPercent ? maxPercent : newPercentage
+                        _widths[index] = currentSectionWidth
+
+
+                        const nextSectionNewPercentage = percentageMoved < 0 ?
+                            _widths[index + 1] + Math.abs(percentageMoved) :
+                            _widths[index + 1] - Math.abs(percentageMoved)
+
+
+                        _widths[index + 1] = nextSectionNewPercentage < 0 ? 0 : nextSectionNewPercentage > maxPercent ? maxPercent : nextSectionNewPercentage
+
+
+
+                        if (tags.length > 2) {
+                            if (_widths[index] === 0) {
+                                _widths[index + 1] = maxPercent
+                                _widths.splice(index, 1)
+                                setTags(tags.filter((t, i) => i !== index))
+                            }
+                            if (_widths[index + 1] === 0) {
+                                _widths[index] = maxPercent
+                                _widths.splice(index + 1, 1)
+                                setTags(tags.filter((t, i) => i !== index + 1))
+                            }
+                        }
+
+                        setWidths(_widths)
+                        console.log('100%: ' + (_widths.reduce((p, c) => p + c, 0) === 100))
+                        console.log(_widths)
+                    }
+
+                    window.addEventListener('mousemove', resize)
+
+                    window.addEventListener('mouseup', (e) => {
+                        window.removeEventListener('mousemove', resize)
+                    })
+
+                }}
+                color={tag.color}
+            />
+            )}
+
+        </div>
+        <h4 style={{ textAlign: 'center', marginTop: 10 }}>Total: {(widths.reduce((p, c) => p + c, 0))}</h4>
+    </>
 }
 
 type StylesType = { [key: string]: React.CSSProperties }
@@ -128,7 +164,8 @@ const styles: StylesType = {
     tagText: {
         color: 'white',
         fontWeight: 700,
-        userSelect: 'none'
+        userSelect: 'none',
+        display: 'block'
     },
     sliderButton: {
         width: '2em',
@@ -144,7 +181,8 @@ const styles: StylesType = {
         bottom: 0,
         margin: 'auto',
         zIndex: 10,
-        cursor: 'grab',
-        userSelect: 'none'
+        cursor: 'ew-resize',
+        userSelect: 'none',
+
     }
 }
