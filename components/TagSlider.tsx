@@ -13,6 +13,13 @@ const _tags = [
         name: 'Comedy',
         color: 'orange'
     },
+    {
+        name: 'Horror',
+        color: 'black'
+    }, {
+        name: 'Scifi',
+        color: 'blue'
+    }
 
 ]
 
@@ -20,6 +27,7 @@ const getPercentage = (containerWidth: number, distanceMoved: number) => {
     return (distanceMoved / containerWidth) * 100
 }
 
+const nearestN = (N: number, number: number) => Math.ceil(number / N) * N
 interface TagSectionProps {
     name: string
     color: string
@@ -29,9 +37,6 @@ interface TagSectionProps {
 }
 
 
-// const mouseDownHandler = (e: MouseEvent) => {
-
-// }
 
 const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagSectionProps) => {
 
@@ -41,10 +46,11 @@ const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagS
         style={{ ...styles.tag, backgroundColor: color, width: width + '%' }}
     >
         <span style={styles.tagText}>{name}</span>
-        <span style={{ ...styles.tagText, fontSize: 12 }}>{width + '%'}</span>
+        <span style={{ ...styles.tagText, fontSize: 12 }}>{nearestN(.001, width) + '%'}</span>
         {!noSliderButton && < div
             style={styles.sliderButton}
-            onMouseDown={onSliderSelect}
+            onPointerDown={onSliderSelect}
+        // onTouchStart={onSliderSelect}
         >
             <img src='/slider-arrows.svg' height={'30%'} />
         </div>
@@ -76,6 +82,7 @@ export default () => {
                 width: '100%',
                 display: 'flex',
 
+
             }}>
             {tags.map((tag, index) => <TagSection
                 width={widths[index]}
@@ -84,56 +91,72 @@ export default () => {
                 name={tag.name}
                 onSliderSelect={(e) => {
                     e.preventDefault()
+                    document.body.style.cursor = 'ew-resize'
+
+
                     const startDragX = e.pageX
                     const sliderWidth = TagSliderRef.current.offsetWidth
 
-                    const resize = (e: MouseEvent) => {
-                        const endDragX = e.pageX
+                    const resize = (e: MouseEvent & TouchEvent) => {
+                        e.preventDefault()
+                        const endDragX = e.touches ? e.touches[0].pageX : e.pageX
                         const distanceMoved = endDragX - startDragX
                         const maxPercent = widths[index] + widths[index + 1]
 
-                        const percentageMoved = getPercentage(sliderWidth, distanceMoved)
+                        const percentageMoved = nearestN(1, getPercentage(sliderWidth, distanceMoved))
 
                         const _widths = widths.map(w => w)
 
-                        const prevPercentage = _widths[index] //previous width of this tag section
+                        const prevPercentage = _widths[index]
                         const newPercentage = prevPercentage + percentageMoved
                         const currentSectionWidth = newPercentage < 0 ? 0 : newPercentage > maxPercent ? maxPercent : newPercentage
                         _widths[index] = currentSectionWidth
 
+                        const nextSectionIndex = index + 1
 
                         const nextSectionNewPercentage = percentageMoved < 0 ?
-                            _widths[index + 1] + Math.abs(percentageMoved) :
-                            _widths[index + 1] - Math.abs(percentageMoved)
+                            _widths[nextSectionIndex] + Math.abs(percentageMoved) :
+                            _widths[nextSectionIndex] - Math.abs(percentageMoved)
 
+                        const nextSectionWidth = nextSectionNewPercentage < 0 ? 0 : nextSectionNewPercentage > maxPercent ? maxPercent : nextSectionNewPercentage
 
-                        _widths[index + 1] = nextSectionNewPercentage < 0 ? 0 : nextSectionNewPercentage > maxPercent ? maxPercent : nextSectionNewPercentage
+                        _widths[index + 1] = nextSectionWidth
 
 
 
                         if (tags.length > 2) {
                             if (_widths[index] === 0) {
-                                _widths[index + 1] = maxPercent
+                                _widths[nextSectionIndex] = maxPercent
                                 _widths.splice(index, 1)
                                 setTags(tags.filter((t, i) => i !== index))
+                                removeEventListener()
                             }
                             if (_widths[index + 1] === 0) {
                                 _widths[index] = maxPercent
-                                _widths.splice(index + 1, 1)
+                                _widths.splice(nextSectionIndex, 1)
                                 setTags(tags.filter((t, i) => i !== index + 1))
+                                removeEventListener()
                             }
                         }
-
                         setWidths(_widths)
-                        console.log('100%: ' + (_widths.reduce((p, c) => p + c, 0) === 100))
-                        console.log(_widths)
                     }
 
-                    window.addEventListener('mousemove', resize)
+                    window.addEventListener('pointermove', resize)
+                    window.addEventListener('touchmove', resize)
 
-                    window.addEventListener('mouseup', (e) => {
-                        window.removeEventListener('mousemove', resize)
-                    })
+                    const removeEventListener = () => {
+                        window.removeEventListener('pointermove', resize)
+                        window.removeEventListener('touchmove', resize)
+                    }
+
+                    const handleEventUp = (e: Event) => {
+                        e.preventDefault()
+                        document.body.style.cursor = 'initial'
+                        removeEventListener()
+                    }
+
+                    window.addEventListener('touchend', handleEventUp)
+                    window.addEventListener('pointerup', handleEventUp)
 
                 }}
                 color={tag.color}
@@ -141,7 +164,7 @@ export default () => {
             )}
 
         </div>
-        <h4 style={{ textAlign: 'center', marginTop: 10 }}>Total: {(widths.reduce((p, c) => p + c, 0))}</h4>
+        {/* <h4 style={{ textAlign: 'center', marginTop: 10 }}>Total: {(widths.reduce((p, c) => p + c, 0))}</h4> */}
     </>
 }
 
