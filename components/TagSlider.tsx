@@ -13,10 +13,12 @@ const _tags = [
         name: 'Comedy',
         color: 'orange'
     },
+    // {
+    //     name: 'Horror',
+    //     color: 'black'
+    // }
+    ,
     {
-        name: 'Horror',
-        color: 'black'
-    }, {
         name: 'Scifi',
         color: 'blue'
     }
@@ -50,7 +52,7 @@ const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagS
         {!noSliderButton && < div
             style={styles.sliderButton}
             onPointerDown={onSliderSelect}
-        // onTouchStart={onSliderSelect}
+
         >
             <img src='/slider-arrows.svg' height={'30%'} />
         </div>
@@ -120,24 +122,26 @@ export default () => {
 
                         const nextSectionWidth = nextSectionNewPercentage < 0 ? 0 : nextSectionNewPercentage > maxPercent ? maxPercent : nextSectionNewPercentage
 
-                        _widths[index + 1] = nextSectionWidth
+                        _widths[nextSectionIndex] = nextSectionWidth
 
 
 
                         if (tags.length > 2) {
+
                             if (_widths[index] === 0) {
                                 _widths[nextSectionIndex] = maxPercent
                                 _widths.splice(index, 1)
                                 setTags(tags.filter((t, i) => i !== index))
                                 removeEventListener()
                             }
-                            if (_widths[index + 1] === 0) {
+                            if (_widths[nextSectionIndex] === 0) {
                                 _widths[index] = maxPercent
                                 _widths.splice(nextSectionIndex, 1)
-                                setTags(tags.filter((t, i) => i !== index + 1))
+                                setTags(tags.filter((t, i) => i !== nextSectionIndex))
                                 removeEventListener()
                             }
                         }
+
                         setWidths(_widths)
                     }
 
@@ -164,7 +168,7 @@ export default () => {
             )}
 
         </div>
-        {/* <h4 style={{ textAlign: 'center', marginTop: 10 }}>Total: {(widths.reduce((p, c) => p + c, 0))}</h4> */}
+
     </>
 }
 
@@ -206,6 +210,5 @@ const styles: StylesType = {
         zIndex: 10,
         cursor: 'ew-resize',
         userSelect: 'none',
-
     }
 }

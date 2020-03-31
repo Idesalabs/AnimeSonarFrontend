@@ -1,26 +1,22 @@
 import React from 'react';
 import Card from './Card';
 
-export const FeaturesCard = (props) => {
+interface Props {
+    title: string
+    children: JSX.Element
+
+}
+
+export const FeaturesCard = ({ children, title }: Props) => {
     return <>
         <Card borderRadius='10px' showLid={false}>
-            <h2 className="title">{props.title}</h2>
-            <img className="img-fluid" style={{ marginTop: 10 }} src={props.image} alt="features__image-1" />
-            <p className="description">{props.description}</p>
-            <style jsx>
-                {`
-            .title {
-                text-align: center;
-                font-size: calc(14px + 1.5vmin);
-                font-weight: 700;
-            }
-            .description {
-                text-align: center;
-                margin-top: 15px;
-                font-size: calc(15px + .6vmin);
-            }
-            `}
-            </style>
+            <h2 style={{
+                textAlign: 'center',
+                marginBottom: 15,
+                fontWeight: 700,
+                fontSize: 'calc(14px + 1.5vmin)'
+            }}>{title}</h2>
+            {children}
         </Card>
     </>
-};
+}
