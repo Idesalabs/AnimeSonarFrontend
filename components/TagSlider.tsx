@@ -192,7 +192,8 @@ const styles: StylesType = {
         color: 'white',
         fontWeight: 700,
         userSelect: 'none',
-        display: 'block'
+        display: 'block',
+        overflow: 'hidden'
     },
     sliderButton: {
         width: '2em',
