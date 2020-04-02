@@ -11,9 +11,9 @@ import TagSlider from '../components/TagSlider'
 
 const IntroText = () => (
     <div className='intro__text'>
-        <h2 className='intro__heading'>Welcome to Anime Sonar</h2>
+        <h2 className='intro__heading'>The "Over-Powered" Anime Recommender</h2>
         <p style={{ marginTop: 10 }} className='intro__description'>
-            The over-engineered anime recommendation site
+            Get anime suggestions by expressing what you want to watch.
         </p>
         <style jsx>
             {`
@@ -61,14 +61,11 @@ const Features = () => (
     <div style={{ padding: 10, width: '100%', maxWidth: 600, margin: 'auto' }}>
         <h1 className='features__heading' >Features</h1>
         <FeaturesCard title='Intuitive Tag System'>
-            <div style={{ textAlign: "center" }}>
-
-
-
+            <>
                 <TagSlider />
-
                 <p
                     style={{
+                        marginTop: 10,
                         textAlign: 'center',
                         fontSize: 'calc(15px + .6vmin)',
 
@@ -77,11 +74,11 @@ const Features = () => (
                 >Prioritize focus areas you want in an anime e.g how 'romantic' or 'comedic'.</p>
 
 
-            </div>
+            </>
         </FeaturesCard>
         <FeaturesCard title='Based on mood'>
             <>
-                <img className="img-fluid" style={{ marginTop: 10 }} src='/mood__selector__logo.svg' alt="features__image-1" />
+                <img width='100%' src='/mood__selector__logo.svg' alt="features__image-1" />
                 <p
                     style={{
                         textAlign: 'center',

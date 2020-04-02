@@ -16,12 +16,8 @@ const _tags = [
     {
         name: 'Horror',
         color: 'black'
-    }
+    },
 
-    // {
-    //     name: 'Scifi',
-    //     color: 'blue'
-    // }
 
 ]
 
@@ -45,7 +41,7 @@ const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagS
 
     return <div
         className='tag'
-        style={{ ...styles.tag, backgroundColor: color, width: width + '%' }}
+        style={{ ...styles.tag, background: color, width: width + '%' }}
     >
         <span style={styles.tagText}>{name}</span>
         {/* <span style={{ ...styles.tagText, fontSize: 12 }}>{nearestN(.01, width) + '%'}</span> */}
@@ -105,7 +101,8 @@ export default () => {
                         const distanceMoved = endDragX - startDragX
                         const maxPercent = widths[index] + widths[index + 1]
 
-                        const percentageMoved = nearestN(1, getPercentage(sliderWidth, distanceMoved))
+                        // const percentageMoved = nearestN(.001, getPercentage(sliderWidth, distanceMoved))
+                        const percentageMoved = getPercentage(sliderWidth, distanceMoved)
 
                         const _widths = widths.map(w => w)
 
