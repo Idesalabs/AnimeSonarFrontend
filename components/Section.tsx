@@ -1,13 +1,20 @@
+interface Props {
+    children: any
+    justifyContent?: string
+    padding?: string | number
+    margin?: string | number
+}
 
-
-export default (props) => (
-    <div>
+export default (props: Props) => (
+    <section>
         {props.children}
         <style jsx>{`
-        div {
-            padding: 10px;
-            margin: 10px;
+        section {
+            display: flex;
+            justify-content: ${props.justifyContent};
+            padding: ${props.padding};
+            margin: ${props.margin};
         }
         `}</style>
-    </div>
+    </section>
 )
