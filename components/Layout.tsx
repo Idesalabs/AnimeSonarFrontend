@@ -4,9 +4,11 @@ import { colors } from '../styles'
 interface LayoutProps {
     backgroundImage?: string
     children: React.ReactNode
+    noSlant?: boolean
 }
 
 export default (props: LayoutProps) => (
+
     <div className="layout__body">
         <Header />
         <div className="b-image__skewer"></div>
@@ -21,7 +23,7 @@ export default (props: LayoutProps) => (
         
         .b-image__skewer {
             width: 100%;
-            height: calc(50vh + 15vmin);
+            height: ${props.noSlant ? 'calc(30vh + 15vmin)' : 'calc(50vh + 15vmin)'};
             background-image: ${props.backgroundImage ?
                 'linear-gradient(to bottom right, rgba(255, 85, 43, .8),rgba(255, 85, 43, 1))' :
                 colors.gradient
@@ -29,7 +31,7 @@ export default (props: LayoutProps) => (
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 100%);
+            clip-path: ${props.noSlant ? 'none' : 'polygon(0% 0%, 100% 0%, 100% 40%, 0% 100%)'};
             position: fixed;
           }
 

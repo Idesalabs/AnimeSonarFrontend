@@ -2,12 +2,12 @@ import { colors } from '../styles'
 
 const Button = (props) => (
     <>
-    <a href='#' className="button" onClick={e => {
-        e.preventDefault()
-        props.handleClick()
+        <a href='#' className="button" onClick={e => {
+            e.preventDefault()
+            props.handleClick()
         }}>{props.text}</a>
-    <style jsx>
-        {`
+        <style jsx>
+            {`
         .button {
             font-weight: 500;
             font-size: ${props.fontSize};
@@ -29,7 +29,7 @@ const Button = (props) => (
             color: #fff;
         }
         `}
-    </style>
+        </style>
     </>
 )
 

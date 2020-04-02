@@ -7,15 +7,15 @@ const SearchBox = (props) => {
     const [search, setSearch] = useState('');
 
     return <>
-            <form className='form'>
-            <IconContext.Provider value={{ style: {fontSize: 'calc(10px + .8vmin)'} }}>
+        <form className='form'>
+            <IconContext.Provider value={{ style: { fontSize: 'calc(10px + .8vmin)' } }}>
                 <input name='search-box' placeholder="Search..." value={search} onChange={event => {
-                        setSearch(event.target.value)
-                    }} className="search__input" />
-                <button type = "submit" className="search__button"><FaSearch/></button>
+                    setSearch(event.target.value)
+                }} className="search__input" />
+                <button type="submit" className="search__button"><FaSearch /></button>
             </IconContext.Provider>
-            </form>
-            <style jsx>
+        </form>
+        <style jsx>
             {`
             *:focus {
                 outline: none;
@@ -37,7 +37,7 @@ const SearchBox = (props) => {
                 padding-left: 10px;
                 height: ${props.height};
                 border: 1.5px solid ${colors.primary};
-                border-radius: 30px;
+                border-radius: 5px;
                 font-weight: 500;
                 color: ${colors.primary};
             }
@@ -59,8 +59,8 @@ const SearchBox = (props) => {
                 opacity: 0.7;
             }
             `}
-            </style>
-            </>
+        </style>
+    </>
 }
 
 export default SearchBox

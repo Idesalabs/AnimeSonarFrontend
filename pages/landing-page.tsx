@@ -7,12 +7,13 @@ import { colors } from '../styles'
 import ShareButtons from '../components/ShareButtons'
 import { FeaturesCard } from '../components/FeaturesCard'
 import MetaTags from '../components/MetaTags'
+import TagSlider from '../components/TagSlider'
 
 const IntroText = () => (
     <div className='intro__text'>
-        <h2 className='intro__heading'>Welcome to AnimeSonar</h2>
+        <h2 className='intro__heading'>The "Over-Powered" Anime Recommender</h2>
         <p style={{ marginTop: 10 }} className='intro__description'>
-            The over-engineered anime recommendation site
+            Get anime suggestions by expressing what you want to watch.
         </p>
         <style jsx>
             {`
@@ -23,14 +24,13 @@ const IntroText = () => (
 
 
             .intro__heading {
-                font-size: 7vmin;
-}
-            .heading {
+                // font-size: 7vmin;
                 font-size: calc(18px + 3vw);
                 padding-top: 15px;
                 text-align: center;
                 margin:auto;
-                font-weight:700;   
+                font-weight:700;
+                font-family:roboto;
             }
             
             .intro__description {
@@ -58,18 +58,41 @@ const IntroText = () => (
 );
 
 const Features = () => (
-    <div style={{ padding: 10, width: '100%', maxWidth: 550, margin: 'auto' }}>
-        <h1 className='features__heading'>Features</h1>
-        <FeaturesCard
-            title='Intuitive Tag System'
-            image='/tag-system.svg'
-            description="Prioritize focus areas you want in an anime e.g how 'romantic' or 'tragic'."
-        />
-        <FeaturesCard
-            title='Based on mood'
-            image='/mood__selector__logo.svg'
-            description='You down in the dumps ? Find anime to cheer you up.'
-        />
+    <div style={{ padding: 10, width: '100%', maxWidth: 600, margin: 'auto' }}>
+        <h1 className='features__heading' >Features</h1>
+        <FeaturesCard title='Intuitive Tag System'>
+
+            <>
+
+                <TagSlider />
+
+                <p
+                    style={{
+                        textAlign: 'center',
+                        fontSize: 'calc(15px + .6vmin)',
+                        marginTop: 10
+                    }}
+
+                >Prioritize focus areas you want in an anime e.g how 'romantic' or 'comedic'.</p>
+
+
+
+            </>
+        </FeaturesCard>
+
+        <FeaturesCard title='Based on mood'>
+            <>
+                <img className="img-fluid" style={{ marginTop: 10 }} src='/mood__selector__logo.svg' alt="features__image-1" />
+                <p
+                    style={{
+                        textAlign: 'center',
+                        fontSize: 'calc(15px + .6vmin)',
+
+                    }}
+                >You down in the dumps ? Find anime to cheer you up.</p>
+
+            </>
+        </FeaturesCard>
 
         <p className='features__footer'>...subtags, blacklist and more!</p>
         <style jsx>
@@ -84,6 +107,7 @@ const Features = () => (
                 font-size: calc(10px + 1vmin);
                 text-align: right;
                 padding: 15px 0;
+                font-weight:500;
             }
             `}
         </style>
@@ -94,7 +118,7 @@ const Features = () => (
 export default () => (
     <>
         <MetaTags />
-        <Layout backgroundImage='/landing__page__background.svg'>
+        <Layout noSlant backgroundImage='/landing__page__background.svg'>
             <Section>
                 <IntroText />
             </Section>
