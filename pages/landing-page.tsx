@@ -61,24 +61,28 @@ const Features = () => (
     <div style={{ padding: 10, width: '100%', maxWidth: 600, margin: 'auto' }}>
         <h1 className='features__heading' >Features</h1>
         <FeaturesCard title='Intuitive Tag System'>
+
             <>
+
                 <TagSlider />
+
                 <p
                     style={{
-                        marginTop: 10,
                         textAlign: 'center',
                         fontSize: 'calc(15px + .6vmin)',
-
+                        marginTop: 10
                     }}
 
                 >Prioritize focus areas you want in an anime e.g how 'romantic' or 'comedic'.</p>
 
 
+
             </>
         </FeaturesCard>
+
         <FeaturesCard title='Based on mood'>
             <>
-                <img width='100%' src='/mood__selector__logo.svg' alt="features__image-1" />
+                <img className="img-fluid" style={{ marginTop: 10 }} src='/mood__selector__logo.svg' alt="features__image-1" />
                 <p
                     style={{
                         textAlign: 'center',

@@ -21,6 +21,7 @@ const _tags = [
 
 ]
 
+
 const getPercentage = (containerWidth: number, distanceMoved: number) => {
     return (distanceMoved / containerWidth) * 100
 }
@@ -44,7 +45,9 @@ const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagS
         style={{ ...styles.tag, background: color, width: width + '%' }}
     >
         <span style={styles.tagText}>{name}</span>
+
         {/* <span style={{ ...styles.tagText, fontSize: 12 }}>{nearestN(.01, width) + '%'}</span> */}
+
         {!noSliderButton && < div
             style={styles.sliderButton}
             onPointerDown={onSliderSelect}
@@ -103,6 +106,7 @@ export default () => {
 
                         // const percentageMoved = nearestN(.001, getPercentage(sliderWidth, distanceMoved))
                         const percentageMoved = getPercentage(sliderWidth, distanceMoved)
+
 
                         const _widths = widths.map(w => w)
 
@@ -191,6 +195,7 @@ const styles: StylesType = {
         userSelect: 'none',
         display: 'block',
         overflow: 'hidden'
+
     },
     sliderButton: {
         width: '2em',
