@@ -9,8 +9,8 @@ import SearchBox from './../components/SearchBox';
 import Button from '../components/button';
 
 export default () => {
-    const [rating, setRating] = useState({ tag: 0 });
-    const [] = useState('');
+    //const [rating, setRating] = useState({ tagName: '', tagRating: 0 });
+    const currentAnimeRatings = [];
     const tags = ['Action', 'Romance', 'Comedy', 'Psychological'];
 
     return <>
@@ -31,20 +31,30 @@ export default () => {
                 <Section padding='10px 0'>
                     <ul style={{ paddingLeft: 0 }}>
                         {
-                            tags.map(tag => (
-                                <li style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            tags.map(tag => {
+                                const [rating, setRating] = useState({ tagName: '', tagRating: 0 });
+
+                                function handleRatings (e) {
+                                    setRating({
+                                        tagName: `${tag}`,
+                                        tagRating: e
+                                    })
+                                    currentAnimeRatings.push(rating);
+                                }
+
+                                return (<li style={{ display: 'flex', justifyContent: 'space-between' }}>
                                     <p style={{ color: '#000', fontSize: 'calc(10px + 1.2vmin)', fontWeight: 'bold', paddingRight: '25px' }}>{tag}</p>
                                     <StarRatings
                                         starRatedColor="blue"
                                         starDimension='calc(8px + 1.7vmin)'
                                         starSpacing='calc(.5px + .2vmin)'
                                         numberOfStars={10}
-                                        rating={rating.tag}
-                                        changeRating={setRating}
+                                        rating={rating.tagRating}
+                                        changeRating={handleRatings}
                                         name={tag}
                                     />
-                                </li>
-                            ))
+                                </li>)
+                            })
                         }
                     </ul>
                 </Section>
