@@ -2,9 +2,33 @@ import { colors } from '../styles';
 import { useState } from 'react';
 import { IconContext } from "react-icons";
 import { FaSearch } from 'react-icons/fa';
+import { Tag } from 'types/typings';
 
-const SearchBox = (props) => {
+
+interface Props {
+    onSelectSuggestion: (tagNames: Tag[]) => any
+    height: string
+    width: string
+}
+
+const SearchBox = (props: Props) => {
     const [search, setSearch] = useState('');
+
+
+    // props.onSelectSuggestion([
+    //     {
+    //         id: '1',
+    //         name: 'Romance'
+    //     },
+    //     {
+    //         id: '2',
+    //         name: 'Comedy'
+    //     },
+    //     {
+    //         id: '3',
+    //         name: 'Scifi'
+    //     },
+    // ])
 
     return <>
         <form className='form'>
@@ -31,6 +55,10 @@ const SearchBox = (props) => {
                 font-size: calc(8px + .8vmin);
                 display: flex;
             }
+
+            .search__input:focus ~ .search__button {
+                opacity:0.2
+            }
             
             .search__input {
                 width: ${props.width};
@@ -40,6 +68,7 @@ const SearchBox = (props) => {
                 border-radius: 5px;
                 font-weight: 500;
                 color: ${colors.primary};
+                transition: all 0.2s;
             }
 
             .search__button {
