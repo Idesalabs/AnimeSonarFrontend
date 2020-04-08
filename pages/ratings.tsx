@@ -7,6 +7,7 @@ import BottomPadding from '../components/BottomPadding'
 import { RatingsCard } from './../components/RatingsCard';
 import SearchBox from './../components/SearchBox';
 import Button from '../components/button';
+import { colors } from '../styles';
 
 interface RatingsState {
     [key: string]: number
@@ -27,7 +28,7 @@ const RatingItem = ({ rating, onChangeRating, name }: RatingItemProps) => {
                 starRatedColor="blue"
                 starDimension='calc(8px + 1.7vmin)'
                 starSpacing='calc(.5px + .2vmin)'
-                numberOfStars={5}
+                numberOfStars={10}
                 rating={rating}
                 changeRating={onChangeRating}
                 name={name}
@@ -37,14 +38,32 @@ const RatingItem = ({ rating, onChangeRating, name }: RatingItemProps) => {
 }
 
 
+const SubTagItems = ({subTag}) => {
+    return <>
+        <p style={{
+            backgroundColor: colors.primary,
+            color: '#fff',
+            margin: '6px 3px',
+            padding: '5px 15px',
+            borderRadius: 50,
+            fontWeight: 500,
+            }}>{subTag}</p>
+    </>
+}
+
 
 
 export default () => {
     const [ratings, setRating] = useState<RatingsState>({
         Romance: 0,
-        Comedy: 4,
-        SciFi: 3
+        Comedy: 0,
+        SciFi: 0
     });
+    const [subTags, setSubTags] = useState([
+        'MC with Blue Hair',
+        'Tsundere Heroine',
+        'OP protagonist'
+    ])
 
     return <>
         <Layout noSlant>
@@ -93,6 +112,11 @@ export default () => {
             <RatingsCard title='Suggest SubTags'>
                 <Section padding='10px 0'>
                     {/* <SearchBox height='calc(20px + 1.5vmin)' width='calc(180px + 15vmin)' /> */}
+                    {<div style={{ display: 'flex', flexWrap: 'nowrap', borderBottom: `5px solid ${colors.primary}`, width: '100%'}}>
+                        { subTags.map(newSubTag => <SubTagItems
+                        subTag = {newSubTag}
+                        /> )}
+                    </div>}
                 </Section>
 
                 <Section justifyContent='flex-end' padding='10px 0 0' margin='10px 0 0'>
