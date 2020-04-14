@@ -13,10 +13,10 @@ const _tags = [
         name: 'Comedy',
         color: 'orange'
     },
-    {
-        name: 'Horror',
-        color: 'black'
-    },
+    // {
+    //     name: 'Horror',
+    //     color: 'black'
+    // },
 
 
 ]
