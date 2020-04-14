@@ -40,13 +40,7 @@ export default () => {
                 handleAddition={onAddition}
                 allowNew={true}
             />
-            <style jsx>
-                {`
-            .color {
-              color: blue;
-            }
-            `}
-            </style>
+          
         </>
     )
 
