@@ -1,4 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import '../styles/subtag.css'
+
 import App from 'next/app'
 import Head from 'next/head'
 class MyApp extends App {

@@ -1,51 +1,14 @@
-import { useState } from 'react'
-import ReactTags from 'react-tag-autocomplete'
+import Layout from '../components/Layout'
+import Card from '../components/Card'
+import SubTags from '../components/SubTags'
 
 export default () => {
-    const [subTags, setSubTags] = useState(
-        [
-            { id: 1, name: "Apples" },
-            { id: 2, name: "Pears" }
-          ]
-    );
-    const [suggestions, setSuggestions] = useState(
-      [
-        { id: 3, name: "Bananas" },
-        { id: 4, name: "Mangos" },
-        { id: 5, name: "Lemons" },
-        { id: 6, name: "Apricots" }
-      ]
-    );
+  return <Layout noSlant>
+    <Card>
 
-    
-   function onDelete (i) {
-    const subtags = subTags.slice(0);
-    subtags.splice(i, 1);
-    setSubTags(subtags);
-  }
+      <SubTags />
 
-  function onAddition (subTag) {
-    const subtags = [].concat(subTags, subTag);
-    setSubTags(subtags);
-  }
+    </Card>
 
-  return (
-      <>
-        <ReactTags
-            tags={subTags}
-            suggestions={suggestions}
-            onDelete={onDelete}
-            onAddition={onAddition}
-            allowNew={true}
-            classNames= 'color' />
-          <style jsx>
-            {`
-            .color {
-              color: blue;
-            }
-            `}
-          </style>
-      </>
-  )
-   
+  </Layout>
 }
