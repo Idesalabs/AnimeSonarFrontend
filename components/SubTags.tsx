@@ -36,11 +36,11 @@ export default () => {
             <ReactTags
                 tags={subTags}
                 suggestions={suggestions}
-                handleDelete={onDelete}
-                handleAddition={onAddition}
+                onDelete={onDelete}
+                onAddition={onAddition}
                 allowNew={true}
+                placeholderText= 'Suggest subTag'
             />
-          
         </>
     )
 
