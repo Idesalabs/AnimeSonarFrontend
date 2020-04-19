@@ -27,9 +27,9 @@ export default () => {
     }
 
     function onAddition(subTag) {
-        // const subtags = [].concat(subTags, subTag);
+        const subtags = [].concat(subTags, subTag);
         // another way to do above:
-        const subtags = [...subTags, subTag]
+        // const subtags = [...subTags, subTag]
         setSubTags(subtags);
     }
 
