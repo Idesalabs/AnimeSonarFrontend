@@ -60,11 +60,7 @@ export default () => {
         Comedy: 0,
         SciFi: 0
     });
-    const [subTags, setSubTags] = useState([
-        'MC with Blue Hair',
-        'Tsundere Heroine',
-        'OP protagonist'
-    ])
+    
 
     return <>
         <Layout noSlant>
