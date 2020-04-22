@@ -24,7 +24,9 @@ export default () => {
     const styles = {
         control: (currentStyles) => ({
             ...currentStyles,
-            border: '2.5px solid #FF552B',
+            border: 'none',
+            borderRadius: 0,
+            borderBottom: '2.5px solid #FF552B',
         })
     }
 
@@ -33,6 +35,7 @@ export default () => {
         <Select 
         options={options}
         name='sweets'
+        isMulti
         components={{
             ...animated,DropdownIndicator}}
         styles={styles} />
