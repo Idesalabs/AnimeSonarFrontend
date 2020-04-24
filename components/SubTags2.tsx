@@ -1,7 +1,7 @@
 import Select, { components } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { colors } from '../styles'
-import { IoIosCloseCircle } from "react-icons/io";
+import { MdClose } from "react-icons/md";
 
 export default () => {
     
@@ -14,7 +14,7 @@ export default () => {
       
     const DropdownIndicator = (props) => { 
           return (
-              <components.DropdownIndicator {...props}>
+            <components.DropdownIndicator {...props}>
             <div/>
           </components.DropdownIndicator>
         );
@@ -27,7 +27,7 @@ export default () => {
     const MultiValueRemove = (props) => {
         return (
             <components.MultiValueRemove {...props}>
-                <IoIosCloseCircle/>
+                <MdClose/>
             </components.MultiValueRemove>
         )
     }
@@ -44,16 +44,25 @@ export default () => {
         multiValue: (currentStyles, state) => ({
             ...currentStyles,
             backgroundColor: `${colors.primary}`,
+            borderRadius: 50,
         }),
         multiValueLabel: (currentStyles, state) => ({
             ...currentStyles,
             color: 'white',
+            /* fontWeight: 400, */
         }),
         multiValueRemove: (currentStyles, state) => ({
             ...currentStyles,
             color: '#fff',
+            borderRadius: '50%',
+            alignSelf: 'center',
+            justifySelf: 'center',
+            height: '1.4em',
+            width: '1.4em',
+            margin: 2,
             ':hover': {
                 color: `${colors.primary}`,
+                backgroundColor: '#fff'
             },
         })
     }
