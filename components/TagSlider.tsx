@@ -48,7 +48,7 @@ const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagS
     >
         <span style={styles.tagText}>{name}</span>
 
-        <span style={{ ...styles.tagText, fontSize: 12 }}>{nearestN(1, width) + '%'}</span>
+        {/* <span style={{ ...styles.tagText, fontSize: 12 }}>{nearestN(1, width) + '%'}</span> */}
 
         {!noSliderButton && < div
             style={styles.sliderButton}
