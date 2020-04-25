@@ -35,7 +35,9 @@ interface TagSectionProps {
     onSliderSelect: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
 
-
+const limitNumberWithinRange = (value: number, min: number, max: number): number => {
+    return Math.min(Math.max(value, min), max)
+}
 
 const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagSectionProps) => {
 
@@ -46,7 +48,7 @@ const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagS
     >
         <span style={styles.tagText}>{name}</span>
 
-        {/* <span style={{ ...styles.tagText, fontSize: 12 }}>{nearestN(.01, width) + '%'}</span> */}
+        <span style={{ ...styles.tagText, fontSize: 12 }}>{nearestN(1, width) + '%'}</span>
 
         {!noSliderButton && < div
             style={styles.sliderButton}
@@ -112,7 +114,7 @@ export default () => {
 
                         const prevPercentage = _widths[index]
                         const newPercentage = prevPercentage + percentageMoved
-                        const currentSectionWidth = newPercentage < 0 ? 0 : newPercentage > maxPercent ? maxPercent : newPercentage
+                        const currentSectionWidth = limitNumberWithinRange(newPercentage, 0, maxPercent)
                         _widths[index] = currentSectionWidth
 
                         const nextSectionIndex = index + 1
@@ -121,8 +123,7 @@ export default () => {
                             _widths[nextSectionIndex] + Math.abs(percentageMoved) :
                             _widths[nextSectionIndex] - Math.abs(percentageMoved)
 
-                        const nextSectionWidth = nextSectionNewPercentage < 0 ? 0 : nextSectionNewPercentage > maxPercent ? maxPercent : nextSectionNewPercentage
-
+                        const nextSectionWidth = limitNumberWithinRange(nextSectionNewPercentage, 0, maxPercent)
                         _widths[nextSectionIndex] = nextSectionWidth
 
 
