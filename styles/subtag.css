@@ -54,8 +54,10 @@
   border-radius: 50px;
   background: #FF552B;
   color: #fff;
-  font-weight: 400;
 
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
   /* match the font styles */
   font-size: inherit;
   line-height: inherit;
@@ -69,7 +71,7 @@
 
 .react-tags__selected-tag:hover,
 .react-tags__selected-tag:focus {
-  border-color: #B1B1B1;
+  border-color:#FF552B;
 }
 
 .react-tags__search {

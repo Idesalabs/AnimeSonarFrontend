@@ -27,6 +27,8 @@ export default () => {
 
     function onAddition(subTag) {
         const subtags = [].concat(subTags, subTag);
+        // another way to do above:
+        // const subtags = [...subTags, subTag]
         setSubTags(subtags);
     }
 
@@ -39,6 +41,7 @@ export default () => {
                 onAddition={onAddition}
                 allowNew={true}
                 placeholderText= 'Suggest subtag'
+
             />
         </>
     )
