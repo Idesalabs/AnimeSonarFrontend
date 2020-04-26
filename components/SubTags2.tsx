@@ -1,37 +1,39 @@
-import Select, { components } from 'react-select';
+import { components } from 'react-select';
+import Select from 'react-select/async'
 import makeAnimated from 'react-select/animated';
 import { colors } from '../styles'
 import { MdClose } from "react-icons/md";
+import stall from '../functions/stall';
 
 export default () => {
-    
+
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry'},
+        { value: 'strawberry', label: 'Strawberry' },
         { value: 'vanilla', label: 'Vanilla' },
-      ];
+    ];
 
-      
-    const DropdownIndicator = (props) => { 
-          return (
+
+    const DropdownIndicator = (props) => {
+        return (
             <components.DropdownIndicator {...props}>
-            <div/>
-          </components.DropdownIndicator>
+                <div />
+            </components.DropdownIndicator>
         );
     };
-      
+
     const IndicatorSeparator = ({ props }) => {
-        return <div/>;
+        return <div />;
     }
 
     const MultiValueRemove = (props) => {
         return (
             <components.MultiValueRemove {...props}>
-                <MdClose/>
+                <MdClose />
             </components.MultiValueRemove>
         )
     }
-    
+
     const animated = makeAnimated();
 
     const styles = {
@@ -69,13 +71,18 @@ export default () => {
 
     return (
         <>
-        <Select 
-        options={options}
-        name='sweets'
-        isMulti
-        components={{
-            ...animated,DropdownIndicator,IndicatorSeparator,MultiValueRemove}}
-        styles={styles} />
+            <Select
+                options={options}
+                name='sweets'
+                isMulti
+                loadOptions={async (inputValue, callback) => {
+                    await stall()
+                    return callback(options)
+                }}
+                components={{
+                    ...animated, DropdownIndicator, MultiValueRemove
+                }}
+                styles={styles} />
         </>
     )
 }

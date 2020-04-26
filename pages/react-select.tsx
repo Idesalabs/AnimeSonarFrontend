@@ -5,14 +5,16 @@ import SubTags2 from '../components/SubTags2'
 
 export default () => (
     <Layout>
-        <Card>
-            <h1>Hey</h1>
-            <SearchBox2/>
+        <Card
+            showLid={false}
+        >
+            <h3>Search Anime</h3>
+            <SearchBox2 />
         </Card>
 
-        <Card>
-            <h1>Hey</h1>
-            <SubTags2/>
+        <Card showLid={false}>
+            <h3>Select some subtags</h3>
+            <SubTags2 />
         </Card>
     </Layout>
 )
