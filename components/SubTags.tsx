@@ -4,18 +4,17 @@ import ReactTags from 'react-tag-autocomplete'
 export default () => {
     const [subTags, setSubTags] = useState(
         [
-            { id: 1, name: "Apples" },
-            { id: 2, name: "Pears" }
+            { id: 1, name: "master-servant relationship" },
+            { id: 2, name: "original work" }
         ]
     )
 
 
     const [suggestions, setSuggestions] = useState(
         [
-            { id: 3, name: "Bananas" },
-            { id: 4, name: "Mangos" },
-            { id: 5, name: "Lemons" },
-            { id: 6, name: "Apricots" }
+            { id: 3, name: "MC with red hair" },
+            { id: 4, name: "OP protagonist" },
+            { id: 5, name: "jojo reference" }
         ]
     );
 
@@ -41,7 +40,8 @@ export default () => {
                 onDelete={onDelete}
                 onAddition={onAddition}
                 allowNew={true}
-                placeholderText='Suggest sub tag'
+                placeholderText= 'Suggest subtag'
+
             />
         </>
     )

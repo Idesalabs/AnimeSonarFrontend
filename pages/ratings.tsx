@@ -8,6 +8,7 @@ import { RatingsCard } from './../components/RatingsCard';
 import SearchBox from './../components/SearchBox';
 import Button from '../components/button';
 import { colors } from '../styles';
+import SubTags from '../components/SubTags';
 
 interface RatingsState {
     [key: string]: number
@@ -59,11 +60,7 @@ export default () => {
         Comedy: 0,
         SciFi: 0
     });
-    const [subTags, setSubTags] = useState([
-        'MC with Blue Hair',
-        'Tsundere Heroine',
-        'OP protagonist'
-    ])
+    
 
     return <>
         <Layout noSlant>
@@ -111,12 +108,7 @@ export default () => {
 
             <RatingsCard title='Suggest SubTags'>
                 <Section padding='10px 0'>
-                    {/* <SearchBox height='calc(20px + 1.5vmin)' width='calc(180px + 15vmin)' /> */}
-                    {<div style={{ display: 'flex', flexWrap: 'nowrap', borderBottom: `5px solid ${colors.primary}`, width: '100%'}}>
-                        { subTags.map(newSubTag => <SubTagItems
-                        subTag = {newSubTag}
-                        /> )}
-                    </div>}
+                    <SubTags />
                 </Section>
 
                 <Section justifyContent='flex-end' padding='10px 0 0' margin='10px 0 0'>
