@@ -3,8 +3,14 @@ import Select from 'react-select/async'
 import makeAnimated from 'react-select/animated';
 import { FaSearch } from 'react-icons/fa';
 import stall from '../functions/stall';
+import { colors } from '../styles';
 
-export default () => {
+interface Props {
+    onChange: (input: string) => any
+    initialData: Array<object>
+}
+
+export default (/* {onChange, initialData}: Props */) => {
 
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
@@ -21,13 +27,34 @@ export default () => {
         );
     };
 
+    const Placeholder = props => {
+        return <components.Placeholder {...props} />;
+      };
+
     const animated = makeAnimated();
 
     const styles = {
-        control: (currentStyles) => ({
+        control: (currentStyles, state) => ({
             ...currentStyles,
-            border: '2.5px solid #FF552B',
-        })
+            border: '1.5px solid #FF552B',
+            width: '100%',
+            maxWidth: 400,
+            transition: 'all 0.3s'
+        }),
+        dropdownIndicator: (currentStyles, state) => ({
+            ...currentStyles,
+            color: `${colors.primary}`,
+            transition: 'all 0.2s',
+            ':hover': {
+                opacity: 0.7
+            },
+        }),
+        placeholder: (currentStyles, state) => ({
+            ...currentStyles,
+            color: `${colors.primary}`,
+            opacity: 0.7,
+            fontWeight: 500,
+        }),
     }
 
     return (
@@ -39,11 +66,13 @@ export default () => {
                     return callback(options)
                 }}
                 name='sweets'
-
+                /* onInputChange= {onChange} */
                 components={{
                     ...animated,
-                    DropdownIndicator
+                    DropdownIndicator,
+                    Placeholder
                 }}
+                placeholder={'Search...'}
                 styles={styles} />
         </>
     )
