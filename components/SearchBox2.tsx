@@ -5,19 +5,20 @@ import { FaSearch } from 'react-icons/fa';
 import stall from '../functions/stall';
 import { colors } from '../styles';
 import { useState } from 'react'
+import { Anime } from 'types/typings';
 
 interface Props {
-    onChange: (input: string) => any
-    initialData: Array<object>
+    onSelectAnime: (selection: Anime) => any
+    // initialData: Array<object>
 }
 
-export default (/* {onChange, initialData}: Props */) => {
+export default ({ }: Props) => {
     const [search, setSearch] = useState('')
     const [selected, setSelected] = useState('')
 
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' }, 
+        { value: 'strawberry', label: 'Strawberry' },
         { value: 'vanilla', label: 'Vanilla' },
     ];
 
@@ -32,7 +33,7 @@ export default (/* {onChange, initialData}: Props */) => {
 
     const Placeholder = props => {
         return <components.Placeholder {...props} />;
-      };
+    };
 
     const animated = makeAnimated();
 
@@ -71,9 +72,9 @@ export default (/* {onChange, initialData}: Props */) => {
 
     return (
         <>
-            <pre>inputValue: "{search}"</pre> 
-            <pre>selectedValue: "{selected}"</pre> 
-           
+            <pre>inputValue: "{search}"</pre>
+            <pre>selectedValue: "{selected}"</pre>
+
             <Select
                 default
                 loadOptions={async (inputValue, callback) => {
@@ -81,8 +82,8 @@ export default (/* {onChange, initialData}: Props */) => {
                     return callback(options)
                 }}
                 name='sweets'
-                onInputChange= {handleInputChange}
-                onChange= {handleChange}
+                onInputChange={handleInputChange}
+                onChange={handleChange}
                 components={{
                     ...animated,
                     DropdownIndicator,

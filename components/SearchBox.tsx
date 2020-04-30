@@ -2,11 +2,11 @@ import { colors } from '../styles';
 import { useState } from 'react';
 import { IconContext } from "react-icons";
 import { FaSearch } from 'react-icons/fa';
-import { Tag } from 'types/typings';
+import { Tag, Anime } from 'types/typings';
 
 
 interface Props {
-    onSelectSuggestion: (tagNames: Tag[]) => any
+    onSelectSuggestion: (tagNames: Anime) => any
     height: string
     width: string
 }
