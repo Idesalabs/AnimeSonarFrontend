@@ -4,6 +4,7 @@ import makeAnimated from 'react-select/animated';
 import { FaSearch } from 'react-icons/fa';
 import stall from '../functions/stall';
 import { colors } from '../styles';
+import { useState } from 'react'
 
 interface Props {
     onChange: (input: string) => any
@@ -11,10 +12,12 @@ interface Props {
 }
 
 export default (/* {onChange, initialData}: Props */) => {
+    const [search, setSearch] = useState('')
+    const [selected, setSelected] = useState('')
 
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'strawberry', label: 'Strawberry' }, 
         { value: 'vanilla', label: 'Vanilla' },
     ];
 
@@ -57,8 +60,20 @@ export default (/* {onChange, initialData}: Props */) => {
         }),
     }
 
+    const handleInputChange = (inputValue: string) => {
+        setSearch(inputValue);
+        return inputValue;
+    }
+
+    const handleChange = (newValue: any) => {
+        setSelected(newValue);
+    }
+
     return (
         <>
+            <pre>inputValue: "{search}"</pre> 
+            <pre>selectedValue: "{selected}"</pre> 
+           
             <Select
                 default
                 loadOptions={async (inputValue, callback) => {
@@ -66,7 +81,8 @@ export default (/* {onChange, initialData}: Props */) => {
                     return callback(options)
                 }}
                 name='sweets'
-                /* onInputChange= {onChange} */
+                onInputChange= {handleInputChange}
+                onChange= {handleChange}
                 components={{
                     ...animated,
                     DropdownIndicator,
