@@ -60,6 +60,7 @@ export default () => {
         Comedy: 0,
         SciFi: 0
     });
+    const [search, setSearch] = useState('');
     
 
     return <>
@@ -68,14 +69,14 @@ export default () => {
 
             <RatingsCard title='What was the last anime you watched?'>
                 <Section padding='10px 0'>
-                    <SearchBox onSelectSuggestion={(tags) => {
+                    {/* <SearchBox onSelectSuggestion={(tags) => {
                         tags.forEach(tag => {
                             setRating({
                                 ...ratings,
                                 [tag.name]: 0
                             })
                         })
-                    }} height='calc(20px + 1.5vmin)' width='calc(110px + 15vmin)' />
+                    }} height='calc(20px + 1.5vmin)' width='calc(110px + 15vmin)' /> */}
                 </Section>
 
                 <Section justifyContent='flex-end' padding='10px 0 0' margin='10px 0 0'>

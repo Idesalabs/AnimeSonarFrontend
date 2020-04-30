@@ -12,7 +12,7 @@ interface Props {
 }
 
 const SearchBox = (props: Props) => {
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState(''); 
 
 
     // props.onSelectSuggestion([

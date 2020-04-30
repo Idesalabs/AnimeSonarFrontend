@@ -1,5 +1,5 @@
 import { components } from 'react-select';
-import Select from 'react-select/async'
+import Select from 'react-select/async-creatable'
 import makeAnimated from 'react-select/animated';
 import { colors } from '../styles'
 import { MdClose } from "react-icons/md";
