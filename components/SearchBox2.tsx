@@ -12,7 +12,7 @@ interface Props {
     // initialData: Array<object>
 }
 
-export default ({ }: Props) => {
+export default () => {
     const [search, setSearch] = useState('')
     const [selected, setSelected] = useState('')
 
