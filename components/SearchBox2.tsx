@@ -5,11 +5,25 @@ import { FaSearch } from 'react-icons/fa';
 import stall from '../functions/stall';
 import { colors } from '../styles';
 import { useState } from 'react'
-import { Anime } from 'types/typings';
+import { Anime,SubTag,Tag }from 'types/typings';
+
+
 
 interface Props {
     onSelectAnime: (selection: Anime) => any
     // initialData: Array<object>
+}
+
+interface nameExists {
+    name: string
+}
+
+interface ReturnAnime {
+    label: string
+    description: string
+    tags: Tag[]
+    subTags: SubTag[]
+    id: string
 }
 
 export default () => {
@@ -65,6 +79,14 @@ export default () => {
     const handleChange = (newValue: any) => {
         setSelected(newValue);
     }
+
+    const renameOptions = (option: Array<Anime>): Array<ReturnAnime> => {
+
+        return option.map(({title, ...obj})=> ({
+            label: title,
+            ...obj
+        }))
+      } 
 
     return (
         <>
