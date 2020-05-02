@@ -31,10 +31,6 @@ export default () => {
         );
     };
 
-    const Placeholder = props => {
-        return <components.Placeholder {...props} />;
-    };
-
     const animated = makeAnimated();
 
     const styles = {
@@ -72,8 +68,6 @@ export default () => {
 
     return (
         <>
-            <pre>inputValue: "{search}"</pre>
-            <pre>selectedValue: "{selected}"</pre>
 
             <Select
                 default
@@ -87,7 +81,6 @@ export default () => {
                 components={{
                     ...animated,
                     DropdownIndicator,
-                    Placeholder
                 }}
                 placeholder={'Search...'}
                 styles={styles} />
