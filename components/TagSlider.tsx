@@ -30,7 +30,6 @@ const nearestN = (N: number, number: number) => Math.ceil(number / N) * N
 interface TagSectionProps {
     name: string
     color: string
-    noSliderButton: boolean
     width: number
     onSliderSelect: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
@@ -39,7 +38,7 @@ const limitNumberWithinRange = (value: number, min: number, max: number): number
     return Math.min(Math.max(value, min), max)
 }
 
-const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagSectionProps) => {
+const TagSection = ({ name, color, width, onSliderSelect }: TagSectionProps) => {
 
 
     return <div
@@ -50,21 +49,25 @@ const TagSection = ({ name, color, noSliderButton, width, onSliderSelect }: TagS
 
         {/* <span style={{ ...styles.tagText, fontSize: 12 }}>{nearestN(1, width) + '%'}</span> */}
 
-        {!noSliderButton && < div
+        < div
             style={styles.sliderButton}
             onPointerDown={onSliderSelect}
-
+            className='slider-button'
         >
             <img src='/slider-arrows.svg' height={'30%'} />
         </div>
-        }
+
         <style jsx>
             {`
+         
             .tag:first-of-type{
                 border-radius: 50px 0px 0px 50px;
             }
             .tag:last-of-type {
                 border-radius: 0px 50px 50px 0px;
+            }
+            .tag:last-of-type>.slider-button {
+                display:none !important;
             }
             `}
         </style>
@@ -90,7 +93,6 @@ export default () => {
             {tags.map((tag, index) => <TagSection
                 width={widths[index]}
                 key={index}
-                noSliderButton={index === tags.length - 1}
                 name={tag.name}
                 onSliderSelect={(e) => {
                     e.preventDefault()
