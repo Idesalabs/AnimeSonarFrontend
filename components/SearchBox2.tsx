@@ -26,10 +26,8 @@ interface ReturnAnime {
     id: string
 }
 
-export default () => {
-    const [search, setSearch] = useState('')
-    const [selected, setSelected] = useState('')
-
+export default ({onSelectAnime}:Props) => {
+    
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
         { value: 'strawberry', label: 'Strawberry' },
@@ -71,15 +69,6 @@ export default () => {
         }),
     }
 
-    const handleInputChange = (inputValue: string) => {
-        setSearch(inputValue);
-        return inputValue;
-    }
-
-    const handleChange = (newValue: any) => {
-        setSelected(newValue);
-    }
-
     const renameOptions = (option: Array<Anime>): Array<ReturnAnime> => {
 
         return option.map(({title, ...obj})=> ({
@@ -90,7 +79,6 @@ export default () => {
 
     return (
         <>
-
             <Select
                 default
                 loadOptions={async (inputValue, callback) => {
@@ -98,8 +86,7 @@ export default () => {
                     return callback(options)
                 }}
                 name='sweets'
-                onInputChange={handleInputChange}
-                onChange={handleChange}
+                onChange={onSelectAnime}
                 components={{
                     ...animated,
                     DropdownIndicator,
