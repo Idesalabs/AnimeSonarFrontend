@@ -4,30 +4,13 @@ import Layout from '../components/Layout'
 import Section from '../components/Section'
 import BottomPadding from '../components/BottomPadding'
 import { RatingsCard } from './../components/RatingsCard';
-import SearchBox from './../components/SearchBox';
 import Button from '../components/button';
 import { colors } from '../styles';
 import SubTags from '../components/SubTags';
-import SearchAnimeSection from 'sections/ratings/SearchAnimeSection';
-import { Anime } from 'types/typings';
-import RatingsSection from 'sections/ratings/RatingsSection'
+import SearchAnimeSection from '../sections/ratings/SearchAnimeSection';
+import { Anime } from '../types/typings';
+import RatingsSection from '../sections/ratings/RatingsSection'
 
-
-
-
-
-const SubTagItems = ({ subTag }) => {
-    return <>
-        <p style={{
-            backgroundColor: colors.primary,
-            color: '#fff',
-            margin: '6px 3px',
-            padding: '5px 15px',
-            borderRadius: 50,
-            fontWeight: 500,
-        }}>{subTag}</p>
-    </>
-}
 
 interface RatingsState {
     selectedAnime?: Anime
@@ -37,9 +20,8 @@ interface RatingsState {
 }
 
 export default () => {
-
-    const [ratingState, setRatingState] = useState<RatingsState>({
-        selectedAnime: null
+    const [ratingPageState, setRatingPageState] = useState<RatingsState>({
+        selectedAnime: null,
     })
 
     return <>
@@ -49,9 +31,8 @@ export default () => {
             <RatingsCard title='What was the last anime you watched?'>
                 <SearchAnimeSection
                     onChange={(anime) => {
-                        setRatingState({
-
-                            ...ratingState,
+                        setRatingPageState({
+                            ...ratingPageState,
                             selectedAnime: anime,
                         })
                     }}
@@ -62,18 +43,18 @@ export default () => {
                 </Section>
             </RatingsCard>
 
-            {ratingState.selectedAnime && <RatingsCard title='Ratings'> {/* if selectedAnime is true show the ratings card*/}
+            {ratingPageState.selectedAnime && <RatingsCard title='Ratings'> {/* if selectedAnime is true show the ratings card*/}
                 <RatingsSection
                     onChange={({ tagId, tagValue, tagName }) => {
-                        setRatingState({
-                            ...ratingState,
+                        setRatingPageState({
+                            ...ratingPageState,
                             selectedAnimeRatings: {
-                                ...ratingState.selectedAnimeRatings,
+                                ...ratingPageState.selectedAnimeRatings,
                                 [tagName]: tagValue
                             }
                         })
                     }}
-                    tags={ratingState.selectedAnime.tags}
+                    tags={ratingPageState.selectedAnime.tags}
 
                 />
                 <Section justifyContent='flex-end' padding='10px 0 0' margin='10px 0 0'>

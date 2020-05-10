@@ -1,5 +1,5 @@
-import Section from '@components/Section'
-import { Anime } from 'types/typings'
+import Section from '../../components/Section'
+import { Anime } from '../../types/typings'
 import StarRatings from 'react-star-ratings';
 
 interface TagRating {
