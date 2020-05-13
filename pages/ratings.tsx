@@ -13,15 +13,24 @@ import RatingsSection from '../sections/ratings/RatingsSection'
 
 
 interface RatingsState {
-    selectedAnime?: Anime
-    selectedAnimeRatings?: {
+    selectedAnime: Anime
+    selectedAnimeRatings: {
         [key: string]: number
     }
 }
 
 export default () => {
     const [ratingPageState, setRatingPageState] = useState<RatingsState>({
-        selectedAnime: null,
+        selectedAnime: {
+            description:'',
+            id:'',
+            subTags:[],
+            tags:[],
+            title:''
+        },
+        selectedAnimeRatings:{
+            
+        }
     })
 
     return <>
@@ -34,6 +43,7 @@ export default () => {
                         setRatingPageState({
                             ...ratingPageState,
                             selectedAnime: anime,
+
                         })
                     }}
                 />
@@ -43,7 +53,7 @@ export default () => {
                 </Section>
             </RatingsCard>
 
-            {ratingPageState.selectedAnime && <RatingsCard title='Ratings'> {/* if selectedAnime is true show the ratings card*/}
+            {!!ratingPageState.selectedAnime.tags.length && <RatingsCard title='Ratings'> {/* if selectedAnime is true show the ratings card*/}
                 <RatingsSection
                     onChange={({ tagId, tagValue, tagName }) => {
                         setRatingPageState({
@@ -55,6 +65,7 @@ export default () => {
                         })
                     }}
                     tags={ratingPageState.selectedAnime.tags}
+                    rating={ratingPageState.selectedAnimeRatings}
 
                 />
                 <Section justifyContent='flex-end' padding='10px 0 0' margin='10px 0 0'>

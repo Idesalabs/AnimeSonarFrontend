@@ -26,140 +26,6 @@ interface ReturnAnime {
     id: string
 }
 
-/* [
-    {
-    title: "Naruto",
-    id: "087a0jnawx",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nulla lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
-    tags: [
-        {
-            averageRatings: null,
-            name: "Action",
-            id: "6kzv2qvya"
-        },
-        {
-            averageRatings: null,
-            name: "Adventure",
-            id: "12ozmtviz"
-        },
-        {
-            averageRatings: null,
-            name: "Comedy",
-            id: "onfl84664"
-        },
-        {
-            averageRatings: null,
-            name: "Super Power",
-            id: "4us0mk0n5"
-        }
-    ],
-    subTags: [
-        {
-            name: ''
-            id: ''
-        }
-    ]
-},
-{
-    title: "Parasyte: the Maxim",
-    id: "py7y3qb9nb",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nulla lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
-    tags: [
-        {
-            averageRatings: null,
-            name: "Action",
-            id: "6kzv2qvya"
-        },
-        {
-            averageRatings: null,
-            name: "Sci-fi",
-            id: "3fbr9kshs"
-        },
-        {
-            averageRatings: null,
-            name: "Horror",
-            id: "5t6cb8z1i"
-        },
-        {
-            averageRatings: null,
-            name: "Psychological",
-            id: "tqfkiqtok"
-        }
-    ],
-    subTags: [
-        {
-            name: ''
-            id: ''
-        }
-    ]
-},
-{
-    title: "Kanokon",
-    id: "nz9iii4atw",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nulla lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
-    tags: [
-        {
-            averageRatings: null,
-            name: "Comedy",
-            id: "onfl84664"
-        },
-        {
-            averageRatings: null,
-            name: "Ecchi",
-            id: "i6i88erx4"
-        },
-        {
-            averageRatings: null,
-            name: "Harem",
-            id: "edj2jiiju"
-        },
-        {
-            averageRatings: null,
-            name: "Romance",
-            id: "4u6jg6bdz"
-        }
-    ],
-    subTags: [
-        {
-            name: ''
-            id: ''
-        }
-    ]
-},
-{
-    title: "Log Horizon",
-    id: "p4h7ibnihh",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nulla lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
-    tags: [
-        {
-            averageRatings: null,
-            name: "Action",
-            id: "6kzv2qvya"
-        },
-        {
-            averageRatings: null,
-            name: "Game",
-            id: "o9x62echd"
-        },
-        {
-            averageRatings: null,
-            name: "Adventure",
-            id: "12ozmtviz"
-        },
-        {
-            averageRatings: null,
-            name: "Magic",
-            id: "er4nlzcor"
-        }
-    ],
-    subTags: [
-        {
-            name: ''
-            id: ''
-        }
-    ]
-}
-] */
 
 export default ({onSelectAnime}:Props) => {
     
@@ -167,25 +33,25 @@ export default ({onSelectAnime}:Props) => {
         {
         title: "Naruto",
         id: "087a0jnawx",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nulla lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum 0a lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
         tags: [
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Action",
                 id: "6kzv2qvya"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Adventure",
                 id: "12ozmtviz"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Comedy",
                 id: "onfl84664"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Super Power",
                 id: "4us0mk0n5"
             }
@@ -200,25 +66,25 @@ export default ({onSelectAnime}:Props) => {
     {
         title: "Parasyte: the Maxim",
         id: "py7y3qb9nb",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nulla lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum 0a lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
         tags: [
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Action",
                 id: "6kzv2qvya"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Sci-fi",
                 id: "3fbr9kshs"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Horror",
                 id: "5t6cb8z1i"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Psychological",
                 id: "tqfkiqtok"
             }
@@ -233,25 +99,25 @@ export default ({onSelectAnime}:Props) => {
     {
         title: "Kanokon",
         id: "nz9iii4atw",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nulla lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum 0a lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
         tags: [
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Comedy",
                 id: "onfl84664"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Ecchi",
                 id: "i6i88erx4"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Harem",
                 id: "edj2jiiju"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Romance",
                 id: "4u6jg6bdz"
             }
@@ -266,25 +132,25 @@ export default ({onSelectAnime}:Props) => {
     {
         title: "Log Horizon",
         id: "p4h7ibnihh",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum nulla lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum 0a lacinia, finibus diam placerat, tincidunt metus. Suspendisse potenti. Morbi eu lobortis urna. Interdum et.",
         tags: [
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Action",
                 id: "6kzv2qvya"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Game",
                 id: "o9x62echd"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Adventure",
                 id: "12ozmtviz"
             },
             {
-                averageRatings: null,
+                averageRatings: 0,
                 name: "Magic",
                 id: "er4nlzcor"
             }
