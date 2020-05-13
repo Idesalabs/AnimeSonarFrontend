@@ -9,7 +9,6 @@ export default () => (
             showLid={false}
         >
             <h3>Search Anime</h3>
-            <SearchBox2 />
         </Card>
 
         <Card showLid={false}>

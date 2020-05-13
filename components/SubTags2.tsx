@@ -4,15 +4,14 @@ import makeAnimated from 'react-select/animated';
 import { colors } from '../styles'
 import { MdClose } from "react-icons/md";
 import stall from '../functions/stall';
+import { Anime,SubTag,Tag }from 'types/typings';
 
-export default () => {
+interface ReturnSubTag {
+    id: string
+    label: string
+}
 
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' },
-    ];
-
+export default ( {defaultOptions}) => {
 
     const DropdownIndicator = (props) => {
         return (
@@ -22,9 +21,11 @@ export default () => {
         );
     };
 
-    const IndicatorSeparator = ({ props }) => {
+    {/* const IndicatorSeparator = ({ props }) => {    
         return <div />;
-    }
+    } */}
+    /* Above code is to remove the line at the box-edge */
+    
 
     const MultiValueRemove = (props) => {
         return (
@@ -69,18 +70,27 @@ export default () => {
         })
     }
 
+    const renameOptions = (option: Array<SubTag>): Array<ReturnSubTag> => {
+
+        return option.map(({name, ...obj})=> ({
+            label: name,
+            ...obj
+        }))
+      } 
+
     return (
         <>
             <Select
-                options={options}
                 name='sweets'
                 isMulti
                 loadOptions={async (inputValue, callback) => {
                     await stall()
-                    return callback(options)
+                    return callback(renameOptions(defaultOptions))
                 }}
                 components={{
-                    ...animated, DropdownIndicator, MultiValueRemove
+                    ...animated,
+                    DropdownIndicator,
+                    MultiValueRemove
                 }}
                 styles={styles} />
         </>

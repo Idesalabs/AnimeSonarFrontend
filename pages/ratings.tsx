@@ -6,7 +6,7 @@ import BottomPadding from '../components/BottomPadding'
 import { RatingsCard } from './../components/RatingsCard';
 import Button from '../components/button';
 import { colors } from '../styles';
-import SubTags from '../components/SubTags';
+import SubTags2 from '../components/SubTags2';
 import SearchAnimeSection from '../sections/ratings/SearchAnimeSection';
 import { Anime } from '../types/typings';
 import RatingsSection from '../sections/ratings/RatingsSection'
@@ -74,15 +74,16 @@ export default () => {
             </RatingsCard>
             }
 
-            <RatingsCard title='Suggest SubTags'>
-                <Section padding='10px 0'>
-                    <SubTags />
-                </Section>
+            {!!ratingPageState.selectedAnime.tags.length && <RatingsCard title='Suggest SubTags'>
+                    <SubTags2
+                    defaultOptions= {ratingPageState.selectedAnime.subTags}
+                    />
 
                 <Section justifyContent='flex-end' padding='10px 0 0' margin='10px 0 0'>
                     <Button text='NEXT' borderRadius='50px' padding='5px 0' width='calc(60px + 10vmin)' fontSize='calc(7px + .8vmin)' />
                 </Section>
             </RatingsCard>
+            }
 
             <BottomPadding />
         </Layout>

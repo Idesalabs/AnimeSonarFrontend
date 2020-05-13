@@ -4,7 +4,6 @@ import makeAnimated from 'react-select/animated';
 import { FaSearch } from 'react-icons/fa';
 import stall from '../functions/stall';
 import { colors } from '../styles';
-import { useState } from 'react'
 import { Anime,SubTag,Tag }from 'types/typings';
 
 
@@ -14,9 +13,6 @@ interface Props {
     // initialData: Array<object>
 }
 
-interface nameExists {
-    name: string
-}
 
 interface ReturnAnime {
     label: string
@@ -58,9 +54,21 @@ export default ({onSelectAnime}:Props) => {
         ],
         subTags: [
             {
-                name: '',
-                id: ''
-            }
+                name: 'ninja',
+                id: '#########001'
+            },
+            {
+                name: 'power system',
+                id: '#########002'
+            },
+            {
+                name: 'fox spirit',
+                id: '#########003'
+            },
+            {
+                name: 'shonen jump',
+                id: '#########004'
+            },
         ]
     },
     {
@@ -91,9 +99,17 @@ export default ({onSelectAnime}:Props) => {
         ],
         subTags: [
             {
-                name: '',
-                id: ''
-            }
+                name: 'body snatcher',
+                id: '#########005'
+            },
+            {
+                name: 'morphing',
+                id: '#########006'
+            },
+            {
+                name: 'airhead MC',
+                id: '#########007'
+            },
         ]
     },
     {
@@ -124,9 +140,17 @@ export default ({onSelectAnime}:Props) => {
         ],
         subTags: [
             {
-                name: '',
-                id: ''
-            }
+                name: 'fox-spirit',
+                id: '#########008'
+            },
+            {
+                name: 'youkai',
+                id: '#########009'
+            },
+            {
+                name: 'light-novel adaptation',
+                id: '#########010'
+            },
         ]
     },
     {
@@ -157,9 +181,13 @@ export default ({onSelectAnime}:Props) => {
         ],
         subTags: [
             {
-                name: '',
-                id: ''
-            }
+                name: 'trapped in a game',
+                id: '#########011'
+            },
+            {
+                name: 'MC with glasses',
+                id: '#########012'
+            },
         ]
     }
     ];
@@ -176,14 +204,14 @@ export default ({onSelectAnime}:Props) => {
     const animated = makeAnimated();
 
     const styles = {
-        control: (currentStyles, state) => ({
+        control: (currentStyles) => ({
             ...currentStyles,
             border: '1.5px solid #FF552B',
             width: '100%',
             maxWidth: 400,
             transition: 'all 0.3s'
         }),
-        dropdownIndicator: (currentStyles, state) => ({
+        dropdownIndicator: (currentStyles) => ({
             ...currentStyles,
             color: `${colors.primary}`,
             transition: 'all 0.2s',
@@ -191,7 +219,7 @@ export default ({onSelectAnime}:Props) => {
                 opacity: 0.7
             },
         }),
-        placeholder: (currentStyles, state) => ({
+        placeholder: (currentStyles) => ({
             ...currentStyles,
             color: `${colors.primary}`,
             opacity: 0.7,
