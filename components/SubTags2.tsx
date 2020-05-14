@@ -5,13 +5,14 @@ import { colors } from '../styles'
 import { MdClose } from "react-icons/md";
 import stall from '../functions/stall';
 import { Anime,SubTag,Tag }from 'types/typings';
+import { v4 as uuidv4 } from 'uuid';
 
 interface ReturnSubTag {
     id: string
     label: string
 }
 
-export default ( {defaultOptions}) => {
+export default ( {defaultOptions, onCreate}) => {
 
     const DropdownIndicator = (props) => {
         return (
@@ -76,7 +77,17 @@ export default ( {defaultOptions}) => {
             label: name,
             ...obj
         }))
-      } 
+    }
+
+    const createOption = (name: string) => ({
+        name,
+        id: uuidv4()
+    })
+    
+    const handleCreate = (input) => {
+        const newSubTag = createOption(input);
+
+    }
 
     return (
         <>
@@ -92,6 +103,7 @@ export default ( {defaultOptions}) => {
                     DropdownIndicator,
                     MultiValueRemove
                 }}
+                onCreateOption={onCreate}
                 styles={styles} />
         </>
     )

@@ -9,7 +9,8 @@ import { colors } from '../styles';
 import SubTags2 from '../components/SubTags2';
 import SearchAnimeSection from '../sections/ratings/SearchAnimeSection';
 import { Anime } from '../types/typings';
-import RatingsSection from '../sections/ratings/RatingsSection'
+import RatingsSection from '../sections/ratings/RatingsSection';
+import { v4 as uuidv4 } from 'uuid';
 
 
 interface RatingsState {
@@ -33,6 +34,18 @@ export default () => {
         }
     })
 
+    const createOption = (name: string) => ({
+        name,
+        id: uuidv4()
+    })
+    
+    const handleCreate = (input) => {
+        const newSubTag = createOption(input);
+        setRatingPageState({
+            ...ratingPageState
+        })
+    }
+
     return <>
         <Layout noSlant>
 
@@ -47,10 +60,6 @@ export default () => {
                         })
                     }}
                 />
-
-                <Section justifyContent='flex-end' padding='10px 0 0' margin='10px 0 0'>
-                    <Button text='NEXT' borderRadius='50px' padding='5px 0' width='calc(60px + 10vmin)' fontSize='calc(7px + .8vmin)' />
-                </Section>
             </RatingsCard>
 
             {!!ratingPageState.selectedAnime.tags.length && <RatingsCard title='Ratings'> {/* if selectedAnime is true show the ratings card*/}
@@ -68,16 +77,25 @@ export default () => {
                     rating={ratingPageState.selectedAnimeRatings}
 
                 />
-                <Section justifyContent='flex-end' padding='10px 0 0' margin='10px 0 0'>
-                    <Button text='NEXT' borderRadius='50px' padding='5px 0' width='calc(60px + 10vmin)' fontSize='calc(7px + .8vmin)' />
-                </Section>
             </RatingsCard>
             }
 
             {!!ratingPageState.selectedAnime.tags.length && <RatingsCard title='Suggest SubTags'>
                     <SubTags2
                     defaultOptions= {ratingPageState.selectedAnime.subTags}
-                    />
+                    onCreate={(input) => {
+                        const newSubTag = createOption(input);
+                        setRatingPageState({
+                            ...ratingPageState,
+                            selectedAnime: {
+                                ...ratingPageState.selectedAnime,
+                                subTags: [
+                                    ...ratingPageState.selectedAnime.subTags,
+                                    newSubTag
+                                ]
+                            }
+                        })}
+                    }/>
 
                 <Section justifyContent='flex-end' padding='10px 0 0' margin='10px 0 0'>
                     <Button text='NEXT' borderRadius='50px' padding='5px 0' width='calc(60px + 10vmin)' fontSize='calc(7px + .8vmin)' />
