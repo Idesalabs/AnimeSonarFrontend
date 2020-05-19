@@ -36,15 +36,8 @@ export default () => {
 
     const createOption = (name: string) => ({
         name,
-        id: uuidv4()
+        id: name.toLowerCase().replace(/\s+/g, '-')
     })
-    
-    const handleCreate = (input) => {
-        const newSubTag = createOption(input);
-        setRatingPageState({
-            ...ratingPageState
-        })
-    }
 
     return <>
         <Layout noSlant>
@@ -82,7 +75,7 @@ export default () => {
 
             {!!ratingPageState.selectedAnime.tags.length && <RatingsCard title='Suggest SubTags'>
                     <SubTags2
-                    defaultOptions= {ratingPageState.selectedAnime.subTags}
+                    initialTags= {ratingPageState.selectedAnime.subTags}
                     onCreate={(input) => {
                         const newSubTag = createOption(input);
                         setRatingPageState({
@@ -95,7 +88,8 @@ export default () => {
                                 ]
                             }
                         })}
-                    }/>
+                    }
+                    />
 
                 <Section justifyContent='flex-end' padding='10px 0 0' margin='10px 0 0'>
                     <Button text='NEXT' borderRadius='50px' padding='5px 0' width='calc(60px + 10vmin)' fontSize='calc(7px + .8vmin)' />

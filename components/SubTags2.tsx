@@ -8,11 +8,18 @@ import { Anime,SubTag,Tag }from 'types/typings';
 import { v4 as uuidv4 } from 'uuid';
 
 interface ReturnSubTag {
-    id: string
+    value: string
     label: string
 }
 
-export default ( {defaultOptions, onCreate}) => {
+interface Props {
+  
+    onCreate:(tagString:string)=>any
+    onChange?:(tags:ReturnSubTag[])=>any
+    initialTags:SubTag[]
+}
+
+export default ( {onCreate,initialTags}:Props) => {
 
     const DropdownIndicator = (props) => {
         return (
@@ -73,20 +80,11 @@ export default ( {defaultOptions, onCreate}) => {
 
     const renameOptions = (option: Array<SubTag>): Array<ReturnSubTag> => {
 
-        return option.map(({name, ...obj})=> ({
+        return option.map(({name, id, ...obj})=> ({
             label: name,
+            value: id,
             ...obj
         }))
-    }
-
-    const createOption = (name: string) => ({
-        name,
-        id: uuidv4()
-    })
-    
-    const handleCreate = (input) => {
-        const newSubTag = createOption(input);
-
     }
 
     return (
@@ -96,7 +94,7 @@ export default ( {defaultOptions, onCreate}) => {
                 isMulti
                 loadOptions={async (inputValue, callback) => {
                     await stall()
-                    return callback(renameOptions(defaultOptions))
+                    return callback(renameOptions(initialTags))
                 }}
                 components={{
                     ...animated,

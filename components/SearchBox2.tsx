@@ -55,11 +55,11 @@ export default ({onSelectAnime}:Props) => {
         subTags: [
             {
                 name: 'ninja',
-                id: '#########001'
+                id: 'ninja'
             },
             {
                 name: 'power system',
-                id: '#########002'
+                id: 'power-system'
             },
             {
                 name: 'fox spirit',
