@@ -1,4 +1,4 @@
-async function stall(stallTime = 3000) {
+async function stall(stallTime = 500) {
     await new Promise(resolve => setTimeout(resolve, stallTime));
 }
 
