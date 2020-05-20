@@ -56,11 +56,11 @@ export default () => {
                 />
             </RatingsCard>
 
-            <RatingsCard title='How many episodes did you watch?'>
+            {!!ratingPageState.selectedAnime.tags.length && <RatingsCard title='How many episodes did you watch?'>
             <Section padding='10px 0 0' margin='10px 0 0'>
                 <EpisodeCount/>
             </Section> 
-            </RatingsCard>
+            </RatingsCard>}
 
             {!!ratingPageState.selectedAnime.tags.length && <RatingsCard title='Ratings'> {/* if selectedAnime is true show the ratings card*/}
                 <RatingsSection
