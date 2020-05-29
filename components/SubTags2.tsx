@@ -5,7 +5,6 @@ import { colors } from '../styles'
 import { MdClose } from "react-icons/md";
 import stall from '../functions/stall';
 import { Anime,SubTag,Tag }from 'types/typings';
-import { v4 as uuidv4 } from 'uuid';
 
 interface ReturnSubTag {
     value: string
@@ -14,12 +13,12 @@ interface ReturnSubTag {
 
 interface Props {
   
-    onCreate:(tagString:string)=>any
+    onCreate?:(tagString:string)=>any
     onChange?:(tags:ReturnSubTag[])=>any
     initialTags:SubTag[]
 }
 
-export default ( {onCreate,initialTags}:Props) => {
+export default ( {onCreate,initialTags,onChange}:Props) => {
 
     const DropdownIndicator = (props) => {
         return (
@@ -102,6 +101,7 @@ export default ( {onCreate,initialTags}:Props) => {
                     MultiValueRemove
                 }}
                 onCreateOption={onCreate}
+                onChange={onChange}
                 styles={styles} />
         </>
     )

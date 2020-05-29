@@ -10,7 +10,6 @@ import SubTags2 from '../components/SubTags2';
 import SearchAnimeSection from '../sections/ratings/SearchAnimeSection';
 import { Anime } from '../types/typings';
 import RatingsSection from '../sections/ratings/RatingsSection';
-import { v4 as uuidv4 } from 'uuid';
 import EpisodeCount from '../components/EpisodeCount'
 
 
