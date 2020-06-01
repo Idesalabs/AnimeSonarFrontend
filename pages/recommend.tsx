@@ -5,6 +5,7 @@ import BlacklistTags from '../components/BlacklistTags';
 import SubTags from '../components/SubTags';
 import { useState } from 'react'
 import { SubTag,Tag,ReturnTag,ReturnSubTag } from '../types/typings';
+import MoodSelector from '../components/MoodSelector';
 
 interface RecommendState {
     selectedTags: Tag[]
@@ -155,6 +156,10 @@ export default () => {
                     }
                     />
 
+        </RatingsCard>
+
+        <RatingsCard title='How are you Feeling?'>
+            <MoodSelector/>
         </RatingsCard>
     </Layout>
 }
