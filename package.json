@@ -34,7 +34,8 @@
         "react-share": "^4.0.1",
         "react-star-ratings": "^2.3.0",
         "react-tag-autocomplete": "^5.12.1",
-        "stein-js-client": "0.0.2"
+        "stein-js-client": "0.0.2",
+        "uuid": "^8.0.0"
     },
     "devDependencies": {
         "@types/node": "^13.1.8",

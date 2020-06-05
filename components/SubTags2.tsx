@@ -4,15 +4,21 @@ import makeAnimated from 'react-select/animated';
 import { colors } from '../styles'
 import { MdClose } from "react-icons/md";
 import stall from '../functions/stall';
+import { Anime,SubTag,Tag }from 'types/typings';
 
-export default () => {
+interface ReturnSubTag {
+    value: string
+    label: string
+}
 
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' },
-    ];
+interface Props {
+  
+    onCreate?:(tagString:string)=>any
+    onChange?:(tags:ReturnSubTag[])=>any
+    initialTags:SubTag[]
+}
 
+export default ( {onCreate,initialTags,onChange}:Props) => {
 
     const DropdownIndicator = (props) => {
         return (
@@ -22,9 +28,11 @@ export default () => {
         );
     };
 
-    const IndicatorSeparator = ({ props }) => {
+    {/* const IndicatorSeparator = ({ props }) => {    
         return <div />;
-    }
+    } */}
+    /* Above code is to remove the line at the box-edge */
+    
 
     const MultiValueRemove = (props) => {
         return (
@@ -69,19 +77,31 @@ export default () => {
         })
     }
 
+    const renameOptions = (option: Array<SubTag>): Array<ReturnSubTag> => {
+
+        return option.map(({name, id, ...obj})=> ({
+            label: name,
+            value: id,
+            ...obj
+        }))
+    }
+
     return (
         <>
             <Select
-                options={options}
                 name='sweets'
                 isMulti
                 loadOptions={async (inputValue, callback) => {
                     await stall()
-                    return callback(options)
+                    return callback(renameOptions(initialTags))
                 }}
                 components={{
-                    ...animated, DropdownIndicator, MultiValueRemove
+                    ...animated,
+                    DropdownIndicator,
+                    MultiValueRemove
                 }}
+                onCreateOption={onCreate}
+                onChange={onChange}
                 styles={styles} />
         </>
     )

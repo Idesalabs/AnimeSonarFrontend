@@ -11,6 +11,9 @@ interface TagRating {
 interface Props {
     tags: Anime['tags']
     onChange: (value: TagRating) => any
+    rating: {
+        [key: string]: number
+    }
 }
 
 interface RatingItemProps {
@@ -38,12 +41,12 @@ const RatingItem = ({ rating, onChangeRating, name }: RatingItemProps) => {
 }
 
 
-export default ({ tags, onChange }: Props) => {
+export default ({ tags, onChange, rating }: Props) => {
 
     return <Section padding='10px 0'>
         {<ul style={{ paddingLeft: 0 }}>
             {
-                tags.map(({ averageRatings, id, name }) => <RatingItem
+                tags.map(({ averageRatings, name, id }) => <RatingItem
                     name={name}
                     onChangeRating={(value) => {
                         onChange({
@@ -54,7 +57,7 @@ export default ({ tags, onChange }: Props) => {
 
 
                     }}
-                    rating={averageRatings}
+                    rating={rating[name]}
                     key={name}
                 />)
             }

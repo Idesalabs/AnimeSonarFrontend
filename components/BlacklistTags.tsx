@@ -6,7 +6,8 @@ import { MdClose } from "react-icons/md";
 import stall from '../functions/stall';
 import { Anime,SubTag,Tag }from 'types/typings';
 
-interface ReturnSubTag {
+interface ReturnTag {
+    averageRatings: number
     value: string
     label: string
 }
@@ -14,8 +15,8 @@ interface ReturnSubTag {
 interface Props {
   
     onCreate?:(tagString:string)=>any
-    onChange?:(tags:ReturnSubTag[])=>any
-    initialTags:SubTag[]
+    onChange?:(tags:ReturnTag[])=>any
+    initialTags:Tag[]
 }
 
 export default ( {onCreate,initialTags,onChange}:Props) => {
@@ -77,7 +78,7 @@ export default ( {onCreate,initialTags,onChange}:Props) => {
         })
     }
 
-    const renameOptions = (option: Array<SubTag>): Array<ReturnSubTag> => {
+    const renameOptions = (option: Array<Tag>): Array<ReturnTag> => {
 
         return option.map(({name, id, ...obj})=> ({
             label: name,

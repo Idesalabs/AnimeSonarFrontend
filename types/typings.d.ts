@@ -1,9 +1,5 @@
-export interface Tag {
-    id: string
-    name: string
-}
 
-interface Anime {
+export interface Anime {
     title: string
     description: string
     tags: Tag[]
@@ -20,4 +16,15 @@ interface Tag {
 interface SubTag {
     id: string
     name: string
+}
+
+interface ReturnSubTag {
+    value: string
+    label: string
+}
+
+interface ReturnTag {
+    averageRatings: number
+    value: string
+    label: string
 }
